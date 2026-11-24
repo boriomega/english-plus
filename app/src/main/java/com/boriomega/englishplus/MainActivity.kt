@@ -65,7 +65,7 @@ fun EnglishPlusApp(onSpeak: (String) -> Unit) {
                             Text("ENGLISH PLUS", color = Color.White, fontWeight = FontWeight.Black, fontSize = 20.sp, letterSpacing = 1.sp)
                             Text("خطوتك اليومية نحو الإنجليزية", color = Color.White.copy(alpha=.85f), fontSize = 13.sp)
                         }
-                        Text("⭐ ${completed.size * 10}", color = Color.White, fontWeight = FontWeight.Bold)
+                        Text("${completed.size * 10} XP", color = Color.White, fontWeight = FontWeight.Bold)
                     }
                     Column(Modifier.padding(20.dp)) {
                         Text("مرحباً بك! 👋", color = Ink, fontSize = 25.sp, fontWeight = FontWeight.Bold)
@@ -98,7 +98,7 @@ fun EnglishPlusApp(onSpeak: (String) -> Unit) {
                                     Text(lesson.subtitle, color = Ink.copy(alpha=.6f), fontSize = 12.sp)
                                 }
                                 if (locked) Icon(Icons.Default.Lock, contentDescription = "مقفل", tint = Color.Gray)
-                                else Text(if (index in completed) "✓" else "ابدأ", color = if(index in completed) Color(0xFF168653) else Red, fontWeight = FontWeight.Bold)
+                                else Text(if (index in completed) "✓" else "ابدأ", color = if(index in completed) Color(0xFF168653) else Green, fontWeight = FontWeight.Bold)
                             }
                         }
                     }
