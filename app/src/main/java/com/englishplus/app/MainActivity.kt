@@ -242,16 +242,16 @@ private fun HomeScreen(xp: Int, completed: Int, examPassed: Boolean, a1ExamPasse
                 colors = CardDefaults.cardColors(containerColor = if (examPassed) Color(0xFFE8F5EC) else Color(0xFFFFF4E5))
             ) {
                 Column(Modifier.fillMaxWidth().padding(16.dp), horizontalAlignment = Alignment.End) {
-                    Text(if (examPassed) "اختبار A0 مكتمل ✓" else "حان وقت الاختبار النهائي A0", color = Navy, fontWeight = FontWeight.Bold, fontSize = 17.sp)
+                    Text(when { completed >= 6 && a1ExamPassed -> "اختبار A1 مكتمل ✓"; completed >= 6 -> "حان وقت الاختبار النهائي A1"; examPassed -> "اختبار A0 مكتمل ✓"; else -> "حان وقت الاختبار النهائي A0" }, color = Navy, fontWeight = FontWeight.Bold, fontSize = 17.sp)
                     Spacer(Modifier.height(6.dp))
                     Text(
-                        if (examPassed) "اجتزت A0! أصبحت دروس المستوى A1 متاحة الآن." else "أكمل دروس A0 الثلاثة ثم أجب عن 5 أسئلة. تحتاج إلى 4 إجابات صحيحة على الأقل.",
+                        when { completed >= 6 && a1ExamPassed -> "أكملت دروس A1 واجتزت اختبارها النهائي."; completed >= 6 -> "أكمل دروس A1 الستة واجتز اختبارها النهائي لاحتساب المستوى مكتملاً."; examPassed -> "اجتزت A0! أصبحت دروس المستوى A1 متاحة الآن."; else -> "أكمل دروس A0 الثلاثة ثم أجب عن 5 أسئلة. تحتاج إلى 4 إجابات صحيحة على الأقل." },
                         color = Ink, fontSize = 13.sp, textAlign = TextAlign.End
                     )
-                    if (!examPassed) {
+                    if ((completed >= 6 && !a1ExamPassed) || (completed in 3..5 && !examPassed)) {
                         Spacer(Modifier.height(10.dp))
                         Button(onClick = onStartExam, colors = ButtonDefaults.buttonColors(containerColor = FlagRed), shape = RoundedCornerShape(12.dp)) {
-                            Text("ابدأ الاختبار النهائي")
+                            Text(if (completed >= 6) "ابدأ اختبار A1" else "ابدأ الاختبار النهائي")
                         }
                     }
                 }
