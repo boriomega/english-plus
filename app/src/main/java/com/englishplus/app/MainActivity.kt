@@ -32,6 +32,7 @@ import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.LinearProgressIndicator
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
+import androidx.compose.material3.Switch
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
@@ -129,6 +130,8 @@ private fun EnglishPlusApp() {
     var xp by remember { mutableStateOf(prefs.getInt("xp", 0)) }
     var completed by remember { mutableStateOf(prefs.getInt("completed_lessons", 0).coerceIn(0, 60)) }
     var passedUnits by remember { mutableStateOf(prefs.getInt("passed_units", 0)) }
+    var autoAdvanceEnabled by remember { mutableStateOf(prefs.getBoolean("auto_advance_enabled", true)) }
+    fun setAutoAdvance(enabled: Boolean) { autoAdvanceEnabled = enabled; prefs.edit().putBoolean("auto_advance_enabled", enabled).apply() }
     var screen by remember { mutableStateOf("home") }
     var selectedLesson by remember { mutableStateOf(1) }
     var selectedExamUnit by remember { mutableStateOf(1) }
@@ -137,11 +140,11 @@ private fun EnglishPlusApp() {
         prefs.edit().putInt("xp", newXp).putInt("completed_lessons", newCompleted).apply()
     }
     when (screen) {
-        "lesson" -> LessonScreen(lessonNumber = selectedLesson, onBack = { screen = "home" }, onLessonComplete = { earned ->
+        "lesson" -> LessonScreen(lessonNumber = selectedLesson, autoAdvanceEnabled = autoAdvanceEnabled, onAutoAdvanceChange = ::setAutoAdvance, onBack = { screen = "home" }, onLessonComplete = { earned ->
             if (selectedLesson > completed) saveProgress(xp + earned, selectedLesson)
             screen = "result"
         })
-        "exam" -> FinalExamScreen(unitNumber = selectedExamUnit, onBack = { screen = "home" }, onComplete = { passed ->
+        "exam" -> FinalExamScreen(unitNumber = selectedExamUnit, autoAdvanceEnabled = autoAdvanceEnabled, onAutoAdvanceChange = ::setAutoAdvance, onBack = { screen = "home" }, onComplete = { passed ->
             if (passed) {
                 passedUnits = passedUnits or (1 shl (selectedExamUnit - 1))
                 prefs.edit().putInt("passed_units", passedUnits).apply()
@@ -386,15 +389,32 @@ private fun CorrectAnswerFeedback() {
 }
 
 @Composable
-private fun LessonScreen(lessonNumber: Int, onBack: () -> Unit, onLessonComplete: (Int) -> Unit) {
+private fun LessonScreen(lessonNumber: Int, autoAdvanceEnabled: Boolean, onAutoAdvanceChange: (Boolean) -> Unit, onBack: () -> Unit, onLessonComplete: (Int) -> Unit) {
     var questionIndex by remember { mutableStateOf(0) }
     var selectedAnswer by remember { mutableStateOf<String?>(null) }
     var correctCount by remember { mutableStateOf(0) }
     var checked by remember { mutableStateOf(false) }
+    var secondsLeft by remember { mutableStateOf(5) }
     val courseLesson = CourseContent.units[(lessonNumber - 1) / 5].lessons[(lessonNumber - 1) % 5]
     val lessonExercises = courseLesson.exercises
     val exercise = lessonExercises[questionIndex]
     val isCorrect = selectedAnswer == exercise.answer
+
+    LaunchedEffect(checked, autoAdvanceEnabled, questionIndex) {
+        if (checked && autoAdvanceEnabled) {
+            for (second in 5 downTo 1) {
+                secondsLeft = second
+                delay(1000)
+            }
+            if (questionIndex < lessonExercises.lastIndex) {
+                questionIndex += 1
+                selectedAnswer = null
+                checked = false
+            } else {
+                onLessonComplete(correctCount * 10)
+            }
+        }
+    }
 
     Column(
         modifier = Modifier.fillMaxSize().background(Page).verticalScroll(rememberScrollState()).padding(20.dp),
@@ -410,7 +430,11 @@ private fun LessonScreen(lessonNumber: Int, onBack: () -> Unit, onLessonComplete
             }
             Text("الوحدة ${(lessonNumber - 1) / 5 + 1} • ${courseLesson.title}", color = Green, fontWeight = FontWeight.Bold)
         }
-        Spacer(Modifier.height(18.dp))
+        Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceBetween, verticalAlignment = Alignment.CenterVertically) {
+            Text("انتقال تلقائي بعد 5 ثوانٍ", color = Ink, fontSize = 12.sp)
+            Switch(checked = autoAdvanceEnabled, onCheckedChange = onAutoAdvanceChange)
+        }
+        Spacer(Modifier.height(8.dp))
         LinearProgressIndicator(
             progress = { (questionIndex + if (checked) 1 else 0).toFloat() / lessonExercises.size },
             modifier = Modifier.fillMaxWidth(),
@@ -470,6 +494,7 @@ private fun LessonScreen(lessonNumber: Int, onBack: () -> Unit, onLessonComplete
             Spacer(Modifier.height(12.dp))
             if (isCorrect) CorrectAnswerFeedback()
             else Text("الإجابة الصحيحة: ${exercise.answer}", color = AccentGreen, fontWeight = FontWeight.Bold, fontSize = 16.sp)
+            if (autoAdvanceEnabled) Text("الانتقال إلى السؤال التالي خلال ${secondsLeft} ثوانٍ...", color = Navy, fontWeight = FontWeight.Bold, fontSize = 14.sp)
         }
         Spacer(Modifier.height(18.dp))
         Button(
@@ -508,7 +533,7 @@ private fun LessonScreen(lessonNumber: Int, onBack: () -> Unit, onLessonComplete
 
 
 @Composable
-private fun FinalExamScreen(unitNumber: Int, onBack: () -> Unit, onComplete: (Boolean) -> Unit) {
+private fun FinalExamScreen(unitNumber: Int, autoAdvanceEnabled: Boolean, onAutoAdvanceChange: (Boolean) -> Unit, onBack: () -> Unit, onComplete: (Boolean) -> Unit) {
     val unit = CourseContent.units[unitNumber - 1]
     val questions = unit.lessons.map { it.exercises.first() }
     var index by remember { mutableStateOf(0) }
@@ -516,12 +541,32 @@ private fun FinalExamScreen(unitNumber: Int, onBack: () -> Unit, onComplete: (Bo
     var score by remember { mutableStateOf(0) }
     var checked by remember { mutableStateOf(false) }
     var finished by remember { mutableStateOf(false) }
+    var secondsLeft by remember { mutableStateOf(5) }
     val item = questions[index]
     val correct = answer == item.answer
+    LaunchedEffect(checked, autoAdvanceEnabled, index, finished) {
+        if (checked && autoAdvanceEnabled && !finished) {
+            for (second in 5 downTo 1) {
+                secondsLeft = second
+                delay(1000)
+            }
+            if (index < questions.lastIndex) {
+                index += 1
+                answer = null
+                checked = false
+            } else {
+                finished = true
+            }
+        }
+    }
     Column(Modifier.fillMaxSize().background(Page).verticalScroll(rememberScrollState()).padding(20.dp), horizontalAlignment = Alignment.End) {
         Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceBetween, verticalAlignment = Alignment.CenterVertically) {
             Button(onClick = onBack, colors = ButtonDefaults.buttonColors(containerColor = Navy)) { Text("خروج") }
             Text("اختبار الوحدة $unitNumber", color = Green, fontWeight = FontWeight.Bold)
+        }
+        Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceBetween, verticalAlignment = Alignment.CenterVertically) {
+            Text("انتقال تلقائي بعد 5 ثوانٍ", color = Ink, fontSize = 12.sp)
+            Switch(checked = autoAdvanceEnabled, onCheckedChange = onAutoAdvanceChange)
         }
         Spacer(Modifier.height(8.dp))
         Text(unit.title, color = Navy, fontSize = 18.sp, fontWeight = FontWeight.Bold)
@@ -543,6 +588,7 @@ private fun FinalExamScreen(unitNumber: Int, onBack: () -> Unit, onComplete: (Bo
                 Spacer(Modifier.height(10.dp))
                 if (correct) CorrectAnswerFeedback()
                 else Text("الإجابة الصحيحة: ${item.answer}", color = Color(0xFF9A805D), fontWeight = FontWeight.Bold)
+                if (autoAdvanceEnabled) Text("الانتقال إلى السؤال التالي خلال ${secondsLeft} ثوانٍ...", color = Navy, fontWeight = FontWeight.Bold, fontSize = 14.sp)
             }
             Spacer(Modifier.height(18.dp))
             Button(onClick = { if (!checked) { checked = true; if (correct) score += 1 } else if (index < questions.lastIndex) { index += 1; answer = null; checked = false } else finished = true }, enabled = checked || answer != null, modifier = Modifier.fillMaxWidth().height(52.dp), colors = ButtonDefaults.buttonColors(containerColor = Green, disabledContainerColor = Color(0xFFE9ECEC)), shape = RoundedCornerShape(15.dp)) { Text(if (!checked) "تحقق من الإجابة" else if (index == questions.lastIndex) "عرض النتيجة" else "السؤال التالي", fontWeight = FontWeight.Bold) }
