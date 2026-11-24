@@ -101,6 +101,7 @@ private fun EnglishPlusApp() {
     var xp by remember { mutableStateOf(prefs.getInt("xp", 0)) }
     var completed by remember { mutableStateOf(prefs.getInt("completed_lessons", 0)) }
     var screen by remember { mutableStateOf("home") }
+    var selectedLesson by remember { mutableStateOf(1) }
 
     fun saveProgress(newXp: Int, newCompleted: Int) {
         xp = newXp
@@ -113,6 +114,7 @@ private fun EnglishPlusApp() {
 
     when (screen) {
         "lesson" -> LessonScreen(
+            lessonNumber = selectedLesson,
             onBack = { screen = "home" },
             onLessonComplete = { earned ->
                 saveProgress(xp + earned, completed + 1)
@@ -127,13 +129,13 @@ private fun EnglishPlusApp() {
         else -> HomeScreen(
             xp = xp,
             completed = completed,
-            onStart = { screen = "lesson" }
+            onStartLesson = { lesson -> selectedLesson = lesson; screen = "lesson" }
         )
     }
 }
 
 @Composable
-private fun HomeScreen(xp: Int, completed: Int, onStart: () -> Unit) {
+private fun HomeScreen(xp: Int, completed: Int, onStartLesson: (Int) -> Unit) {
     Column(
         modifier = Modifier.fillMaxSize().verticalScroll(rememberScrollState())
             .background(Page).padding(horizontal = 20.dp, vertical = 24.dp),
@@ -206,10 +208,10 @@ private fun HomeScreen(xp: Int, completed: Int, onStart: () -> Unit) {
         ) {
             Column(Modifier.fillMaxWidth().padding(vertical = 18.dp, horizontal = 12.dp)) {
                 Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.End) {
-                    Text("الوحدة 1 • الكلمات الأولى", color = Navy, fontWeight = FontWeight.Bold, fontSize = 15.sp)
+                    Text("الوحدة الأولى • الكلمات الأولى", color = Navy, fontWeight = FontWeight.Bold, fontSize = 15.sp)
                 }
                 Spacer(Modifier.height(16.dp))
-                (1..10).forEach { lessonNumber ->
+                (1..3).forEach { lessonNumber ->
                     val isDone = lessonNumber <= completed
                     val isUnlocked = lessonNumber == completed + 1
                     Row(
@@ -223,7 +225,7 @@ private fun HomeScreen(xp: Int, completed: Int, onStart: () -> Unit) {
                     ) {
                         Column(horizontalAlignment = Alignment.CenterHorizontally) {
                             Button(
-                                onClick = onStart,
+                                onClick = { onStartLesson(lessonNumber) },
                                 enabled = isUnlocked || isDone,
                                 modifier = Modifier.size(76.dp),
                                 shape = CircleShape,
@@ -260,7 +262,7 @@ private fun HomeScreen(xp: Int, completed: Int, onStart: () -> Unit) {
                     }
                 }
                 Spacer(Modifier.height(8.dp))
-                Text("A1 ثم A2 وB1 ستُفتح بعد إكمال مسار البداية", color = Color(0xFF64748B), fontSize = 12.sp)
+                Text("أكمل الدروس الثلاثة لفتح الوحدة التالية في التحديث القادم", color = Color(0xFF64748B), fontSize = 12.sp)
             }
         }
         Spacer(Modifier.height(16.dp))
@@ -273,12 +275,13 @@ private fun HomeScreen(xp: Int, completed: Int, onStart: () -> Unit) {
 }
 
 @Composable
-private fun LessonScreen(onBack: () -> Unit, onLessonComplete: (Int) -> Unit) {
+private fun LessonScreen(lessonNumber: Int, onBack: () -> Unit, onLessonComplete: (Int) -> Unit) {
     var questionIndex by remember { mutableStateOf(0) }
     var selectedAnswer by remember { mutableStateOf<String?>(null) }
     var correctCount by remember { mutableStateOf(0) }
     var checked by remember { mutableStateOf(false) }
-    val exercise = beginnerExercises[questionIndex]
+    val lessonExercises = beginnerExercises.drop((lessonNumber - 1) * 5).take(5)
+    val exercise = lessonExercises[questionIndex]
     val isCorrect = selectedAnswer == exercise.answer
 
     Column(
@@ -293,17 +296,17 @@ private fun LessonScreen(onBack: () -> Unit, onLessonComplete: (Int) -> Unit) {
             Button(onClick = onBack, colors = ButtonDefaults.buttonColors(containerColor = Navy)) {
                 Text("خروج")
             }
-            Text("الدرس 1 • A0", color = FlagRed, fontWeight = FontWeight.Bold)
+            Text("الدرس $lessonNumber • A0", color = FlagRed, fontWeight = FontWeight.Bold)
         }
         Spacer(Modifier.height(18.dp))
         LinearProgressIndicator(
-            progress = { (questionIndex + if (checked) 1 else 0).toFloat() / beginnerExercises.size },
+            progress = { (questionIndex + if (checked) 1 else 0).toFloat() / lessonExercises.size },
             modifier = Modifier.fillMaxWidth(),
             color = FlagRed,
             trackColor = PaleBlue
         )
         Spacer(Modifier.height(22.dp))
-        Text("السؤال ${questionIndex + 1} من ${beginnerExercises.size}", color = Color(0xFF64748B), fontSize = 13.sp)
+        Text("السؤال ${questionIndex + 1} من ${lessonExercises.size}", color = Color(0xFF64748B), fontSize = 13.sp)
         Spacer(Modifier.height(8.dp))
         Text(exercise.question, color = Ink, fontSize = 22.sp, fontWeight = FontWeight.Bold)
         Spacer(Modifier.height(18.dp))
@@ -364,7 +367,7 @@ private fun LessonScreen(onBack: () -> Unit, onLessonComplete: (Int) -> Unit) {
                 if (!checked) {
                     checked = true
                     if (isCorrect) correctCount += 1
-                } else if (questionIndex < beginnerExercises.lastIndex) {
+                } else if (questionIndex < lessonExercises.lastIndex) {
                     questionIndex += 1
                     selectedAnswer = null
                     checked = false
@@ -383,7 +386,7 @@ private fun LessonScreen(onBack: () -> Unit, onLessonComplete: (Int) -> Unit) {
             Text(
                 when {
                     !checked -> "تحقق من الإجابة"
-                    questionIndex == beginnerExercises.lastIndex -> "إنهاء الدرس"
+                    questionIndex == lessonExercises.lastIndex -> "إنهاء الدرس"
                     else -> "السؤال التالي"
                 },
                 fontSize = 16.sp,
