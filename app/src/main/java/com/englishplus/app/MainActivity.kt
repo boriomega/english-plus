@@ -60,7 +60,7 @@ private val Navy = Color(0xFF496783)
 private val AccentGreen = Color(0xFF648F78)
 private val PaleBlue = Color(0xFFF0F4F0)
 private val Ink = Color(0xFF344456)
-private val Page = Color(0xFFF0F1F3)
+private val Page = Color(0xFFF6F4FF)
 private val Green = Color(0xFF648F78)
 
 data class Exercise(
