@@ -7,6 +7,8 @@ import java.util.Locale
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.Image
+import androidx.compose.animation.core.animateFloatAsState
+import androidx.compose.animation.core.tween
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
@@ -41,6 +43,7 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalLayoutDirection
@@ -50,6 +53,7 @@ import androidx.compose.ui.unit.LayoutDirection
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.compose.runtime.CompositionLocalProvider
+import kotlinx.coroutines.delay
 
 private val Navy = Color(0xFF496783)
 private val AccentGreen = Color(0xFF648F78)
@@ -224,15 +228,19 @@ private fun HomeScreen(xp: Int, completed: Int, passedUnits: Int, onStartLesson:
                         val isUnlocked = lessonNumber == completed + 1 && unitUnlocked
                         Row(modifier = Modifier.fillMaxWidth().padding(vertical = 5.dp), horizontalArrangement = when (lessonNumber % 3) { 0 -> Arrangement.Start; 1 -> Arrangement.Center; else -> Arrangement.End }, verticalAlignment = Alignment.CenterVertically) {
                             Column(horizontalAlignment = Alignment.CenterHorizontally) {
-                                Button(
-                                    onClick = { onStartLesson(lessonNumber) },
-                                    enabled = isUnlocked || isDone,
-                                    modifier = Modifier.size(66.dp),
-                                    shape = CircleShape,
-                                    colors = ButtonDefaults.buttonColors(containerColor = if (isDone) Green else if (isUnlocked) Color(0xFF83A991) else Color(0xFFECEFEF), disabledContainerColor = Color(0xFFECEFEF), contentColor = Color.White, disabledContentColor = Color(0xFF8290A3)),
-                                    elevation = ButtonDefaults.buttonElevation(defaultElevation = if (isUnlocked) 5.dp else 0.dp),
-                                    contentPadding = androidx.compose.foundation.layout.PaddingValues(0.dp)
-                                ) { Text(if (isDone) "✓" else if (isUnlocked) "▶" else "🔒", fontSize = 23.sp, fontWeight = FontWeight.ExtraBold) }
+                                if (isUnlocked) {
+                                    AppleLessonButton(onClick = { onStartLesson(lessonNumber) }, modifier = Modifier.size(66.dp))
+                                } else {
+                                    Button(
+                                        onClick = { onStartLesson(lessonNumber) },
+                                        enabled = isDone,
+                                        modifier = Modifier.size(66.dp),
+                                        shape = CircleShape,
+                                        colors = ButtonDefaults.buttonColors(containerColor = if (isDone) Green else Color(0xFFECEFEF), disabledContainerColor = Color(0xFFECEFEF), contentColor = Color.White, disabledContentColor = Color(0xFF8290A3)),
+                                        elevation = ButtonDefaults.buttonElevation(defaultElevation = 0.dp),
+                                        contentPadding = androidx.compose.foundation.layout.PaddingValues(0.dp)
+                                    ) { Text(if (isDone) "✓" else "🔒", fontSize = 23.sp, fontWeight = FontWeight.ExtraBold) }
+                                }
                                 Text(if (isDone) "مكتمل" else if (isUnlocked) "ابدأ" else "الدرس $lessonNumber", color = if (isUnlocked) Green else Color(0xFF64748B), fontSize = 11.sp, fontWeight = FontWeight.Bold)
                                 Text(lesson.title, color = Color(0xFF64748B), fontSize = 10.sp, textAlign = TextAlign.Center)
                             }
@@ -248,6 +256,74 @@ private fun HomeScreen(xp: Int, completed: Int, passedUnits: Int, onStartLesson:
         Text("تُحفظ نقاطك وتقدّمك على هذا الجهاز", color = Navy, fontSize = 13.sp, fontWeight = FontWeight.SemiBold, modifier = Modifier.fillMaxWidth(), textAlign = TextAlign.Center)
     }
 }
+@Composable
+private fun AppleLessonButton(onClick: () -> Unit, modifier: Modifier = Modifier) {
+    var biting by remember { mutableStateOf(false) }
+    var biteVisible by remember { mutableStateOf(false) }
+    val scale by animateFloatAsState(
+        targetValue = if (biting) 0.88f else 1f,
+        animationSpec = tween(durationMillis = 180),
+        label = "appleBiteScale"
+    )
+    val rotation by animateFloatAsState(
+        targetValue = if (biting) -8f else 0f,
+        animationSpec = tween(durationMillis = 180),
+        label = "appleBiteRotation"
+    )
+
+    LaunchedEffect(biting) {
+        if (biting) {
+            delay(180)
+            biteVisible = true
+            delay(320)
+            onClick()
+        }
+    }
+
+    Button(
+        onClick = { if (!biting) biting = true },
+        enabled = !biting,
+        modifier = modifier,
+        shape = CircleShape,
+        colors = ButtonDefaults.buttonColors(
+            containerColor = Color(0xFF83A991),
+            disabledContainerColor = Color(0xFF83A991)
+        ),
+        elevation = ButtonDefaults.buttonElevation(defaultElevation = 5.dp),
+        contentPadding = androidx.compose.foundation.layout.PaddingValues(0.dp)
+    ) {
+        Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
+            Image(
+                painter = painterResource(id = R.drawable.illustration_apple),
+                contentDescription = "ابدأ الدرس بالتفاحة",
+                modifier = Modifier
+                    .size(46.dp)
+                    .graphicsLayer {
+                        scaleX = scale
+                        scaleY = scale
+                        rotationZ = rotation
+                    }
+            )
+            if (biteVisible) {
+                Box(
+                    modifier = Modifier
+                        .align(Alignment.CenterEnd)
+                        .padding(end = 9.dp, top = 5.dp)
+                        .size(13.dp)
+                        .background(Color(0xFF83A991), CircleShape)
+                )
+                Box(
+                    modifier = Modifier
+                        .align(Alignment.CenterEnd)
+                        .padding(end = 12.dp, top = 16.dp)
+                        .size(8.dp)
+                        .background(Color(0xFF83A991), CircleShape)
+                )
+            }
+        }
+    }
+}
+
 private fun illustrationFor(word: String): Int = when (word.uppercase()) {
     "WATER" -> R.drawable.illustration_water
     "HOUSE" -> R.drawable.illustration_house
