@@ -79,6 +79,24 @@ private val beginnerExercises = listOf(
     Exercise("GOODBYE", "good-BYE", "ماذا تعني هذه الكلمة؟", listOf("مرحباً", "إلى اللقاء", "شكراً"), "إلى اللقاء", "Goodbye, see you soon.")
 )
 
+private val a1Exercises = listOf(
+    Exercise("BREAKFAST", "BREK-fuhst", "ماذا تعني هذه الكلمة؟", listOf("العشاء", "الفطور", "الغداء"), "الفطور", "I eat breakfast at seven."),
+    Exercise("TEACHER", "TEE-cher", "ماذا تعني هذه الكلمة؟", listOf("طبيب", "مهندس", "معلّم"), "معلّم", "My teacher is kind."),
+    Exercise("HOSPITAL", "HOS-pi-tuhl", "ماذا تعني هذه الكلمة؟", listOf("مستشفى", "مدرسة", "متجر"), "مستشفى", "The hospital is near my home."),
+    Exercise("MARKET", "MAR-kit", "ماذا تعني هذه الكلمة؟", listOf("حديقة", "سوق", "مكتبة"), "سوق", "We go to the market."),
+    Exercise("MORNING", "MOR-ning", "ماذا تعني هذه الكلمة؟", listOf("الصباح", "المساء", "الليل"), "الصباح", "I study in the morning."),
+    Exercise("BREAKFAST", "BREK-fuhst", "اختر الترجمة الصحيحة", listOf("الفطور", "الغداء", "العشاء"), "الفطور", "Breakfast is ready."),
+    Exercise("YESTERDAY", "YES-ter-day", "ماذا تعني هذه الكلمة؟", listOf("غداً", "اليوم", "أمس"), "أمس", "I studied yesterday."),
+    Exercise("TOMORROW", "tuh-MOR-oh", "ماذا تعني هذه الكلمة؟", listOf("أمس", "غداً", "الآن"), "غداً", "See you tomorrow."),
+    Exercise("HAPPY", "HAP-ee", "ماذا تعني هذه الكلمة؟", listOf("سعيد", "متعب", "جائع"), "سعيد", "I am happy today."),
+    Exercise("TIRED", "TY-erd", "ماذا تعني هذه الكلمة؟", listOf("سعيد", "متعب", "سريع"), "متعب", "She is tired after work."),
+    Exercise("NEIGHBOR", "NAY-ber", "ماذا تعني هذه الكلمة؟", listOf("زميل", "جار", "قريب"), "جار", "Our neighbor is friendly."),
+    Exercise("KITCHEN", "KICH-in", "ماذا تعني هذه الكلمة؟", listOf("غرفة النوم", "المطبخ", "الحديقة"), "المطبخ", "The kitchen is clean."),
+    Exercise("EXPENSIVE", "ik-SPEN-siv", "ماذا تعني هذه الكلمة؟", listOf("رخيص", "جميل", "غالي"), "غالي", "This bag is expensive."),
+    Exercise("CHEAP", "cheep", "ماذا تعني هذه الكلمة؟", listOf("غالي", "رخيص", "بعيد"), "رخيص", "This book is cheap."),
+    Exercise("WEATHER", "WETH-er", "ماذا تعني هذه الكلمة؟", listOf("الطقس", "الوقت", "الطريق"), "الطقس", "The weather is nice today.")
+)
+
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
