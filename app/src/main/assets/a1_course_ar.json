@@ -10,27 +10,332 @@
         {
           "lessonNumber": 1,
           "titleAr": "التحية والتوديع",
-          "exercises": []
+          "exercises": [
+            {
+              "word": "HELLO",
+              "pronunciation": "hello",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "مرحباً",
+                "إلى اللقاء",
+                "من فضلك"
+              ],
+              "answerAr": "مرحباً",
+              "exampleEn": "I can say hello."
+            },
+            {
+              "word": "GOODBYE",
+              "pronunciation": "goodbye",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "من فضلك",
+                "شكراً",
+                "إلى اللقاء"
+              ],
+              "answerAr": "إلى اللقاء",
+              "exampleEn": "I can say goodbye."
+            },
+            {
+              "word": "PLEASE",
+              "pronunciation": "please",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "أهلاً بك",
+                "من فضلك",
+                "شكراً"
+              ],
+              "answerAr": "من فضلك",
+              "exampleEn": "I can say please."
+            },
+            {
+              "word": "THANKS",
+              "pronunciation": "thanks",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "شكراً",
+                "أهلاً بك",
+                "اسم"
+              ],
+              "answerAr": "شكراً",
+              "exampleEn": "I can say thanks."
+            },
+            {
+              "word": "WELCOME",
+              "pronunciation": "welcome",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "اسم",
+                "الاسم الشخصي",
+                "أهلاً بك"
+              ],
+              "answerAr": "أهلاً بك",
+              "exampleEn": "I can say welcome."
+            }
+          ]
         },
         {
           "lessonNumber": 2,
           "titleAr": "التعريف بالنفس",
-          "exercises": []
+          "exercises": [
+            {
+              "word": "NAME",
+              "pronunciation": "name",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "الاسم الشخصي",
+                "اسم العائلة",
+                "اسم"
+              ],
+              "answerAr": "اسم",
+              "exampleEn": "I can say name."
+            },
+            {
+              "word": "FIRST NAME",
+              "pronunciation": "first name",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "العمر",
+                "الاسم الشخصي",
+                "اسم العائلة"
+              ],
+              "answerAr": "الاسم الشخصي",
+              "exampleEn": "I can say first name."
+            },
+            {
+              "word": "LAST NAME",
+              "pronunciation": "last name",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "اسم العائلة",
+                "العمر",
+                "العنوان"
+              ],
+              "answerAr": "اسم العائلة",
+              "exampleEn": "I can say last name."
+            },
+            {
+              "word": "AGE",
+              "pronunciation": "age",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "العنوان",
+                "بلد",
+                "العمر"
+              ],
+              "answerAr": "العمر",
+              "exampleEn": "I can say age."
+            },
+            {
+              "word": "ADDRESS",
+              "pronunciation": "address",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "مدينة",
+                "العنوان",
+                "بلد"
+              ],
+              "answerAr": "العنوان",
+              "exampleEn": "I can say address."
+            }
+          ]
         },
         {
           "lessonNumber": 3,
           "titleAr": "البلدان واللغات",
-          "exercises": []
+          "exercises": [
+            {
+              "word": "COUNTRY",
+              "pronunciation": "country",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "لغة",
+                "بلد",
+                "مدينة"
+              ],
+              "answerAr": "بلد",
+              "exampleEn": "I can say country."
+            },
+            {
+              "word": "CITY",
+              "pronunciation": "city",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "مدينة",
+                "لغة",
+                "الجنسية"
+              ],
+              "answerAr": "مدينة",
+              "exampleEn": "I can say city."
+            },
+            {
+              "word": "LANGUAGE",
+              "pronunciation": "language",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "الجنسية",
+                "المغرب",
+                "لغة"
+              ],
+              "answerAr": "لغة",
+              "exampleEn": "I can say language."
+            },
+            {
+              "word": "NATIONALITY",
+              "pronunciation": "nationality",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "بخير",
+                "الجنسية",
+                "المغرب"
+              ],
+              "answerAr": "الجنسية",
+              "exampleEn": "I can say nationality."
+            },
+            {
+              "word": "MOROCCO",
+              "pronunciation": "morocco",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "المغرب",
+                "بخير",
+                "سعيد"
+              ],
+              "answerAr": "المغرب",
+              "exampleEn": "I can say morocco."
+            }
+          ]
         },
         {
           "lessonNumber": 4,
           "titleAr": "السؤال عن الحال",
-          "exercises": []
+          "exercises": [
+            {
+              "word": "FINE",
+              "pronunciation": "fine",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "بخير",
+                "سعيد",
+                "متعب"
+              ],
+              "answerAr": "بخير",
+              "exampleEn": "I can say fine."
+            },
+            {
+              "word": "HAPPY",
+              "pronunciation": "happy",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "متعب",
+                "آسف",
+                "سعيد"
+              ],
+              "answerAr": "سعيد",
+              "exampleEn": "I can say happy."
+            },
+            {
+              "word": "TIRED",
+              "pronunciation": "tired",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "عذراً",
+                "متعب",
+                "آسف"
+              ],
+              "answerAr": "متعب",
+              "exampleEn": "I can say tired."
+            },
+            {
+              "word": "SORRY",
+              "pronunciation": "sorry",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "آسف",
+                "عذراً",
+                "يلتقي"
+              ],
+              "answerAr": "آسف",
+              "exampleEn": "I can say sorry."
+            },
+            {
+              "word": "EXCUSE ME",
+              "pronunciation": "excuse me",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "يلتقي",
+                "يعرّف",
+                "عذراً"
+              ],
+              "answerAr": "عذراً",
+              "exampleEn": "I can say excuse me."
+            }
+          ]
         },
         {
           "lessonNumber": 5,
           "titleAr": "مراجعة التعارف",
-          "exercises": []
+          "exercises": [
+            {
+              "word": "MEET",
+              "pronunciation": "meet",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "يعرّف",
+                "يتحدث",
+                "يلتقي"
+              ],
+              "answerAr": "يلتقي",
+              "exampleEn": "I can say meet."
+            },
+            {
+              "word": "INTRODUCE",
+              "pronunciation": "introduce",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "يعيش",
+                "يعرّف",
+                "يتحدث"
+              ],
+              "answerAr": "يعرّف",
+              "exampleEn": "I can say introduce."
+            },
+            {
+              "word": "SPEAK",
+              "pronunciation": "speak",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "يتحدث",
+                "يعيش",
+                "من"
+              ],
+              "answerAr": "يتحدث",
+              "exampleEn": "I can say speak."
+            },
+            {
+              "word": "LIVE",
+              "pronunciation": "live",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "من",
+                "مرحباً",
+                "يعيش"
+              ],
+              "answerAr": "يعيش",
+              "exampleEn": "I can say live."
+            },
+            {
+              "word": "FROM",
+              "pronunciation": "from",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "إلى اللقاء",
+                "من",
+                "مرحباً"
+              ],
+              "answerAr": "من",
+              "exampleEn": "I can say from."
+            }
+          ]
         }
       ]
     },
@@ -41,27 +346,332 @@
         {
           "lessonNumber": 6,
           "titleAr": "الأرقام الأساسية",
-          "exercises": []
+          "exercises": [
+            {
+              "word": "ONE",
+              "pronunciation": "one",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "واحد",
+                "اثنان",
+                "ثلاثة"
+              ],
+              "answerAr": "واحد",
+              "exampleEn": "I can say one."
+            },
+            {
+              "word": "TWO",
+              "pronunciation": "two",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "ثلاثة",
+                "أربعة",
+                "اثنان"
+              ],
+              "answerAr": "اثنان",
+              "exampleEn": "I can say two."
+            },
+            {
+              "word": "THREE",
+              "pronunciation": "three",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "خمسة",
+                "ثلاثة",
+                "أربعة"
+              ],
+              "answerAr": "ثلاثة",
+              "exampleEn": "I can say three."
+            },
+            {
+              "word": "FOUR",
+              "pronunciation": "four",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "أربعة",
+                "خمسة",
+                "ستة"
+              ],
+              "answerAr": "أربعة",
+              "exampleEn": "I can say four."
+            },
+            {
+              "word": "FIVE",
+              "pronunciation": "five",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "ستة",
+                "سبعة",
+                "خمسة"
+              ],
+              "answerAr": "خمسة",
+              "exampleEn": "I can say five."
+            }
+          ]
         },
         {
           "lessonNumber": 7,
           "titleAr": "أفراد العائلة",
-          "exercises": []
+          "exercises": [
+            {
+              "word": "SIX",
+              "pronunciation": "six",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "سبعة",
+                "ثمانية",
+                "ستة"
+              ],
+              "answerAr": "ستة",
+              "exampleEn": "I can say six."
+            },
+            {
+              "word": "SEVEN",
+              "pronunciation": "seven",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "تسعة",
+                "سبعة",
+                "ثمانية"
+              ],
+              "answerAr": "سبعة",
+              "exampleEn": "I can say seven."
+            },
+            {
+              "word": "EIGHT",
+              "pronunciation": "eight",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "ثمانية",
+                "تسعة",
+                "عشرة"
+              ],
+              "answerAr": "ثمانية",
+              "exampleEn": "I can say eight."
+            },
+            {
+              "word": "NINE",
+              "pronunciation": "nine",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "عشرة",
+                "أم",
+                "تسعة"
+              ],
+              "answerAr": "تسعة",
+              "exampleEn": "I can say nine."
+            },
+            {
+              "word": "TEN",
+              "pronunciation": "ten",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "أب",
+                "عشرة",
+                "أم"
+              ],
+              "answerAr": "عشرة",
+              "exampleEn": "I can say ten."
+            }
+          ]
         },
         {
           "lessonNumber": 8,
           "titleAr": "العمر والعدد",
-          "exercises": []
+          "exercises": [
+            {
+              "word": "MOTHER",
+              "pronunciation": "mother",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "أخ",
+                "أم",
+                "أب"
+              ],
+              "answerAr": "أم",
+              "exampleEn": "I can say mother."
+            },
+            {
+              "word": "FATHER",
+              "pronunciation": "father",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "أب",
+                "أخ",
+                "أخت"
+              ],
+              "answerAr": "أب",
+              "exampleEn": "I can say father."
+            },
+            {
+              "word": "BROTHER",
+              "pronunciation": "brother",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "أخت",
+                "الوالدان",
+                "أخ"
+              ],
+              "answerAr": "أخ",
+              "exampleEn": "I can say brother."
+            },
+            {
+              "word": "SISTER",
+              "pronunciation": "sister",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "ابن",
+                "أخت",
+                "الوالدان"
+              ],
+              "answerAr": "أخت",
+              "exampleEn": "I can say sister."
+            },
+            {
+              "word": "PARENTS",
+              "pronunciation": "parents",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "الوالدان",
+                "ابن",
+                "ابنة"
+              ],
+              "answerAr": "الوالدان",
+              "exampleEn": "I can say parents."
+            }
+          ]
         },
         {
           "lessonNumber": 9,
           "titleAr": "وصف العائلة",
-          "exercises": []
+          "exercises": [
+            {
+              "word": "SON",
+              "pronunciation": "son",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "ابن",
+                "ابنة",
+                "جدة"
+              ],
+              "answerAr": "ابن",
+              "exampleEn": "I can say son."
+            },
+            {
+              "word": "DAUGHTER",
+              "pronunciation": "daughter",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "جدة",
+                "جد",
+                "ابنة"
+              ],
+              "answerAr": "ابنة",
+              "exampleEn": "I can say daughter."
+            },
+            {
+              "word": "GRANDMOTHER",
+              "pronunciation": "grandmother",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "عائلة",
+                "جدة",
+                "جد"
+              ],
+              "answerAr": "جدة",
+              "exampleEn": "I can say grandmother."
+            },
+            {
+              "word": "GRANDFATHER",
+              "pronunciation": "grandfather",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "جد",
+                "عائلة",
+                "طفل"
+              ],
+              "answerAr": "جد",
+              "exampleEn": "I can say grandfather."
+            },
+            {
+              "word": "FAMILY",
+              "pronunciation": "family",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "طفل",
+                "أطفال",
+                "عائلة"
+              ],
+              "answerAr": "عائلة",
+              "exampleEn": "I can say family."
+            }
+          ]
         },
         {
           "lessonNumber": 10,
           "titleAr": "مراجعة العائلة والأرقام",
-          "exercises": []
+          "exercises": [
+            {
+              "word": "CHILD",
+              "pronunciation": "child",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "أطفال",
+                "صغير السن",
+                "طفل"
+              ],
+              "answerAr": "طفل",
+              "exampleEn": "I can say child."
+            },
+            {
+              "word": "CHILDREN",
+              "pronunciation": "children",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "كبير السن",
+                "أطفال",
+                "صغير السن"
+              ],
+              "answerAr": "أطفال",
+              "exampleEn": "I can say children."
+            },
+            {
+              "word": "YOUNG",
+              "pronunciation": "young",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "صغير السن",
+                "كبير السن",
+                "ابن العم أو الخال"
+              ],
+              "answerAr": "صغير السن",
+              "exampleEn": "I can say young."
+            },
+            {
+              "word": "OLD",
+              "pronunciation": "old",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "ابن العم أو الخال",
+                "واحد",
+                "كبير السن"
+              ],
+              "answerAr": "كبير السن",
+              "exampleEn": "I can say old."
+            },
+            {
+              "word": "COUSIN",
+              "pronunciation": "cousin",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "اثنان",
+                "ابن العم أو الخال",
+                "واحد"
+              ],
+              "answerAr": "ابن العم أو الخال",
+              "exampleEn": "I can say cousin."
+            }
+          ]
         }
       ]
     },
@@ -72,27 +682,332 @@
         {
           "lessonNumber": 11,
           "titleAr": "غرف المنزل",
-          "exercises": []
+          "exercises": [
+            {
+              "word": "HOUSE",
+              "pronunciation": "house",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "منزل",
+                "شقة",
+                "غرفة"
+              ],
+              "answerAr": "منزل",
+              "exampleEn": "I can say house."
+            },
+            {
+              "word": "APARTMENT",
+              "pronunciation": "apartment",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "غرفة",
+                "مطبخ",
+                "شقة"
+              ],
+              "answerAr": "شقة",
+              "exampleEn": "I can say apartment."
+            },
+            {
+              "word": "ROOM",
+              "pronunciation": "room",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "غرفة نوم",
+                "غرفة",
+                "مطبخ"
+              ],
+              "answerAr": "غرفة",
+              "exampleEn": "I can say room."
+            },
+            {
+              "word": "KITCHEN",
+              "pronunciation": "kitchen",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "مطبخ",
+                "غرفة نوم",
+                "حمام"
+              ],
+              "answerAr": "مطبخ",
+              "exampleEn": "I can say kitchen."
+            },
+            {
+              "word": "BEDROOM",
+              "pronunciation": "bedroom",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "حمام",
+                "غرفة الجلوس",
+                "غرفة نوم"
+              ],
+              "answerAr": "غرفة نوم",
+              "exampleEn": "I can say bedroom."
+            }
+          ]
         },
         {
           "lessonNumber": 12,
           "titleAr": "الأثاث",
-          "exercises": []
+          "exercises": [
+            {
+              "word": "BATHROOM",
+              "pronunciation": "bathroom",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "غرفة الجلوس",
+                "باب",
+                "حمام"
+              ],
+              "answerAr": "حمام",
+              "exampleEn": "I can say bathroom."
+            },
+            {
+              "word": "LIVING ROOM",
+              "pronunciation": "living room",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "نافذة",
+                "غرفة الجلوس",
+                "باب"
+              ],
+              "answerAr": "غرفة الجلوس",
+              "exampleEn": "I can say living room."
+            },
+            {
+              "word": "DOOR",
+              "pronunciation": "door",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "باب",
+                "نافذة",
+                "حديقة"
+              ],
+              "answerAr": "باب",
+              "exampleEn": "I can say door."
+            },
+            {
+              "word": "WINDOW",
+              "pronunciation": "window",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "حديقة",
+                "طاولة",
+                "نافذة"
+              ],
+              "answerAr": "نافذة",
+              "exampleEn": "I can say window."
+            },
+            {
+              "word": "GARDEN",
+              "pronunciation": "garden",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "كرسي",
+                "حديقة",
+                "طاولة"
+              ],
+              "answerAr": "حديقة",
+              "exampleEn": "I can say garden."
+            }
+          ]
         },
         {
           "lessonNumber": 13,
           "titleAr": "أشياء يومية",
-          "exercises": []
+          "exercises": [
+            {
+              "word": "TABLE",
+              "pronunciation": "table",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "سرير",
+                "طاولة",
+                "كرسي"
+              ],
+              "answerAr": "طاولة",
+              "exampleEn": "I can say table."
+            },
+            {
+              "word": "CHAIR",
+              "pronunciation": "chair",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "كرسي",
+                "سرير",
+                "أريكة"
+              ],
+              "answerAr": "كرسي",
+              "exampleEn": "I can say chair."
+            },
+            {
+              "word": "BED",
+              "pronunciation": "bed",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "أريكة",
+                "مكتب",
+                "سرير"
+              ],
+              "answerAr": "سرير",
+              "exampleEn": "I can say bed."
+            },
+            {
+              "word": "SOFA",
+              "pronunciation": "sofa",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "مفتاح",
+                "أريكة",
+                "مكتب"
+              ],
+              "answerAr": "أريكة",
+              "exampleEn": "I can say sofa."
+            },
+            {
+              "word": "DESK",
+              "pronunciation": "desk",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "مكتب",
+                "مفتاح",
+                "هاتف"
+              ],
+              "answerAr": "مكتب",
+              "exampleEn": "I can say desk."
+            }
+          ]
         },
         {
           "lessonNumber": 14,
           "titleAr": "وصف المنزل",
-          "exercises": []
+          "exercises": [
+            {
+              "word": "KEY",
+              "pronunciation": "key",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "مفتاح",
+                "هاتف",
+                "كتاب"
+              ],
+              "answerAr": "مفتاح",
+              "exampleEn": "I can say key."
+            },
+            {
+              "word": "PHONE",
+              "pronunciation": "phone",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "كتاب",
+                "قلم",
+                "هاتف"
+              ],
+              "answerAr": "هاتف",
+              "exampleEn": "I can say phone."
+            },
+            {
+              "word": "BOOK",
+              "pronunciation": "book",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "حقيبة",
+                "كتاب",
+                "قلم"
+              ],
+              "answerAr": "كتاب",
+              "exampleEn": "I can say book."
+            },
+            {
+              "word": "PEN",
+              "pronunciation": "pen",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "قلم",
+                "حقيبة",
+                "نظيف"
+              ],
+              "answerAr": "قلم",
+              "exampleEn": "I can say pen."
+            },
+            {
+              "word": "BAG",
+              "pronunciation": "bag",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "نظيف",
+                "كبير",
+                "حقيبة"
+              ],
+              "answerAr": "حقيبة",
+              "exampleEn": "I can say bag."
+            }
+          ]
         },
         {
           "lessonNumber": 15,
           "titleAr": "مراجعة المنزل",
-          "exercises": []
+          "exercises": [
+            {
+              "word": "CLEAN",
+              "pronunciation": "clean",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "كبير",
+                "صغير",
+                "نظيف"
+              ],
+              "answerAr": "نظيف",
+              "exampleEn": "I can say clean."
+            },
+            {
+              "word": "BIG",
+              "pronunciation": "big",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "مفتوح",
+                "كبير",
+                "صغير"
+              ],
+              "answerAr": "كبير",
+              "exampleEn": "I can say big."
+            },
+            {
+              "word": "SMALL",
+              "pronunciation": "small",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "صغير",
+                "مفتوح",
+                "مغلق"
+              ],
+              "answerAr": "صغير",
+              "exampleEn": "I can say small."
+            },
+            {
+              "word": "OPEN",
+              "pronunciation": "open",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "مغلق",
+                "منزل",
+                "مفتوح"
+              ],
+              "answerAr": "مفتوح",
+              "exampleEn": "I can say open."
+            },
+            {
+              "word": "CLOSED",
+              "pronunciation": "closed",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "شقة",
+                "مغلق",
+                "منزل"
+              ],
+              "answerAr": "مغلق",
+              "exampleEn": "I can say closed."
+            }
+          ]
         }
       ]
     },
@@ -103,27 +1018,332 @@
         {
           "lessonNumber": 16,
           "titleAr": "الفواكه والخضروات",
-          "exercises": []
+          "exercises": [
+            {
+              "word": "APPLE",
+              "pronunciation": "apple",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "تفاحة",
+                "موزة",
+                "برتقالة"
+              ],
+              "answerAr": "تفاحة",
+              "exampleEn": "I can say apple."
+            },
+            {
+              "word": "BANANA",
+              "pronunciation": "banana",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "برتقالة",
+                "عنب",
+                "موزة"
+              ],
+              "answerAr": "موزة",
+              "exampleEn": "I can say banana."
+            },
+            {
+              "word": "ORANGE",
+              "pronunciation": "orange",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "ليمون",
+                "برتقالة",
+                "عنب"
+              ],
+              "answerAr": "برتقالة",
+              "exampleEn": "I can say orange."
+            },
+            {
+              "word": "GRAPES",
+              "pronunciation": "grapes",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "عنب",
+                "ليمون",
+                "طماطم"
+              ],
+              "answerAr": "عنب",
+              "exampleEn": "I can say grapes."
+            },
+            {
+              "word": "LEMON",
+              "pronunciation": "lemon",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "طماطم",
+                "بطاطس",
+                "ليمون"
+              ],
+              "answerAr": "ليمون",
+              "exampleEn": "I can say lemon."
+            }
+          ]
         },
         {
           "lessonNumber": 17,
           "titleAr": "الوجبات",
-          "exercises": []
+          "exercises": [
+            {
+              "word": "TOMATO",
+              "pronunciation": "tomato",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "بطاطس",
+                "جزر",
+                "طماطم"
+              ],
+              "answerAr": "طماطم",
+              "exampleEn": "I can say tomato."
+            },
+            {
+              "word": "POTATO",
+              "pronunciation": "potato",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "بصل",
+                "بطاطس",
+                "جزر"
+              ],
+              "answerAr": "بطاطس",
+              "exampleEn": "I can say potato."
+            },
+            {
+              "word": "CARROT",
+              "pronunciation": "carrot",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "جزر",
+                "بصل",
+                "سلطة"
+              ],
+              "answerAr": "جزر",
+              "exampleEn": "I can say carrot."
+            },
+            {
+              "word": "ONION",
+              "pronunciation": "onion",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "سلطة",
+                "خبز",
+                "بصل"
+              ],
+              "answerAr": "بصل",
+              "exampleEn": "I can say onion."
+            },
+            {
+              "word": "SALAD",
+              "pronunciation": "salad",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "أرز",
+                "سلطة",
+                "خبز"
+              ],
+              "answerAr": "سلطة",
+              "exampleEn": "I can say salad."
+            }
+          ]
         },
         {
           "lessonNumber": 18,
           "titleAr": "المشروبات",
-          "exercises": []
+          "exercises": [
+            {
+              "word": "BREAD",
+              "pronunciation": "bread",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "بيضة",
+                "خبز",
+                "أرز"
+              ],
+              "answerAr": "خبز",
+              "exampleEn": "I can say bread."
+            },
+            {
+              "word": "RICE",
+              "pronunciation": "rice",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "أرز",
+                "بيضة",
+                "جبن"
+              ],
+              "answerAr": "أرز",
+              "exampleEn": "I can say rice."
+            },
+            {
+              "word": "EGG",
+              "pronunciation": "egg",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "جبن",
+                "دجاج",
+                "بيضة"
+              ],
+              "answerAr": "بيضة",
+              "exampleEn": "I can say egg."
+            },
+            {
+              "word": "CHEESE",
+              "pronunciation": "cheese",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "فطور",
+                "جبن",
+                "دجاج"
+              ],
+              "answerAr": "جبن",
+              "exampleEn": "I can say cheese."
+            },
+            {
+              "word": "CHICKEN",
+              "pronunciation": "chicken",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "دجاج",
+                "فطور",
+                "غداء"
+              ],
+              "answerAr": "دجاج",
+              "exampleEn": "I can say chicken."
+            }
+          ]
         },
         {
           "lessonNumber": 19,
           "titleAr": "في المطعم",
-          "exercises": []
+          "exercises": [
+            {
+              "word": "BREAKFAST",
+              "pronunciation": "breakfast",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "فطور",
+                "غداء",
+                "عشاء"
+              ],
+              "answerAr": "فطور",
+              "exampleEn": "I can say breakfast."
+            },
+            {
+              "word": "LUNCH",
+              "pronunciation": "lunch",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "عشاء",
+                "وجبة",
+                "غداء"
+              ],
+              "answerAr": "غداء",
+              "exampleEn": "I can say lunch."
+            },
+            {
+              "word": "DINNER",
+              "pronunciation": "dinner",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "قائمة الطعام",
+                "عشاء",
+                "وجبة"
+              ],
+              "answerAr": "عشاء",
+              "exampleEn": "I can say dinner."
+            },
+            {
+              "word": "MEAL",
+              "pronunciation": "meal",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "وجبة",
+                "قائمة الطعام",
+                "ماء"
+              ],
+              "answerAr": "وجبة",
+              "exampleEn": "I can say meal."
+            },
+            {
+              "word": "MENU",
+              "pronunciation": "menu",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "ماء",
+                "حليب",
+                "قائمة الطعام"
+              ],
+              "answerAr": "قائمة الطعام",
+              "exampleEn": "I can say menu."
+            }
+          ]
         },
         {
           "lessonNumber": 20,
           "titleAr": "مراجعة الطعام",
-          "exercises": []
+          "exercises": [
+            {
+              "word": "WATER",
+              "pronunciation": "water",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "حليب",
+                "شاي",
+                "ماء"
+              ],
+              "answerAr": "ماء",
+              "exampleEn": "I can say water."
+            },
+            {
+              "word": "MILK",
+              "pronunciation": "milk",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "عصير",
+                "حليب",
+                "شاي"
+              ],
+              "answerAr": "حليب",
+              "exampleEn": "I can say milk."
+            },
+            {
+              "word": "TEA",
+              "pronunciation": "tea",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "شاي",
+                "عصير",
+                "جائع"
+              ],
+              "answerAr": "شاي",
+              "exampleEn": "I can say tea."
+            },
+            {
+              "word": "JUICE",
+              "pronunciation": "juice",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "جائع",
+                "تفاحة",
+                "عصير"
+              ],
+              "answerAr": "عصير",
+              "exampleEn": "I can say juice."
+            },
+            {
+              "word": "HUNGRY",
+              "pronunciation": "hungry",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "موزة",
+                "جائع",
+                "تفاحة"
+              ],
+              "answerAr": "جائع",
+              "exampleEn": "I can say hungry."
+            }
+          ]
         }
       ]
     },
@@ -134,27 +1354,332 @@
         {
           "lessonNumber": 21,
           "titleAr": "أفعال يومية",
-          "exercises": []
+          "exercises": [
+            {
+              "word": "WAKE UP",
+              "pronunciation": "wake up",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "يستيقظ",
+                "ينهض",
+                "يغسل"
+              ],
+              "answerAr": "يستيقظ",
+              "exampleEn": "I can say wake up."
+            },
+            {
+              "word": "GET UP",
+              "pronunciation": "get up",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "يغسل",
+                "استحمام",
+                "ينهض"
+              ],
+              "answerAr": "ينهض",
+              "exampleEn": "I can say get up."
+            },
+            {
+              "word": "WASH",
+              "pronunciation": "wash",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "يرتدي",
+                "يغسل",
+                "استحمام"
+              ],
+              "answerAr": "يغسل",
+              "exampleEn": "I can say wash."
+            },
+            {
+              "word": "SHOWER",
+              "pronunciation": "shower",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "استحمام",
+                "يرتدي",
+                "يأكل"
+              ],
+              "answerAr": "استحمام",
+              "exampleEn": "I can say shower."
+            },
+            {
+              "word": "DRESS",
+              "pronunciation": "dress",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "يأكل",
+                "يشرب",
+                "يرتدي"
+              ],
+              "answerAr": "يرتدي",
+              "exampleEn": "I can say dress."
+            }
+          ]
         },
         {
           "lessonNumber": 22,
           "titleAr": "الاستيقاظ والنوم",
-          "exercises": []
+          "exercises": [
+            {
+              "word": "EAT",
+              "pronunciation": "eat",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "يشرب",
+                "يذهب",
+                "يأكل"
+              ],
+              "answerAr": "يأكل",
+              "exampleEn": "I can say eat."
+            },
+            {
+              "word": "DRINK",
+              "pronunciation": "drink",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "يأتي",
+                "يشرب",
+                "يذهب"
+              ],
+              "answerAr": "يشرب",
+              "exampleEn": "I can say drink."
+            },
+            {
+              "word": "GO",
+              "pronunciation": "go",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "يذهب",
+                "يأتي",
+                "يعود"
+              ],
+              "answerAr": "يذهب",
+              "exampleEn": "I can say go."
+            },
+            {
+              "word": "COME",
+              "pronunciation": "come",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "يعود",
+                "يعمل",
+                "يأتي"
+              ],
+              "answerAr": "يأتي",
+              "exampleEn": "I can say come."
+            },
+            {
+              "word": "RETURN",
+              "pronunciation": "return",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "يدرس",
+                "يعود",
+                "يعمل"
+              ],
+              "answerAr": "يعود",
+              "exampleEn": "I can say return."
+            }
+          ]
         },
         {
           "lessonNumber": 23,
           "titleAr": "العمل والدراسة",
-          "exercises": []
+          "exercises": [
+            {
+              "word": "WORK",
+              "pronunciation": "work",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "يقرأ",
+                "يعمل",
+                "يدرس"
+              ],
+              "answerAr": "يعمل",
+              "exampleEn": "I can say work."
+            },
+            {
+              "word": "STUDY",
+              "pronunciation": "study",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "يدرس",
+                "يقرأ",
+                "يكتب"
+              ],
+              "answerAr": "يدرس",
+              "exampleEn": "I can say study."
+            },
+            {
+              "word": "READ",
+              "pronunciation": "read",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "يكتب",
+                "يستمع",
+                "يقرأ"
+              ],
+              "answerAr": "يقرأ",
+              "exampleEn": "I can say read."
+            },
+            {
+              "word": "WRITE",
+              "pronunciation": "write",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "يشاهد",
+                "يكتب",
+                "يستمع"
+              ],
+              "answerAr": "يكتب",
+              "exampleEn": "I can say write."
+            },
+            {
+              "word": "LISTEN",
+              "pronunciation": "listen",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "يستمع",
+                "يشاهد",
+                "ينام"
+              ],
+              "answerAr": "يستمع",
+              "exampleEn": "I can say listen."
+            }
+          ]
         },
         {
           "lessonNumber": 24,
           "titleAr": "أوقات الفراغ",
-          "exercises": []
+          "exercises": [
+            {
+              "word": "WATCH",
+              "pronunciation": "watch",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "يشاهد",
+                "ينام",
+                "يطبخ"
+              ],
+              "answerAr": "يشاهد",
+              "exampleEn": "I can say watch."
+            },
+            {
+              "word": "SLEEP",
+              "pronunciation": "sleep",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "يطبخ",
+                "ينظف",
+                "ينام"
+              ],
+              "answerAr": "ينام",
+              "exampleEn": "I can say sleep."
+            },
+            {
+              "word": "COOK",
+              "pronunciation": "cook",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "يمشي",
+                "يطبخ",
+                "ينظف"
+              ],
+              "answerAr": "يطبخ",
+              "exampleEn": "I can say cook."
+            },
+            {
+              "word": "CLEAN",
+              "pronunciation": "clean",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "ينظف",
+                "يمشي",
+                "عادةً"
+              ],
+              "answerAr": "ينظف",
+              "exampleEn": "I can say clean."
+            },
+            {
+              "word": "WALK",
+              "pronunciation": "walk",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "عادةً",
+                "دائماً",
+                "يمشي"
+              ],
+              "answerAr": "يمشي",
+              "exampleEn": "I can say walk."
+            }
+          ]
         },
         {
           "lessonNumber": 25,
           "titleAr": "مراجعة الروتين",
-          "exercises": []
+          "exercises": [
+            {
+              "word": "USUALLY",
+              "pronunciation": "usually",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "دائماً",
+                "أحياناً",
+                "عادةً"
+              ],
+              "answerAr": "عادةً",
+              "exampleEn": "I can say usually."
+            },
+            {
+              "word": "ALWAYS",
+              "pronunciation": "always",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "أبداً",
+                "دائماً",
+                "أحياناً"
+              ],
+              "answerAr": "دائماً",
+              "exampleEn": "I can say always."
+            },
+            {
+              "word": "SOMETIMES",
+              "pronunciation": "sometimes",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "أحياناً",
+                "أبداً",
+                "كل يوم"
+              ],
+              "answerAr": "أحياناً",
+              "exampleEn": "I can say sometimes."
+            },
+            {
+              "word": "NEVER",
+              "pronunciation": "never",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "كل يوم",
+                "يستيقظ",
+                "أبداً"
+              ],
+              "answerAr": "أبداً",
+              "exampleEn": "I can say never."
+            },
+            {
+              "word": "EVERY DAY",
+              "pronunciation": "every day",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "ينهض",
+                "كل يوم",
+                "يستيقظ"
+              ],
+              "answerAr": "كل يوم",
+              "exampleEn": "I can say every day."
+            }
+          ]
         }
       ]
     },
@@ -165,27 +1690,332 @@
         {
           "lessonNumber": 26,
           "titleAr": "أيام الأسبوع",
-          "exercises": []
+          "exercises": [
+            {
+              "word": "MONDAY",
+              "pronunciation": "monday",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "الاثنين",
+                "الثلاثاء",
+                "الأربعاء"
+              ],
+              "answerAr": "الاثنين",
+              "exampleEn": "I can say monday."
+            },
+            {
+              "word": "TUESDAY",
+              "pronunciation": "tuesday",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "الأربعاء",
+                "الخميس",
+                "الثلاثاء"
+              ],
+              "answerAr": "الثلاثاء",
+              "exampleEn": "I can say tuesday."
+            },
+            {
+              "word": "WEDNESDAY",
+              "pronunciation": "wednesday",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "الجمعة",
+                "الأربعاء",
+                "الخميس"
+              ],
+              "answerAr": "الأربعاء",
+              "exampleEn": "I can say wednesday."
+            },
+            {
+              "word": "THURSDAY",
+              "pronunciation": "thursday",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "الخميس",
+                "الجمعة",
+                "السبت"
+              ],
+              "answerAr": "الخميس",
+              "exampleEn": "I can say thursday."
+            },
+            {
+              "word": "FRIDAY",
+              "pronunciation": "friday",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "السبت",
+                "الأحد",
+                "الجمعة"
+              ],
+              "answerAr": "الجمعة",
+              "exampleEn": "I can say friday."
+            }
+          ]
         },
         {
           "lessonNumber": 27,
           "titleAr": "أشهر السنة",
-          "exercises": []
+          "exercises": [
+            {
+              "word": "SATURDAY",
+              "pronunciation": "saturday",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "الأحد",
+                "يناير",
+                "السبت"
+              ],
+              "answerAr": "السبت",
+              "exampleEn": "I can say saturday."
+            },
+            {
+              "word": "SUNDAY",
+              "pronunciation": "sunday",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "فبراير",
+                "الأحد",
+                "يناير"
+              ],
+              "answerAr": "الأحد",
+              "exampleEn": "I can say sunday."
+            },
+            {
+              "word": "JANUARY",
+              "pronunciation": "january",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "يناير",
+                "فبراير",
+                "مارس"
+              ],
+              "answerAr": "يناير",
+              "exampleEn": "I can say january."
+            },
+            {
+              "word": "FEBRUARY",
+              "pronunciation": "february",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "مارس",
+                "أبريل",
+                "فبراير"
+              ],
+              "answerAr": "فبراير",
+              "exampleEn": "I can say february."
+            },
+            {
+              "word": "MARCH",
+              "pronunciation": "march",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "مايو",
+                "مارس",
+                "أبريل"
+              ],
+              "answerAr": "مارس",
+              "exampleEn": "I can say march."
+            }
+          ]
         },
         {
           "lessonNumber": 28,
           "titleAr": "قراءة الساعة",
-          "exercises": []
+          "exercises": [
+            {
+              "word": "APRIL",
+              "pronunciation": "april",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "يونيو",
+                "أبريل",
+                "مايو"
+              ],
+              "answerAr": "أبريل",
+              "exampleEn": "I can say april."
+            },
+            {
+              "word": "MAY",
+              "pronunciation": "may",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "مايو",
+                "يونيو",
+                "يوليو"
+              ],
+              "answerAr": "مايو",
+              "exampleEn": "I can say may."
+            },
+            {
+              "word": "JUNE",
+              "pronunciation": "june",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "يوليو",
+                "أغسطس",
+                "يونيو"
+              ],
+              "answerAr": "يونيو",
+              "exampleEn": "I can say june."
+            },
+            {
+              "word": "JULY",
+              "pronunciation": "july",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "سبتمبر",
+                "يوليو",
+                "أغسطس"
+              ],
+              "answerAr": "يوليو",
+              "exampleEn": "I can say july."
+            },
+            {
+              "word": "AUGUST",
+              "pronunciation": "august",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "أغسطس",
+                "سبتمبر",
+                "أكتوبر"
+              ],
+              "answerAr": "أغسطس",
+              "exampleEn": "I can say august."
+            }
+          ]
         },
         {
           "lessonNumber": 29,
           "titleAr": "التواريخ",
-          "exercises": []
+          "exercises": [
+            {
+              "word": "SEPTEMBER",
+              "pronunciation": "september",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "سبتمبر",
+                "أكتوبر",
+                "نوفمبر"
+              ],
+              "answerAr": "سبتمبر",
+              "exampleEn": "I can say september."
+            },
+            {
+              "word": "OCTOBER",
+              "pronunciation": "october",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "نوفمبر",
+                "ديسمبر",
+                "أكتوبر"
+              ],
+              "answerAr": "أكتوبر",
+              "exampleEn": "I can say october."
+            },
+            {
+              "word": "NOVEMBER",
+              "pronunciation": "november",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "عطلة نهاية الأسبوع",
+                "نوفمبر",
+                "ديسمبر"
+              ],
+              "answerAr": "نوفمبر",
+              "exampleEn": "I can say november."
+            },
+            {
+              "word": "DECEMBER",
+              "pronunciation": "december",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "ديسمبر",
+                "عطلة نهاية الأسبوع",
+                "اليوم"
+              ],
+              "answerAr": "ديسمبر",
+              "exampleEn": "I can say december."
+            },
+            {
+              "word": "WEEKEND",
+              "pronunciation": "weekend",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "اليوم",
+                "غداً",
+                "عطلة نهاية الأسبوع"
+              ],
+              "answerAr": "عطلة نهاية الأسبوع",
+              "exampleEn": "I can say weekend."
+            }
+          ]
         },
         {
           "lessonNumber": 30,
           "titleAr": "مراجعة الوقت",
-          "exercises": []
+          "exercises": [
+            {
+              "word": "TODAY",
+              "pronunciation": "today",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "غداً",
+                "أمس",
+                "اليوم"
+              ],
+              "answerAr": "اليوم",
+              "exampleEn": "I can say today."
+            },
+            {
+              "word": "TOMORROW",
+              "pronunciation": "tomorrow",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "الصباح",
+                "غداً",
+                "أمس"
+              ],
+              "answerAr": "غداً",
+              "exampleEn": "I can say tomorrow."
+            },
+            {
+              "word": "YESTERDAY",
+              "pronunciation": "yesterday",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "أمس",
+                "الصباح",
+                "المساء"
+              ],
+              "answerAr": "أمس",
+              "exampleEn": "I can say yesterday."
+            },
+            {
+              "word": "MORNING",
+              "pronunciation": "morning",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "المساء",
+                "الاثنين",
+                "الصباح"
+              ],
+              "answerAr": "الصباح",
+              "exampleEn": "I can say morning."
+            },
+            {
+              "word": "EVENING",
+              "pronunciation": "evening",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "الثلاثاء",
+                "المساء",
+                "الاثنين"
+              ],
+              "answerAr": "المساء",
+              "exampleEn": "I can say evening."
+            }
+          ]
         }
       ]
     },
@@ -196,27 +2026,332 @@
         {
           "lessonNumber": 31,
           "titleAr": "المدرسة والمواد",
-          "exercises": []
+          "exercises": [
+            {
+              "word": "SCHOOL",
+              "pronunciation": "school",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "مدرسة",
+                "فصل دراسي",
+                "طالب"
+              ],
+              "answerAr": "مدرسة",
+              "exampleEn": "I can say school."
+            },
+            {
+              "word": "CLASSROOM",
+              "pronunciation": "classroom",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "طالب",
+                "معلم",
+                "فصل دراسي"
+              ],
+              "answerAr": "فصل دراسي",
+              "exampleEn": "I can say classroom."
+            },
+            {
+              "word": "STUDENT",
+              "pronunciation": "student",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "درس",
+                "طالب",
+                "معلم"
+              ],
+              "answerAr": "طالب",
+              "exampleEn": "I can say student."
+            },
+            {
+              "word": "TEACHER",
+              "pronunciation": "teacher",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "معلم",
+                "درس",
+                "اللغة الإنجليزية"
+              ],
+              "answerAr": "معلم",
+              "exampleEn": "I can say teacher."
+            },
+            {
+              "word": "LESSON",
+              "pronunciation": "lesson",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "اللغة الإنجليزية",
+                "اللغة العربية",
+                "درس"
+              ],
+              "answerAr": "درس",
+              "exampleEn": "I can say lesson."
+            }
+          ]
         },
         {
           "lessonNumber": 32,
           "titleAr": "أدوات الدراسة",
-          "exercises": []
+          "exercises": [
+            {
+              "word": "ENGLISH",
+              "pronunciation": "english",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "اللغة العربية",
+                "رياضيات",
+                "اللغة الإنجليزية"
+              ],
+              "answerAr": "اللغة الإنجليزية",
+              "exampleEn": "I can say english."
+            },
+            {
+              "word": "ARABIC",
+              "pronunciation": "arabic",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "علوم",
+                "اللغة العربية",
+                "رياضيات"
+              ],
+              "answerAr": "اللغة العربية",
+              "exampleEn": "I can say arabic."
+            },
+            {
+              "word": "MATH",
+              "pronunciation": "math",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "رياضيات",
+                "علوم",
+                "تاريخ"
+              ],
+              "answerAr": "رياضيات",
+              "exampleEn": "I can say math."
+            },
+            {
+              "word": "SCIENCE",
+              "pronunciation": "science",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "تاريخ",
+                "دفتر",
+                "علوم"
+              ],
+              "answerAr": "علوم",
+              "exampleEn": "I can say science."
+            },
+            {
+              "word": "HISTORY",
+              "pronunciation": "history",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "قلم رصاص",
+                "تاريخ",
+                "دفتر"
+              ],
+              "answerAr": "تاريخ",
+              "exampleEn": "I can say history."
+            }
+          ]
         },
         {
           "lessonNumber": 33,
           "titleAr": "المهن",
-          "exercises": []
+          "exercises": [
+            {
+              "word": "NOTEBOOK",
+              "pronunciation": "notebook",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "ممحاة",
+                "دفتر",
+                "قلم رصاص"
+              ],
+              "answerAr": "دفتر",
+              "exampleEn": "I can say notebook."
+            },
+            {
+              "word": "PENCIL",
+              "pronunciation": "pencil",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "قلم رصاص",
+                "ممحاة",
+                "مسطرة"
+              ],
+              "answerAr": "قلم رصاص",
+              "exampleEn": "I can say pencil."
+            },
+            {
+              "word": "ERASER",
+              "pronunciation": "eraser",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "مسطرة",
+                "حاسوب",
+                "ممحاة"
+              ],
+              "answerAr": "ممحاة",
+              "exampleEn": "I can say eraser."
+            },
+            {
+              "word": "RULER",
+              "pronunciation": "ruler",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "طبيب",
+                "مسطرة",
+                "حاسوب"
+              ],
+              "answerAr": "مسطرة",
+              "exampleEn": "I can say ruler."
+            },
+            {
+              "word": "COMPUTER",
+              "pronunciation": "computer",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "حاسوب",
+                "طبيب",
+                "ممرض"
+              ],
+              "answerAr": "حاسوب",
+              "exampleEn": "I can say computer."
+            }
+          ]
         },
         {
           "lessonNumber": 34,
           "titleAr": "مكان العمل",
-          "exercises": []
+          "exercises": [
+            {
+              "word": "DOCTOR",
+              "pronunciation": "doctor",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "طبيب",
+                "ممرض",
+                "سائق"
+              ],
+              "answerAr": "طبيب",
+              "exampleEn": "I can say doctor."
+            },
+            {
+              "word": "NURSE",
+              "pronunciation": "nurse",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "سائق",
+                "مهندس",
+                "ممرض"
+              ],
+              "answerAr": "ممرض",
+              "exampleEn": "I can say nurse."
+            },
+            {
+              "word": "DRIVER",
+              "pronunciation": "driver",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "طباخ",
+                "سائق",
+                "مهندس"
+              ],
+              "answerAr": "سائق",
+              "exampleEn": "I can say driver."
+            },
+            {
+              "word": "ENGINEER",
+              "pronunciation": "engineer",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "مهندس",
+                "طباخ",
+                "مكتب"
+              ],
+              "answerAr": "مهندس",
+              "exampleEn": "I can say engineer."
+            },
+            {
+              "word": "COOK",
+              "pronunciation": "cook",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "مكتب",
+                "مدير",
+                "طباخ"
+              ],
+              "answerAr": "طباخ",
+              "exampleEn": "I can say cook."
+            }
+          ]
         },
         {
           "lessonNumber": 35,
           "titleAr": "مراجعة الدراسة والعمل",
-          "exercises": []
+          "exercises": [
+            {
+              "word": "OFFICE",
+              "pronunciation": "office",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "مدير",
+                "زميل عمل",
+                "مكتب"
+              ],
+              "answerAr": "مكتب",
+              "exampleEn": "I can say office."
+            },
+            {
+              "word": "MANAGER",
+              "pronunciation": "manager",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "وظيفة",
+                "مدير",
+                "زميل عمل"
+              ],
+              "answerAr": "مدير",
+              "exampleEn": "I can say manager."
+            },
+            {
+              "word": "COLLEAGUE",
+              "pronunciation": "colleague",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "زميل عمل",
+                "وظيفة",
+                "مشغول"
+              ],
+              "answerAr": "زميل عمل",
+              "exampleEn": "I can say colleague."
+            },
+            {
+              "word": "JOB",
+              "pronunciation": "job",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "مشغول",
+                "مدرسة",
+                "وظيفة"
+              ],
+              "answerAr": "وظيفة",
+              "exampleEn": "I can say job."
+            },
+            {
+              "word": "BUSY",
+              "pronunciation": "busy",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "فصل دراسي",
+                "مشغول",
+                "مدرسة"
+              ],
+              "answerAr": "مشغول",
+              "exampleEn": "I can say busy."
+            }
+          ]
         }
       ]
     },
@@ -227,27 +2362,332 @@
         {
           "lessonNumber": 36,
           "titleAr": "أماكن في المدينة",
-          "exercises": []
+          "exercises": [
+            {
+              "word": "STREET",
+              "pronunciation": "street",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "شارع",
+                "طريق",
+                "بنك"
+              ],
+              "answerAr": "شارع",
+              "exampleEn": "I can say street."
+            },
+            {
+              "word": "ROAD",
+              "pronunciation": "road",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "بنك",
+                "مستشفى",
+                "طريق"
+              ],
+              "answerAr": "طريق",
+              "exampleEn": "I can say road."
+            },
+            {
+              "word": "BANK",
+              "pronunciation": "bank",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "صيدلية",
+                "بنك",
+                "مستشفى"
+              ],
+              "answerAr": "بنك",
+              "exampleEn": "I can say bank."
+            },
+            {
+              "word": "HOSPITAL",
+              "pronunciation": "hospital",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "مستشفى",
+                "صيدلية",
+                "مدرسة"
+              ],
+              "answerAr": "مستشفى",
+              "exampleEn": "I can say hospital."
+            },
+            {
+              "word": "PHARMACY",
+              "pronunciation": "pharmacy",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "مدرسة",
+                "مسجد",
+                "صيدلية"
+              ],
+              "answerAr": "صيدلية",
+              "exampleEn": "I can say pharmacy."
+            }
+          ]
         },
         {
           "lessonNumber": 37,
           "titleAr": "الاتجاهات",
-          "exercises": []
+          "exercises": [
+            {
+              "word": "SCHOOL",
+              "pronunciation": "school",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "مسجد",
+                "حديقة عامة",
+                "مدرسة"
+              ],
+              "answerAr": "مدرسة",
+              "exampleEn": "I can say school."
+            },
+            {
+              "word": "MOSQUE",
+              "pronunciation": "mosque",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "محطة",
+                "مسجد",
+                "حديقة عامة"
+              ],
+              "answerAr": "مسجد",
+              "exampleEn": "I can say mosque."
+            },
+            {
+              "word": "PARK",
+              "pronunciation": "park",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "حديقة عامة",
+                "محطة",
+                "سوق"
+              ],
+              "answerAr": "حديقة عامة",
+              "exampleEn": "I can say park."
+            },
+            {
+              "word": "STATION",
+              "pronunciation": "station",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "سوق",
+                "يسار",
+                "محطة"
+              ],
+              "answerAr": "محطة",
+              "exampleEn": "I can say station."
+            },
+            {
+              "word": "MARKET",
+              "pronunciation": "market",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "يمين",
+                "سوق",
+                "يسار"
+              ],
+              "answerAr": "سوق",
+              "exampleEn": "I can say market."
+            }
+          ]
         },
         {
           "lessonNumber": 38,
           "titleAr": "وسائل النقل",
-          "exercises": []
+          "exercises": [
+            {
+              "word": "LEFT",
+              "pronunciation": "left",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "مستقيماً",
+                "يسار",
+                "يمين"
+              ],
+              "answerAr": "يسار",
+              "exampleEn": "I can say left."
+            },
+            {
+              "word": "RIGHT",
+              "pronunciation": "right",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "يمين",
+                "مستقيماً",
+                "قريب"
+              ],
+              "answerAr": "يمين",
+              "exampleEn": "I can say right."
+            },
+            {
+              "word": "STRAIGHT",
+              "pronunciation": "straight",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "قريب",
+                "بعيد",
+                "مستقيماً"
+              ],
+              "answerAr": "مستقيماً",
+              "exampleEn": "I can say straight."
+            },
+            {
+              "word": "NEAR",
+              "pronunciation": "near",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "حافلة",
+                "قريب",
+                "بعيد"
+              ],
+              "answerAr": "قريب",
+              "exampleEn": "I can say near."
+            },
+            {
+              "word": "FAR",
+              "pronunciation": "far",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "بعيد",
+                "حافلة",
+                "قطار"
+              ],
+              "answerAr": "بعيد",
+              "exampleEn": "I can say far."
+            }
+          ]
         },
         {
           "lessonNumber": 39,
           "titleAr": "السؤال عن الطريق",
-          "exercises": []
+          "exercises": [
+            {
+              "word": "BUS",
+              "pronunciation": "bus",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "حافلة",
+                "قطار",
+                "سيارة"
+              ],
+              "answerAr": "حافلة",
+              "exampleEn": "I can say bus."
+            },
+            {
+              "word": "TRAIN",
+              "pronunciation": "train",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "سيارة",
+                "سيارة أجرة",
+                "قطار"
+              ],
+              "answerAr": "قطار",
+              "exampleEn": "I can say train."
+            },
+            {
+              "word": "CAR",
+              "pronunciation": "car",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "دراجة",
+                "سيارة",
+                "سيارة أجرة"
+              ],
+              "answerAr": "سيارة",
+              "exampleEn": "I can say car."
+            },
+            {
+              "word": "TAXI",
+              "pronunciation": "taxi",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "سيارة أجرة",
+                "دراجة",
+                "تذكرة"
+              ],
+              "answerAr": "سيارة أجرة",
+              "exampleEn": "I can say taxi."
+            },
+            {
+              "word": "BICYCLE",
+              "pronunciation": "bicycle",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "تذكرة",
+                "خريطة",
+                "دراجة"
+              ],
+              "answerAr": "دراجة",
+              "exampleEn": "I can say bicycle."
+            }
+          ]
         },
         {
           "lessonNumber": 40,
           "titleAr": "مراجعة المدينة",
-          "exercises": []
+          "exercises": [
+            {
+              "word": "TICKET",
+              "pronunciation": "ticket",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "خريطة",
+                "يتوقف",
+                "تذكرة"
+              ],
+              "answerAr": "تذكرة",
+              "exampleEn": "I can say ticket."
+            },
+            {
+              "word": "MAP",
+              "pronunciation": "map",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "ينعطف",
+                "خريطة",
+                "يتوقف"
+              ],
+              "answerAr": "خريطة",
+              "exampleEn": "I can say map."
+            },
+            {
+              "word": "STOP",
+              "pronunciation": "stop",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "يتوقف",
+                "ينعطف",
+                "يسافر"
+              ],
+              "answerAr": "يتوقف",
+              "exampleEn": "I can say stop."
+            },
+            {
+              "word": "TURN",
+              "pronunciation": "turn",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "يسافر",
+                "شارع",
+                "ينعطف"
+              ],
+              "answerAr": "ينعطف",
+              "exampleEn": "I can say turn."
+            },
+            {
+              "word": "TRAVEL",
+              "pronunciation": "travel",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "طريق",
+                "يسافر",
+                "شارع"
+              ],
+              "answerAr": "يسافر",
+              "exampleEn": "I can say travel."
+            }
+          ]
         }
       ]
     },
@@ -258,27 +2698,332 @@
         {
           "lessonNumber": 41,
           "titleAr": "الملابس الأساسية",
-          "exercises": []
+          "exercises": [
+            {
+              "word": "SHIRT",
+              "pronunciation": "shirt",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "قميص",
+                "سروال",
+                "فستان"
+              ],
+              "answerAr": "قميص",
+              "exampleEn": "I can say shirt."
+            },
+            {
+              "word": "TROUSERS",
+              "pronunciation": "trousers",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "فستان",
+                "سترة",
+                "سروال"
+              ],
+              "answerAr": "سروال",
+              "exampleEn": "I can say trousers."
+            },
+            {
+              "word": "DRESS",
+              "pronunciation": "dress",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "حذاء",
+                "فستان",
+                "سترة"
+              ],
+              "answerAr": "فستان",
+              "exampleEn": "I can say dress."
+            },
+            {
+              "word": "JACKET",
+              "pronunciation": "jacket",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "سترة",
+                "حذاء",
+                "جوارب"
+              ],
+              "answerAr": "سترة",
+              "exampleEn": "I can say jacket."
+            },
+            {
+              "word": "SHOES",
+              "pronunciation": "shoes",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "جوارب",
+                "قبعة",
+                "حذاء"
+              ],
+              "answerAr": "حذاء",
+              "exampleEn": "I can say shoes."
+            }
+          ]
         },
         {
           "lessonNumber": 42,
           "titleAr": "الألوان والمقاسات",
-          "exercises": []
+          "exercises": [
+            {
+              "word": "SOCKS",
+              "pronunciation": "socks",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "قبعة",
+                "وشاح",
+                "جوارب"
+              ],
+              "answerAr": "جوارب",
+              "exampleEn": "I can say socks."
+            },
+            {
+              "word": "HAT",
+              "pronunciation": "hat",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "معطف",
+                "قبعة",
+                "وشاح"
+              ],
+              "answerAr": "قبعة",
+              "exampleEn": "I can say hat."
+            },
+            {
+              "word": "SCARF",
+              "pronunciation": "scarf",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "وشاح",
+                "معطف",
+                "تنورة"
+              ],
+              "answerAr": "وشاح",
+              "exampleEn": "I can say scarf."
+            },
+            {
+              "word": "COAT",
+              "pronunciation": "coat",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "تنورة",
+                "أحمر",
+                "معطف"
+              ],
+              "answerAr": "معطف",
+              "exampleEn": "I can say coat."
+            },
+            {
+              "word": "SKIRT",
+              "pronunciation": "skirt",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "أزرق",
+                "تنورة",
+                "أحمر"
+              ],
+              "answerAr": "تنورة",
+              "exampleEn": "I can say skirt."
+            }
+          ]
         },
         {
           "lessonNumber": 43,
           "titleAr": "الأسعار والمال",
-          "exercises": []
+          "exercises": [
+            {
+              "word": "RED",
+              "pronunciation": "red",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "أخضر",
+                "أحمر",
+                "أزرق"
+              ],
+              "answerAr": "أحمر",
+              "exampleEn": "I can say red."
+            },
+            {
+              "word": "BLUE",
+              "pronunciation": "blue",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "أزرق",
+                "أخضر",
+                "أسود"
+              ],
+              "answerAr": "أزرق",
+              "exampleEn": "I can say blue."
+            },
+            {
+              "word": "GREEN",
+              "pronunciation": "green",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "أسود",
+                "أبيض",
+                "أخضر"
+              ],
+              "answerAr": "أخضر",
+              "exampleEn": "I can say green."
+            },
+            {
+              "word": "BLACK",
+              "pronunciation": "black",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "مقاس",
+                "أسود",
+                "أبيض"
+              ],
+              "answerAr": "أسود",
+              "exampleEn": "I can say black."
+            },
+            {
+              "word": "WHITE",
+              "pronunciation": "white",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "أبيض",
+                "مقاس",
+                "صغير"
+              ],
+              "answerAr": "أبيض",
+              "exampleEn": "I can say white."
+            }
+          ]
         },
         {
           "lessonNumber": 44,
           "titleAr": "في المتجر",
-          "exercises": []
+          "exercises": [
+            {
+              "word": "SIZE",
+              "pronunciation": "size",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "مقاس",
+                "صغير",
+                "متوسط"
+              ],
+              "answerAr": "مقاس",
+              "exampleEn": "I can say size."
+            },
+            {
+              "word": "SMALL",
+              "pronunciation": "small",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "متوسط",
+                "كبير",
+                "صغير"
+              ],
+              "answerAr": "صغير",
+              "exampleEn": "I can say small."
+            },
+            {
+              "word": "MEDIUM",
+              "pronunciation": "medium",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "سعر",
+                "متوسط",
+                "كبير"
+              ],
+              "answerAr": "متوسط",
+              "exampleEn": "I can say medium."
+            },
+            {
+              "word": "LARGE",
+              "pronunciation": "large",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "كبير",
+                "سعر",
+                "مال"
+              ],
+              "answerAr": "كبير",
+              "exampleEn": "I can say large."
+            },
+            {
+              "word": "PRICE",
+              "pronunciation": "price",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "مال",
+                "نقداً",
+                "سعر"
+              ],
+              "answerAr": "سعر",
+              "exampleEn": "I can say price."
+            }
+          ]
         },
         {
           "lessonNumber": 45,
           "titleAr": "مراجعة التسوق",
-          "exercises": []
+          "exercises": [
+            {
+              "word": "MONEY",
+              "pronunciation": "money",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "نقداً",
+                "رخيص",
+                "مال"
+              ],
+              "answerAr": "مال",
+              "exampleEn": "I can say money."
+            },
+            {
+              "word": "CASH",
+              "pronunciation": "cash",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "غالي",
+                "نقداً",
+                "رخيص"
+              ],
+              "answerAr": "نقداً",
+              "exampleEn": "I can say cash."
+            },
+            {
+              "word": "CHEAP",
+              "pronunciation": "cheap",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "رخيص",
+                "غالي",
+                "متجر"
+              ],
+              "answerAr": "رخيص",
+              "exampleEn": "I can say cheap."
+            },
+            {
+              "word": "EXPENSIVE",
+              "pronunciation": "expensive",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "متجر",
+                "قميص",
+                "غالي"
+              ],
+              "answerAr": "غالي",
+              "exampleEn": "I can say expensive."
+            },
+            {
+              "word": "SHOP",
+              "pronunciation": "shop",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "سروال",
+                "متجر",
+                "قميص"
+              ],
+              "answerAr": "متجر",
+              "exampleEn": "I can say shop."
+            }
+          ]
         }
       ]
     },
@@ -289,27 +3034,332 @@
         {
           "lessonNumber": 46,
           "titleAr": "حالة الطقس",
-          "exercises": []
+          "exercises": [
+            {
+              "word": "SUN",
+              "pronunciation": "sun",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "شمس",
+                "مطر",
+                "رياح"
+              ],
+              "answerAr": "شمس",
+              "exampleEn": "I can say sun."
+            },
+            {
+              "word": "RAIN",
+              "pronunciation": "rain",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "رياح",
+                "سحابة",
+                "مطر"
+              ],
+              "answerAr": "مطر",
+              "exampleEn": "I can say rain."
+            },
+            {
+              "word": "WIND",
+              "pronunciation": "wind",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "ثلج",
+                "رياح",
+                "سحابة"
+              ],
+              "answerAr": "رياح",
+              "exampleEn": "I can say wind."
+            },
+            {
+              "word": "CLOUD",
+              "pronunciation": "cloud",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "سحابة",
+                "ثلج",
+                "حار"
+              ],
+              "answerAr": "سحابة",
+              "exampleEn": "I can say cloud."
+            },
+            {
+              "word": "SNOW",
+              "pronunciation": "snow",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "حار",
+                "بارد",
+                "ثلج"
+              ],
+              "answerAr": "ثلج",
+              "exampleEn": "I can say snow."
+            }
+          ]
         },
         {
           "lessonNumber": 47,
           "titleAr": "الفصول",
-          "exercises": []
+          "exercises": [
+            {
+              "word": "HOT",
+              "pronunciation": "hot",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "بارد",
+                "دافئ",
+                "حار"
+              ],
+              "answerAr": "حار",
+              "exampleEn": "I can say hot."
+            },
+            {
+              "word": "COLD",
+              "pronunciation": "cold",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "معتدل البرودة",
+                "بارد",
+                "دافئ"
+              ],
+              "answerAr": "بارد",
+              "exampleEn": "I can say cold."
+            },
+            {
+              "word": "WARM",
+              "pronunciation": "warm",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "دافئ",
+                "معتدل البرودة",
+                "طقس"
+              ],
+              "answerAr": "دافئ",
+              "exampleEn": "I can say warm."
+            },
+            {
+              "word": "COOL",
+              "pronunciation": "cool",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "طقس",
+                "الربيع",
+                "معتدل البرودة"
+              ],
+              "answerAr": "معتدل البرودة",
+              "exampleEn": "I can say cool."
+            },
+            {
+              "word": "WEATHER",
+              "pronunciation": "weather",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "الصيف",
+                "طقس",
+                "الربيع"
+              ],
+              "answerAr": "طقس",
+              "exampleEn": "I can say weather."
+            }
+          ]
         },
         {
           "lessonNumber": 48,
           "titleAr": "الطبيعة",
-          "exercises": []
+          "exercises": [
+            {
+              "word": "SPRING",
+              "pronunciation": "spring",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "الخريف",
+                "الربيع",
+                "الصيف"
+              ],
+              "answerAr": "الربيع",
+              "exampleEn": "I can say spring."
+            },
+            {
+              "word": "SUMMER",
+              "pronunciation": "summer",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "الصيف",
+                "الخريف",
+                "الشتاء"
+              ],
+              "answerAr": "الصيف",
+              "exampleEn": "I can say summer."
+            },
+            {
+              "word": "AUTUMN",
+              "pronunciation": "autumn",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "الشتاء",
+                "فصل",
+                "الخريف"
+              ],
+              "answerAr": "الخريف",
+              "exampleEn": "I can say autumn."
+            },
+            {
+              "word": "WINTER",
+              "pronunciation": "winter",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "شجرة",
+                "الشتاء",
+                "فصل"
+              ],
+              "answerAr": "الشتاء",
+              "exampleEn": "I can say winter."
+            },
+            {
+              "word": "SEASON",
+              "pronunciation": "season",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "فصل",
+                "شجرة",
+                "زهرة"
+              ],
+              "answerAr": "فصل",
+              "exampleEn": "I can say season."
+            }
+          ]
         },
         {
           "lessonNumber": 49,
           "titleAr": "وصف الجو",
-          "exercises": []
+          "exercises": [
+            {
+              "word": "TREE",
+              "pronunciation": "tree",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "شجرة",
+                "زهرة",
+                "نهر"
+              ],
+              "answerAr": "شجرة",
+              "exampleEn": "I can say tree."
+            },
+            {
+              "word": "FLOWER",
+              "pronunciation": "flower",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "نهر",
+                "جبل",
+                "زهرة"
+              ],
+              "answerAr": "زهرة",
+              "exampleEn": "I can say flower."
+            },
+            {
+              "word": "RIVER",
+              "pronunciation": "river",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "بحر",
+                "نهر",
+                "جبل"
+              ],
+              "answerAr": "نهر",
+              "exampleEn": "I can say river."
+            },
+            {
+              "word": "MOUNTAIN",
+              "pronunciation": "mountain",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "جبل",
+                "بحر",
+                "سماء"
+              ],
+              "answerAr": "جبل",
+              "exampleEn": "I can say mountain."
+            },
+            {
+              "word": "SEA",
+              "pronunciation": "sea",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "سماء",
+                "عشب",
+                "بحر"
+              ],
+              "answerAr": "بحر",
+              "exampleEn": "I can say sea."
+            }
+          ]
         },
         {
           "lessonNumber": 50,
           "titleAr": "مراجعة الطقس والطبيعة",
-          "exercises": []
+          "exercises": [
+            {
+              "word": "SKY",
+              "pronunciation": "sky",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "عشب",
+                "حيوان",
+                "سماء"
+              ],
+              "answerAr": "سماء",
+              "exampleEn": "I can say sky."
+            },
+            {
+              "word": "GRASS",
+              "pronunciation": "grass",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "جميل",
+                "عشب",
+                "حيوان"
+              ],
+              "answerAr": "عشب",
+              "exampleEn": "I can say grass."
+            },
+            {
+              "word": "ANIMAL",
+              "pronunciation": "animal",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "حيوان",
+                "جميل",
+                "غائم"
+              ],
+              "answerAr": "حيوان",
+              "exampleEn": "I can say animal."
+            },
+            {
+              "word": "BEAUTIFUL",
+              "pronunciation": "beautiful",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "غائم",
+                "شمس",
+                "جميل"
+              ],
+              "answerAr": "جميل",
+              "exampleEn": "I can say beautiful."
+            },
+            {
+              "word": "CLOUDY",
+              "pronunciation": "cloudy",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "مطر",
+                "غائم",
+                "شمس"
+              ],
+              "answerAr": "غائم",
+              "exampleEn": "I can say cloudy."
+            }
+          ]
         }
       ]
     },
@@ -320,27 +3370,332 @@
         {
           "lessonNumber": 51,
           "titleAr": "أجزاء الجسم",
-          "exercises": []
+          "exercises": [
+            {
+              "word": "HEAD",
+              "pronunciation": "head",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "رأس",
+                "عين",
+                "أذن"
+              ],
+              "answerAr": "رأس",
+              "exampleEn": "I can say head."
+            },
+            {
+              "word": "EYE",
+              "pronunciation": "eye",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "أذن",
+                "أنف",
+                "عين"
+              ],
+              "answerAr": "عين",
+              "exampleEn": "I can say eye."
+            },
+            {
+              "word": "EAR",
+              "pronunciation": "ear",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "فم",
+                "أذن",
+                "أنف"
+              ],
+              "answerAr": "أذن",
+              "exampleEn": "I can say ear."
+            },
+            {
+              "word": "NOSE",
+              "pronunciation": "nose",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "أنف",
+                "فم",
+                "يد"
+              ],
+              "answerAr": "أنف",
+              "exampleEn": "I can say nose."
+            },
+            {
+              "word": "MOUTH",
+              "pronunciation": "mouth",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "يد",
+                "ذراع",
+                "فم"
+              ],
+              "answerAr": "فم",
+              "exampleEn": "I can say mouth."
+            }
+          ]
         },
         {
           "lessonNumber": 52,
           "titleAr": "المشاعر والأعراض",
-          "exercises": []
+          "exercises": [
+            {
+              "word": "HAND",
+              "pronunciation": "hand",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "ذراع",
+                "ساق",
+                "يد"
+              ],
+              "answerAr": "يد",
+              "exampleEn": "I can say hand."
+            },
+            {
+              "word": "ARM",
+              "pronunciation": "arm",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "قدم",
+                "ذراع",
+                "ساق"
+              ],
+              "answerAr": "ذراع",
+              "exampleEn": "I can say arm."
+            },
+            {
+              "word": "LEG",
+              "pronunciation": "leg",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "ساق",
+                "قدم",
+                "جسم"
+              ],
+              "answerAr": "ساق",
+              "exampleEn": "I can say leg."
+            },
+            {
+              "word": "FOOT",
+              "pronunciation": "foot",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "جسم",
+                "مريض",
+                "قدم"
+              ],
+              "answerAr": "قدم",
+              "exampleEn": "I can say foot."
+            },
+            {
+              "word": "BODY",
+              "pronunciation": "body",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "مريض",
+                "جسم",
+                "مريض"
+              ],
+              "answerAr": "جسم",
+              "exampleEn": "I can say body."
+            }
+          ]
         },
         {
           "lessonNumber": 53,
           "titleAr": "زيارة الطبيب",
-          "exercises": []
+          "exercises": [
+            {
+              "word": "ILL",
+              "pronunciation": "ill",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "ألم",
+                "مريض",
+                "مريض"
+              ],
+              "answerAr": "مريض",
+              "exampleEn": "I can say ill."
+            },
+            {
+              "word": "SICK",
+              "pronunciation": "sick",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "مريض",
+                "ألم",
+                "صداع"
+              ],
+              "answerAr": "مريض",
+              "exampleEn": "I can say sick."
+            },
+            {
+              "word": "PAIN",
+              "pronunciation": "pain",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "صداع",
+                "حمى",
+                "ألم"
+              ],
+              "answerAr": "ألم",
+              "exampleEn": "I can say pain."
+            },
+            {
+              "word": "HEADACHE",
+              "pronunciation": "headache",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "طبيب",
+                "صداع",
+                "حمى"
+              ],
+              "answerAr": "صداع",
+              "exampleEn": "I can say headache."
+            },
+            {
+              "word": "FEVER",
+              "pronunciation": "fever",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "حمى",
+                "طبيب",
+                "دواء"
+              ],
+              "answerAr": "حمى",
+              "exampleEn": "I can say fever."
+            }
+          ]
         },
         {
           "lessonNumber": 54,
           "titleAr": "العادات الصحية",
-          "exercises": []
+          "exercises": [
+            {
+              "word": "DOCTOR",
+              "pronunciation": "doctor",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "طبيب",
+                "دواء",
+                "موعد"
+              ],
+              "answerAr": "طبيب",
+              "exampleEn": "I can say doctor."
+            },
+            {
+              "word": "MEDICINE",
+              "pronunciation": "medicine",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "موعد",
+                "مساعدة",
+                "دواء"
+              ],
+              "answerAr": "دواء",
+              "exampleEn": "I can say medicine."
+            },
+            {
+              "word": "APPOINTMENT",
+              "pronunciation": "appointment",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "راحة",
+                "موعد",
+                "مساعدة"
+              ],
+              "answerAr": "موعد",
+              "exampleEn": "I can say appointment."
+            },
+            {
+              "word": "HELP",
+              "pronunciation": "help",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "مساعدة",
+                "راحة",
+                "صحي"
+              ],
+              "answerAr": "مساعدة",
+              "exampleEn": "I can say help."
+            },
+            {
+              "word": "REST",
+              "pronunciation": "rest",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "صحي",
+                "تمرين",
+                "راحة"
+              ],
+              "answerAr": "راحة",
+              "exampleEn": "I can say rest."
+            }
+          ]
         },
         {
           "lessonNumber": 55,
           "titleAr": "مراجعة الصحة",
-          "exercises": []
+          "exercises": [
+            {
+              "word": "HEALTHY",
+              "pronunciation": "healthy",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "تمرين",
+                "طعام",
+                "صحي"
+              ],
+              "answerAr": "صحي",
+              "exampleEn": "I can say healthy."
+            },
+            {
+              "word": "EXERCISE",
+              "pronunciation": "exercise",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "نوم",
+                "تمرين",
+                "طعام"
+              ],
+              "answerAr": "تمرين",
+              "exampleEn": "I can say exercise."
+            },
+            {
+              "word": "FOOD",
+              "pronunciation": "food",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "طعام",
+                "نوم",
+                "قوي"
+              ],
+              "answerAr": "طعام",
+              "exampleEn": "I can say food."
+            },
+            {
+              "word": "SLEEP",
+              "pronunciation": "sleep",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "قوي",
+                "رأس",
+                "نوم"
+              ],
+              "answerAr": "نوم",
+              "exampleEn": "I can say sleep."
+            },
+            {
+              "word": "STRONG",
+              "pronunciation": "strong",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "عين",
+                "قوي",
+                "رأس"
+              ],
+              "answerAr": "قوي",
+              "exampleEn": "I can say strong."
+            }
+          ]
         }
       ]
     },
@@ -351,27 +3706,332 @@
         {
           "lessonNumber": 56,
           "titleAr": "الهوايات",
-          "exercises": []
+          "exercises": [
+            {
+              "word": "HOBBY",
+              "pronunciation": "hobby",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "هواية",
+                "القراءة",
+                "الرسم"
+              ],
+              "answerAr": "هواية",
+              "exampleEn": "I can say hobby."
+            },
+            {
+              "word": "READING",
+              "pronunciation": "reading",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "الرسم",
+                "الطبخ",
+                "القراءة"
+              ],
+              "answerAr": "القراءة",
+              "exampleEn": "I can say reading."
+            },
+            {
+              "word": "DRAWING",
+              "pronunciation": "drawing",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "البستنة",
+                "الرسم",
+                "الطبخ"
+              ],
+              "answerAr": "الرسم",
+              "exampleEn": "I can say drawing."
+            },
+            {
+              "word": "COOKING",
+              "pronunciation": "cooking",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "الطبخ",
+                "البستنة",
+                "كرة القدم"
+              ],
+              "answerAr": "الطبخ",
+              "exampleEn": "I can say cooking."
+            },
+            {
+              "word": "GARDENING",
+              "pronunciation": "gardening",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "كرة القدم",
+                "السباحة",
+                "البستنة"
+              ],
+              "answerAr": "البستنة",
+              "exampleEn": "I can say gardening."
+            }
+          ]
         },
         {
           "lessonNumber": 57,
           "titleAr": "الرياضة",
-          "exercises": []
+          "exercises": [
+            {
+              "word": "FOOTBALL",
+              "pronunciation": "football",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "السباحة",
+                "الجري",
+                "كرة القدم"
+              ],
+              "answerAr": "كرة القدم",
+              "exampleEn": "I can say football."
+            },
+            {
+              "word": "SWIMMING",
+              "pronunciation": "swimming",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "التنس",
+                "السباحة",
+                "الجري"
+              ],
+              "answerAr": "السباحة",
+              "exampleEn": "I can say swimming."
+            },
+            {
+              "word": "RUNNING",
+              "pronunciation": "running",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "الجري",
+                "التنس",
+                "لعبة"
+              ],
+              "answerAr": "الجري",
+              "exampleEn": "I can say running."
+            },
+            {
+              "word": "TENNIS",
+              "pronunciation": "tennis",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "لعبة",
+                "عطلة",
+                "التنس"
+              ],
+              "answerAr": "التنس",
+              "exampleEn": "I can say tennis."
+            },
+            {
+              "word": "GAME",
+              "pronunciation": "game",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "رحلة",
+                "لعبة",
+                "عطلة"
+              ],
+              "answerAr": "لعبة",
+              "exampleEn": "I can say game."
+            }
+          ]
         },
         {
           "lessonNumber": 58,
           "titleAr": "العطلات والسفر",
-          "exercises": []
+          "exercises": [
+            {
+              "word": "HOLIDAY",
+              "pronunciation": "holiday",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "يزور",
+                "عطلة",
+                "رحلة"
+              ],
+              "answerAr": "عطلة",
+              "exampleEn": "I can say holiday."
+            },
+            {
+              "word": "TRIP",
+              "pronunciation": "trip",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "رحلة",
+                "يزور",
+                "كاميرا"
+              ],
+              "answerAr": "رحلة",
+              "exampleEn": "I can say trip."
+            },
+            {
+              "word": "VISIT",
+              "pronunciation": "visit",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "كاميرا",
+                "صورة",
+                "يزور"
+              ],
+              "answerAr": "يزور",
+              "exampleEn": "I can say visit."
+            },
+            {
+              "word": "CAMERA",
+              "pronunciation": "camera",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "فندق",
+                "كاميرا",
+                "صورة"
+              ],
+              "answerAr": "كاميرا",
+              "exampleEn": "I can say camera."
+            },
+            {
+              "word": "PHOTO",
+              "pronunciation": "photo",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "صورة",
+                "فندق",
+                "مطار"
+              ],
+              "answerAr": "صورة",
+              "exampleEn": "I can say photo."
+            }
+          ]
         },
         {
           "lessonNumber": 59,
           "titleAr": "الفندق والمطار",
-          "exercises": []
+          "exercises": [
+            {
+              "word": "HOTEL",
+              "pronunciation": "hotel",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "فندق",
+                "مطار",
+                "جواز سفر"
+              ],
+              "answerAr": "فندق",
+              "exampleEn": "I can say hotel."
+            },
+            {
+              "word": "AIRPORT",
+              "pronunciation": "airport",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "جواز سفر",
+                "أمتعة",
+                "مطار"
+              ],
+              "answerAr": "مطار",
+              "exampleEn": "I can say airport."
+            },
+            {
+              "word": "PASSPORT",
+              "pronunciation": "passport",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "حجز",
+                "جواز سفر",
+                "أمتعة"
+              ],
+              "answerAr": "جواز سفر",
+              "exampleEn": "I can say passport."
+            },
+            {
+              "word": "LUGGAGE",
+              "pronunciation": "luggage",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "أمتعة",
+                "حجز",
+                "شاطئ"
+              ],
+              "answerAr": "أمتعة",
+              "exampleEn": "I can say luggage."
+            },
+            {
+              "word": "RESERVATION",
+              "pronunciation": "reservation",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "شاطئ",
+                "متحف",
+                "حجز"
+              ],
+              "answerAr": "حجز",
+              "exampleEn": "I can say reservation."
+            }
+          ]
         },
         {
           "lessonNumber": 60,
           "titleAr": "مراجعة عامة",
-          "exercises": []
+          "exercises": [
+            {
+              "word": "BEACH",
+              "pronunciation": "beach",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "متحف",
+                "جميل",
+                "شاطئ"
+              ],
+              "answerAr": "شاطئ",
+              "exampleEn": "I can say beach."
+            },
+            {
+              "word": "MUSEUM",
+              "pronunciation": "museum",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "يستمتع",
+                "متحف",
+                "جميل"
+              ],
+              "answerAr": "متحف",
+              "exampleEn": "I can say museum."
+            },
+            {
+              "word": "BEAUTIFUL",
+              "pronunciation": "beautiful",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "جميل",
+                "يستمتع",
+                "مفضل"
+              ],
+              "answerAr": "جميل",
+              "exampleEn": "I can say beautiful."
+            },
+            {
+              "word": "ENJOY",
+              "pronunciation": "enjoy",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "مفضل",
+                "هواية",
+                "يستمتع"
+              ],
+              "answerAr": "يستمتع",
+              "exampleEn": "I can say enjoy."
+            },
+            {
+              "word": "FAVORITE",
+              "pronunciation": "favorite",
+              "questionAr": "ما معنى هذه الكلمة؟",
+              "choicesAr": [
+                "القراءة",
+                "مفضل",
+                "هواية"
+              ],
+              "answerAr": "مفضل",
+              "exampleEn": "I can say favorite."
+            }
+          ]
         }
       ]
     }
