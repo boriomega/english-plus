@@ -183,7 +183,7 @@ private fun HomeScreen(xp: Int, completed: Int, examPassed: Boolean, onStartLess
                 )
                 Spacer(Modifier.height(16.dp))
                 Button(
-                    onClick = { onStartLesson((completed + 1).coerceIn(1, 3)) },
+                    onClick = { onStartLesson(if (completed >= 6) 6 else (completed + 1).coerceIn(1, 6)) },
                     colors = ButtonDefaults.buttonColors(containerColor = FlagRed),
                     shape = RoundedCornerShape(14.dp)
                 ) { Text("تابع التعلّم", fontWeight = FontWeight.Bold) }
@@ -198,16 +198,16 @@ private fun HomeScreen(xp: Int, completed: Int, examPassed: Boolean, onStartLess
             colors = CardDefaults.cardColors(containerColor = Color.White)
         ) {
             Column(Modifier.padding(16.dp), horizontalAlignment = Alignment.End) {
-                Text("$completed دروس مكتملة", color = Ink, fontWeight = FontWeight.Bold)
+                Text("$completed من 6 دروس مكتملة", color = Ink, fontWeight = FontWeight.Bold)
                 Spacer(Modifier.height(8.dp))
                 LinearProgressIndicator(
-                    progress = { (completed.coerceAtMost(3) / 3f) },
+                    progress = { (completed.coerceAtMost(6) / 6f) },
                     modifier = Modifier.fillMaxWidth(),
                     color = Green,
                     trackColor = PaleBlue
                 )
                 Spacer(Modifier.height(5.dp))
-                Text("هدف البداية: إكمال 3 دروس", color = Color(0xFF64748B), fontSize = 12.sp)
+                Text("الهدف الحالي: إكمال 6 دروس في A0 وA1", color = Color(0xFF64748B), fontSize = 12.sp)
             }
         }
         if (completed >= 3) {
@@ -221,7 +221,7 @@ private fun HomeScreen(xp: Int, completed: Int, examPassed: Boolean, onStartLess
                     Text(if (examPassed) "اختبار A0 مكتمل ✓" else "حان وقت الاختبار النهائي A0", color = Navy, fontWeight = FontWeight.Bold, fontSize = 17.sp)
                     Spacer(Modifier.height(6.dp))
                     Text(
-                        if (examPassed) "اجتزت الاختبار بنجاح. المستوى A1 هو خطوتك التالية وسيُضاف محتواه في التحديث القادم." else "أجب عن 5 أسئلة. تحتاج إلى 4 إجابات صحيحة على الأقل لاجتياز الاختبار.",
+                        if (examPassed) "اجتزت A0! أصبحت دروس المستوى A1 متاحة الآن." else "أجب عن 5 أسئلة. تحتاج إلى 4 إجابات صحيحة على الأقل لاجتياز الاختبار.",
                         color = Ink, fontSize = 13.sp, textAlign = TextAlign.End
                     )
                     if (!examPassed) {
@@ -244,12 +244,12 @@ private fun HomeScreen(xp: Int, completed: Int, examPassed: Boolean, onStartLess
         ) {
             Column(Modifier.fillMaxWidth().padding(vertical = 18.dp, horizontal = 12.dp)) {
                 Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.End) {
-                    Text("الوحدة الأولى • الكلمات الأولى", color = Navy, fontWeight = FontWeight.Bold, fontSize = 15.sp)
+                    Text("A0 • الكلمات الأولى", color = Navy, fontWeight = FontWeight.Bold, fontSize = 15.sp)
                 }
                 Spacer(Modifier.height(16.dp))
-                (1..3).forEach { lessonNumber ->
+                (1..6).forEach { lessonNumber ->
                     val isDone = lessonNumber <= completed
-                    val isUnlocked = lessonNumber == completed + 1
+                    val isUnlocked = lessonNumber == completed + 1 && (lessonNumber <= 3 || examPassed)
                     Row(
                         modifier = Modifier.fillMaxWidth().padding(vertical = 5.dp),
                         horizontalArrangement = when (lessonNumber % 3) {
@@ -298,7 +298,7 @@ private fun HomeScreen(xp: Int, completed: Int, examPassed: Boolean, onStartLess
                     }
                 }
                 Spacer(Modifier.height(8.dp))
-                Text(if (examPassed) "أكملت A0 بنجاح • المستوى A1 قيد الإعداد" else "أكمل الدروس الثلاثة ثم اجتز الاختبار النهائي", color = Color(0xFF64748B), fontSize = 12.sp)
+                Text(if (examPassed) "A0 مكتمل • تابع دروس A1 من 4 إلى 6" else "أكمل دروس A0 الثلاثة واجتز الاختبار لفتح A1", color = Color(0xFF64748B), fontSize = 12.sp)
             }
         }
         Spacer(Modifier.height(16.dp))
@@ -316,7 +316,7 @@ private fun LessonScreen(lessonNumber: Int, onBack: () -> Unit, onLessonComplete
     var selectedAnswer by remember { mutableStateOf<String?>(null) }
     var correctCount by remember { mutableStateOf(0) }
     var checked by remember { mutableStateOf(false) }
-    val lessonExercises = beginnerExercises.drop((lessonNumber - 1) * 5).take(5)
+    val lessonExercises = if (lessonNumber <= 3) beginnerExercises.drop((lessonNumber - 1) * 5).take(5) else a1Exercises.drop((lessonNumber - 4) * 5).take(5)
     val exercise = lessonExercises[questionIndex]
     val isCorrect = selectedAnswer == exercise.answer
 
@@ -332,7 +332,7 @@ private fun LessonScreen(lessonNumber: Int, onBack: () -> Unit, onLessonComplete
             Button(onClick = onBack, colors = ButtonDefaults.buttonColors(containerColor = Navy)) {
                 Text("خروج")
             }
-            Text("الدرس $lessonNumber • A0", color = FlagRed, fontWeight = FontWeight.Bold)
+            Text("الدرس $lessonNumber • ${if (lessonNumber <= 3) "A0" else "A1"}", color = FlagRed, fontWeight = FontWeight.Bold)
         }
         Spacer(Modifier.height(18.dp))
         LinearProgressIndicator(
