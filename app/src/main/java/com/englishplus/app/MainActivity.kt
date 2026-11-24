@@ -453,7 +453,7 @@ private fun FinalExamScreen(onBack: () -> Unit, onComplete: (Boolean) -> Unit) {
         LinearProgressIndicator(progress = { (index.value + if (checked.value) 1 else 0).toFloat() / questions.size }, modifier = Modifier.fillMaxWidth(), color = FlagRed, trackColor = PaleBlue)
         Spacer(Modifier.height(22.dp))
         if (!finished.value) {
-            Text("السؤال \${index.value + 1} من 5", color = Color(0xFF64748B), fontSize = 13.sp)
+            Text("السؤال ${index.value + 1} من 5", color = Color(0xFF64748B), fontSize = 13.sp)
             Spacer(Modifier.height(10.dp))
             Text(item.word, color = Navy, fontSize = 30.sp, fontWeight = FontWeight.ExtraBold)
             Text(item.question, color = Ink, fontSize = 19.sp, fontWeight = FontWeight.Bold)
@@ -468,7 +468,7 @@ private fun FinalExamScreen(onBack: () -> Unit, onComplete: (Boolean) -> Unit) {
             }
             if (checked.value) {
                 Spacer(Modifier.height(10.dp))
-                Text(if (correct) "إجابة صحيحة" else "الإجابة الصحيحة: \${item.answer}", color = if (correct) Green else FlagRed, fontWeight = FontWeight.Bold)
+                Text(if (correct) "إجابة صحيحة" else "الإجابة الصحيحة: ${item.answer}", color = if (correct) Green else FlagRed, fontWeight = FontWeight.Bold)
             }
             Spacer(Modifier.height(18.dp))
             Button(
@@ -492,7 +492,7 @@ private fun FinalExamScreen(onBack: () -> Unit, onComplete: (Boolean) -> Unit) {
             Spacer(Modifier.height(42.dp))
             Text(if (passed) "ممتاز! اجتزت الاختبار" else "واصل التدريب وحاول مرة أخرى", color = Navy, fontSize = 23.sp, fontWeight = FontWeight.ExtraBold, textAlign = TextAlign.Center)
             Spacer(Modifier.height(12.dp))
-            Text("\${score.value} من 5 إجابات صحيحة", color = if (passed) Green else FlagRed, fontSize = 20.sp, fontWeight = FontWeight.Bold)
+            Text("${score.value} من 5 إجابات صحيحة", color = if (passed) Green else FlagRed, fontSize = 20.sp, fontWeight = FontWeight.Bold)
             Text(if (passed) "تم تسجيل نجاحك في اختبار A0 على هذا الجهاز." else "تحتاج إلى 4 إجابات صحيحة على الأقل. يمكنك إعادة الاختبار.", color = Ink, fontSize = 14.sp, textAlign = TextAlign.Center)
             Spacer(Modifier.height(24.dp))
             Button(onClick = { onComplete(passed) }, modifier = Modifier.fillMaxWidth(), colors = ButtonDefaults.buttonColors(containerColor = Navy), shape = RoundedCornerShape(15.dp)) { Text("العودة إلى المسار") }
