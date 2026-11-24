@@ -7,6 +7,9 @@ import androidx.activity.compose.setContent
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
+import androidx.compose.ui.res.painterResource
+import androidx.compose.foundation.Image
+import java.util.Calendar
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -27,6 +30,19 @@ private val Blue = Color(0xFF3977D5)
 private val PaleBlue = Color(0xFFEAF1FC)
 private val Ink = Color(0xFF18243A)
 private val Green = Color(0xFF269B68)
+
+private fun recordLearningDay(prefs: android.content.SharedPreferences): Int {
+    val calendar = Calendar.getInstance()
+    val today = calendar.get(Calendar.YEAR) * 1000 + calendar.get(Calendar.DAY_OF_YEAR)
+    val lastDay = prefs.getInt("last_learning_day", 0)
+    var streak = prefs.getInt("streak", 0)
+    val yesterdayCalendar = calendar.clone() as Calendar
+    yesterdayCalendar.add(Calendar.DAY_OF_YEAR, -1)
+    val yesterday = yesterdayCalendar.get(Calendar.YEAR) * 1000 + yesterdayCalendar.get(Calendar.DAY_OF_YEAR)
+    if (lastDay != today) streak = if (lastDay == yesterday) streak + 1 else 1
+    prefs.edit().putInt("last_learning_day", today).putInt("streak", streak).apply()
+    return streak
+}
 
 data class Question(val prompt: String, val answer: String, val choices: List<String>, val hint: String)
 data class Lesson(val id: Int, val title: String, val subtitle: String, val questions: List<Question>)
@@ -71,18 +87,22 @@ private fun EnglishPlusApp(context: Context) {
     val prefs = remember { context.getSharedPreferences("english_plus", Context.MODE_PRIVATE) }
     var completed by remember { mutableIntStateOf(prefs.getInt("completed", 0)) }
     var xp by remember { mutableIntStateOf(prefs.getInt("xp", 0)) }
+    var streak by remember { mutableIntStateOf(prefs.getInt("streak", 0)) }
     var selected by remember { mutableStateOf<Lesson?>(null) }
     MaterialTheme(colorScheme = lightColorScheme(primary = Navy, secondary = Red, background = Color(0xFFF7F8FC))) {
         Surface(Modifier.fillMaxSize(), color = Color(0xFFF7F8FC)) {
             val lesson = selected
-            if (lesson == null) LearningPath(completed, xp) { selected = it }
+            if (lesson == null) LearningPath(completed, xp, streak) { selected = it }
             else QuizScreen(lesson, completed >= lesson.id, onExit = { selected = null }) {
                 if (completed < lesson.id) {
                     completed = lesson.id
                     prefs.edit().putInt("completed", completed).apply()
                 }
-                xp += 30
-                prefs.edit().putInt("xp", xp).apply()
+                if (completed < lesson.id) {
+                    xp += 30
+                    prefs.edit().putInt("xp", xp).apply()
+                }
+                streak = recordLearningDay(prefs)
                 selected = null
             }
         }
@@ -90,7 +110,7 @@ private fun EnglishPlusApp(context: Context) {
 }
 
 @Composable
-private fun LearningPath(completed: Int, xp: Int, onOpen: (Lesson) -> Unit) {
+private fun LearningPath(completed: Int, xp: Int, streak: Int, onOpen: (Lesson) -> Unit) {
     LazyColumn(
         modifier = Modifier.fillMaxSize(),
         contentPadding = PaddingValues(horizontal = 20.dp, vertical = 18.dp),
@@ -102,7 +122,9 @@ private fun LearningPath(completed: Int, xp: Int, onOpen: (Lesson) -> Unit) {
                     Text("مرحباً بك في", color = Ink.copy(alpha = .65f), fontSize = 14.sp)
                     Text("English Plus", color = Navy, fontSize = 29.sp, fontWeight = FontWeight.ExtraBold)
                 }
-                StatPill("🔥", "1")
+                Image(painter = painterResource(R.drawable.mascot), contentDescription = "رفيق التعلّم", modifier = Modifier.size(52.dp))
+                Spacer(Modifier.width(6.dp))
+                StatPill("🔥", streak.toString())
                 Spacer(Modifier.width(8.dp))
                 StatPill("💎", xp.toString())
             }
