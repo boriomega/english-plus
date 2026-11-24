@@ -51,12 +51,12 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.compose.runtime.CompositionLocalProvider
 
-private val Navy = Color(0xFF123B70)
-private val AccentGreen = Color(0xFF16834A)
-private val PaleBlue = Color(0xFFE8F5EC)
-private val Ink = Color(0xFF172B4D)
-private val Page = Color(0xFFF7F9FC)
-private val Green = Color(0xFF16834A)
+private val Navy = Color(0xFF496783)
+private val AccentGreen = Color(0xFF648F78)
+private val PaleBlue = Color(0xFFF0F4F0)
+private val Ink = Color(0xFF344456)
+private val Page = Color(0xFFFAFBFA)
+private val Green = Color(0xFF648F78)
 
 data class Exercise(
     val word: String,
@@ -229,7 +229,7 @@ private fun HomeScreen(xp: Int, completed: Int, passedUnits: Int, onStartLesson:
                                     enabled = isUnlocked || isDone,
                                     modifier = Modifier.size(66.dp),
                                     shape = CircleShape,
-                                    colors = ButtonDefaults.buttonColors(containerColor = if (isDone) Green else if (isUnlocked) Color(0xFF269B61) else Color(0xFFE1E7EF), disabledContainerColor = Color(0xFFE1E7EF), contentColor = Color.White, disabledContentColor = Color(0xFF8290A3)),
+                                    colors = ButtonDefaults.buttonColors(containerColor = if (isDone) Green else if (isUnlocked) Color(0xFF83A991) else Color(0xFFECEFEF), disabledContainerColor = Color(0xFFECEFEF), contentColor = Color.White, disabledContentColor = Color(0xFF8290A3)),
                                     elevation = ButtonDefaults.buttonElevation(defaultElevation = if (isUnlocked) 5.dp else 0.dp),
                                     contentPadding = androidx.compose.foundation.layout.PaddingValues(0.dp)
                                 ) { Text(if (isDone) "✓" else if (isUnlocked) "▶" else "🔒", fontSize = 23.sp, fontWeight = FontWeight.ExtraBold) }
@@ -394,7 +394,7 @@ private fun LessonScreen(lessonNumber: Int, onBack: () -> Unit, onLessonComplete
                 ),
                 border = androidx.compose.foundation.BorderStroke(
                     width = if (chosen) 2.dp else 1.dp,
-                    color = if (chosen) Navy else Color(0xFFE6EAF0)
+                    color = if (chosen) Navy else Color(0xFFE9ECEC)
                 )
             ) {
                 Text(
@@ -430,7 +430,7 @@ private fun LessonScreen(lessonNumber: Int, onBack: () -> Unit, onLessonComplete
             modifier = Modifier.fillMaxWidth().height(52.dp),
             colors = ButtonDefaults.buttonColors(
                 containerColor = Green,
-                disabledContainerColor = Color(0xFFE6EAF0)
+                disabledContainerColor = Color(0xFFE9ECEC)
             ),
             shape = RoundedCornerShape(15.dp)
         ) {
@@ -478,21 +478,21 @@ private fun FinalExamScreen(unitNumber: Int, onBack: () -> Unit, onComplete: (Bo
             SpeechButton(item.word)
             Spacer(Modifier.height(18.dp))
             item.choices.forEach { choice ->
-                Card(modifier = Modifier.fillMaxWidth().padding(vertical = 5.dp).clickable(enabled = !checked) { answer = choice }, shape = RoundedCornerShape(15.dp), colors = CardDefaults.cardColors(containerColor = if (answer == choice) PaleBlue else Color.White), border = androidx.compose.foundation.BorderStroke(if (answer == choice) 2.dp else 1.dp, if (answer == choice) Green else Color(0xFFE6EAF0))) { Text(choice, modifier = Modifier.fillMaxWidth().padding(17.dp), color = Ink, textAlign = TextAlign.Center, fontSize = 17.sp) }
+                Card(modifier = Modifier.fillMaxWidth().padding(vertical = 5.dp).clickable(enabled = !checked) { answer = choice }, shape = RoundedCornerShape(15.dp), colors = CardDefaults.cardColors(containerColor = if (answer == choice) PaleBlue else Color.White), border = androidx.compose.foundation.BorderStroke(if (answer == choice) 2.dp else 1.dp, if (answer == choice) Green else Color(0xFFE9ECEC))) { Text(choice, modifier = Modifier.fillMaxWidth().padding(17.dp), color = Ink, textAlign = TextAlign.Center, fontSize = 17.sp) }
             }
             if (checked) {
                 Spacer(Modifier.height(10.dp))
                 if (correct) CorrectAnswerFeedback()
-                else Text("الإجابة الصحيحة: ${item.answer}", color = Color(0xFFB45309), fontWeight = FontWeight.Bold)
+                else Text("الإجابة الصحيحة: ${item.answer}", color = Color(0xFF9A805D), fontWeight = FontWeight.Bold)
             }
             Spacer(Modifier.height(18.dp))
-            Button(onClick = { if (!checked) { checked = true; if (correct) score += 1 } else if (index < questions.lastIndex) { index += 1; answer = null; checked = false } else finished = true }, enabled = checked || answer != null, modifier = Modifier.fillMaxWidth().height(52.dp), colors = ButtonDefaults.buttonColors(containerColor = Green, disabledContainerColor = Color(0xFFE6EAF0)), shape = RoundedCornerShape(15.dp)) { Text(if (!checked) "تحقق من الإجابة" else if (index == questions.lastIndex) "عرض النتيجة" else "السؤال التالي", fontWeight = FontWeight.Bold) }
+            Button(onClick = { if (!checked) { checked = true; if (correct) score += 1 } else if (index < questions.lastIndex) { index += 1; answer = null; checked = false } else finished = true }, enabled = checked || answer != null, modifier = Modifier.fillMaxWidth().height(52.dp), colors = ButtonDefaults.buttonColors(containerColor = Green, disabledContainerColor = Color(0xFFE9ECEC)), shape = RoundedCornerShape(15.dp)) { Text(if (!checked) "تحقق من الإجابة" else if (index == questions.lastIndex) "عرض النتيجة" else "السؤال التالي", fontWeight = FontWeight.Bold) }
         } else {
             val passed = score >= 4
             Spacer(Modifier.height(42.dp))
             Text(if (passed) "ممتاز! اجتزت الاختبار" else "واصل التدريب وحاول مرة أخرى", color = Navy, fontSize = 23.sp, fontWeight = FontWeight.ExtraBold, textAlign = TextAlign.Center)
             Spacer(Modifier.height(12.dp))
-            Text("$score من 5 إجابات صحيحة", color = if (passed) Green else Color(0xFFB45309), fontSize = 20.sp, fontWeight = FontWeight.Bold)
+            Text("$score من 5 إجابات صحيحة", color = if (passed) Green else Color(0xFF9A805D), fontSize = 20.sp, fontWeight = FontWeight.Bold)
             Text(if (passed) "فُتحت لك الوحدة التالية." else "تحتاج إلى 4 إجابات صحيحة على الأقل. أعد الدروس ثم حاول مجدداً.", color = Ink, fontSize = 14.sp, textAlign = TextAlign.Center)
             Spacer(Modifier.height(24.dp))
             Button(onClick = { onComplete(passed) }, modifier = Modifier.fillMaxWidth(), colors = ButtonDefaults.buttonColors(containerColor = Navy), shape = RoundedCornerShape(15.dp)) { Text("العودة إلى المسار") }
@@ -547,7 +547,7 @@ private fun LevelCard(
             Text(
                 level,
                 modifier = Modifier.background(
-                    if (active) AccentGreen else Color(0xFFE6EAF0),
+                    if (active) AccentGreen else Color(0xFFE9ECEC),
                     RoundedCornerShape(12.dp)
                 ).padding(horizontal = 13.dp, vertical = 9.dp),
                 color = if (active) Color.White else Navy,
