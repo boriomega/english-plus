@@ -25,17 +25,24 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import java.util.Locale
 
-private val Navy = Color(0xFF123B70)
-private val Green = Color(0xFF19A56B)
-private val Cream = Color(0xFFF6F8FC)
-private val Ink = Color(0xFF17243A)
+private val Navy = Color(0xFF7895B8)
+private val Green = Color(0xFF83C7A8)
+private val Cream = Color(0xFFF7F9FC)
+private val Ink = Color(0xFF34445B)
 
 class MainActivity : ComponentActivity() {
     private var tts: TextToSpeech? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         tts = TextToSpeech(this) { status ->
-            if (status == TextToSpeech.SUCCESS) tts?.language = Locale.US
+            if (status == TextToSpeech.SUCCESS) {
+                tts?.language = Locale.US
+                tts?.setSpeechRate(0.9f)
+                val narrativeVoice = tts?.voices?.firstOrNull {
+                    it.name.contains("narrative", ignoreCase = true) && it.locale.language == "en"
+                }
+                if (narrativeVoice != null) tts?.voice = narrativeVoice
+            }
         }
         setContent { EnglishPlusApp(onSpeak = { speak(it) }) }
     }
