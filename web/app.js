@@ -130,6 +130,7 @@ if(ok){
   if(control)control.classList.add("wrong");
   if(control?.classList.contains("answer"))control.disabled=true;
   if(control?.id==="typed-answer")control.classList.remove("wrong");
+  $("next").disabled=false;$("next").textContent="إعادة المحاولة";$("next").onclick=retryCurrentQuestion;
  }
 }
 if(!practiceMode)localStorage.setItem("ep-hearts",hearts);
@@ -142,6 +143,7 @@ if(answered){
  $("next").disabled=true;
 }
 }
+function retryCurrentQuestion(){stopQuestionTimer();showQuestion();sound("click")}
 function nextQuestion(){stopQuestionTimer();if(!answered)return;if(!practiceMode&&hearts<=0){$("lesson-content").innerHTML=`<div class="word-picture">❤️‍🩹</div><h2 class="question-title" style="text-align:center">نفدت القلوب!</h2><p style="text-align:center;color:var(--muted)">ابدأ تدريباً قصيراً وأجب عن 3 أسئلة صحيحة لاستعادة قلب.</p><button class="primary-button" id="refill-now">ابدأ التدريب</button>`;$("refill-now").onclick=()=>{ $("lesson-dialog").close();beginPractice()};return}const total=practiceMode?4:lessons[activeLesson].words.length;if(question<total-1){question++;showQuestion();sound("click");return}if(practiceMode){if(practiceCorrect>=3){hearts=Math.min(5,hearts+1);localStorage.setItem("ep-hearts",hearts);$("lesson-dialog").close();render();toast("رائع! استعدت قلباً ❤️")}else{$("lesson-content").innerHTML=`<div class="word-picture">💪</div><h2 class="question-title" style="text-align:center">واصل المحاولة</h2><p style="text-align:center;color:var(--muted)">تحتاج إلى 3 إجابات صحيحة لاستعادة قلب.</p><button class="primary-button" id="practice-again">إعادة التدريب</button>`;$("practice-again").onclick=beginPractice}return}
 if(correctCount>=Math.ceil(total*.75)){const wasFirst=completed.size===0;const firstCompletion=!completed.has(activeLesson);completed.add(activeLesson);save("ep-completed",[...completed]);if(firstCompletion)addXP(20);if(wasFirst)unlockBadge("first");if(streak>=7)unlockBadge("week");sound("complete");$("lesson-dialog").close();render();toast("ممتاز! أكملت الدرس وفتحت المرحلة التالية 🎉")}else{$("lesson-content").innerHTML=`<div class="word-picture">💪</div><h2 class="question-title" style="text-align:center">أنت قريب من النجاح!</h2><p style="text-align:center;color:var(--muted)">أجب عن ثلاثة أرباع الأسئلة بشكل صحيح على الأقل. أعد المحاولة لترسيخ الكلمات.</p><button class="primary-button" id="retry">إعادة الدرس</button>`;$("retry").onclick=()=>{question=0;correctCount=0;combo=0;showQuestion();sound("click")}}}
 function toast(msg){$("toast").textContent=msg;$("toast").classList.add("show");setTimeout(()=>$("toast").classList.remove("show"),2600)}
