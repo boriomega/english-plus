@@ -160,8 +160,7 @@ private fun HomeScreen(xp: Int, completed: Int, onStart: () -> Unit) {
                 Text("مرحباً بك!", color = Color.White, fontSize = 23.sp, fontWeight = FontWeight.Bold)
                 Spacer(Modifier.height(8.dp))
                 Text(
-                    "تعلّم الإنجليزية خطوة بخطوة،
-واحرز تقدماً كل يوم.",
+                    "تعلّم الإنجليزية خطوة بخطوة،\nواحرز تقدماً كل يوم.",
                     color = Color.White.copy(alpha = 0.92f),
                     fontSize = 15.sp,
                     textAlign = TextAlign.End,
