@@ -47,3 +47,30 @@
 
 /* Calm grammar focus card with an accessible audio action */
 .grammar-tip{position:relative;display:grid;gap:7px;margin:12px 0 18px;padding:14px 54px 14px 14px;background:#f1f6f3;border:1px solid #dcebe2;border-radius:16px;color:#526e60;text-align:right;line-height:1.65}.grammar-tip b{font-size:13px;color:#4d765f}.grammar-tip span{font-size:12px;color:#708477}.grammar-tip div{font:800 15px Nunito,sans-serif;text-align:center;color:#536f85}.grammar-tip small{font-size:12px;text-align:center;color:#84958b}.grammar-tip .word-audio{position:absolute;right:10px;top:50%;transform:translateY(-50%);margin:0;width:36px;height:36px}
+
+
+/* English Plus palette: replace violet accents with soft, calm blue */
+:root{
+  --bg:#f3f7fc;
+  --card:#ffffff;
+  --ink:#263b55;
+  --mute:#778ba3;
+  --pri:#91b5d8;
+  --pri2:#6f98c1;
+  --ok:#72bd9a;
+  --okbg:#e4f4eb;
+  --bad:#df9295;
+  --badbg:#fae9e9;
+  --line:#dce7f1;
+  --gold:#e8c878;
+  --navy:#7895b8;
+  --blue:#a8bfdc;
+  --red:#83c7a8;
+  --green:#83c7a8;
+  --paper:#f3f7fc;
+}
+:root[data-theme="dark"]{
+  --bg:#172638;--card:#20364b;--ink:#edf4fb;--mute:#a8bbce;
+  --pri:#8fb5da;--pri2:#6f98c1;--ok:#76c7a0;--okbg:#193b32;
+  --bad:#e69a9d;--badbg:#452a31;--line:#354d63;
+}
