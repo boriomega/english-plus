@@ -13,6 +13,14 @@
   </header>
   <main class="shell">
     <section class="welcome"><div><p class="eyebrow">مرحباً بك في رحلتك</p><h1>تعلّم الإنجليزية<br><span>بخطوات صغيرة!</span></h1><p>دروس قصيرة، كلمات مفيدة، وتقدّم تراه بنفسك.</p></div><div class="mascot" aria-hidden="true">🦉</div></section>
+    <section class="game-stats" aria-label="إحصاءات التعلّم">
+  <div class="stat-card streak-stat"><span class="stat-icon">🔥</span><div><strong id="streak-count">0</strong><small>أيام متتالية</small></div></div>
+  <div class="stat-card heart-stat"><span class="stat-icon">❤️</span><div><strong id="heart-count">5 / 5</strong><small>القلوب</small></div></div>
+  <div class="stat-card xp-stat"><span class="stat-icon">⚡</span><div><strong id="xp-count">0 XP</strong><small id="rank-label">المستوى 1</small></div></div>
+</section>
+<div class="xp-progress"><div class="xp-progress-head"><span>التقدم للمستوى التالي</span><b id="xp-progress-label">0 / 100 XP</b></div><div class="progress-track"><span id="xp-progress-bar"></span></div></div>
+<section class="achievements"><div class="achievement-head"><h2>إنجازاتك</h2><span>🏅</span></div><div id="badge-list" class="badge-list"></div></section>
+<div id="heart-help" class="heart-help" hidden><div><b>نفدت القلوب؟</b><small>أكمل تدريب المراجعة لاستعادة قلب.</small></div><button id="practice-refill" class="practice-button">تدرّب ❤️</button></div>
     <section class="progress-card"><div class="progress-head"><div><b>المستوى A1</b><small>المبتدئ • الأساسيات</small></div><strong id="progress-label">0 / 5</strong></div><div class="progress-track"><span id="progress-bar"></span></div></section>
     <section class="section-heading"><div><h2>مسار التعلّم</h2><p>أكمل الدرس لفتح الدرس التالي</p></div><span class="level-tag">A1</span></section>
     <section id="lesson-list" class="lesson-list" aria-label="الدروس"></section>
