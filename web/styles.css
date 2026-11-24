@@ -80,3 +80,5 @@
 
 /* Clear, encouraging answer feedback */
 .feedback{border-radius:12px;padding:10px 14px;margin:10px 0;font-weight:900}.feedback:empty{display:none}
+
+.feedback.good{background:var(--okbg);color:var(--ok)!important;border:1px solid var(--ok)}.feedback.bad{background:var(--badbg);color:var(--bad)!important;border:1px solid var(--bad)}
