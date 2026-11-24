@@ -32,6 +32,7 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.DisposableEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -291,6 +292,41 @@ private fun SpeechButton(text: String) {
 }
 
 @Composable
+private fun CorrectAnswerFeedback() {
+    val context = LocalContext.current
+    var ready by remember { mutableStateOf(false) }
+    val tts = remember(context) {
+        lateinit var engine: TextToSpeech
+        engine = TextToSpeech(context) { status ->
+            if (status == TextToSpeech.SUCCESS) {
+                engine.setLanguage(Locale.US)
+                engine.setSpeechRate(0.92f)
+                ready = true
+            }
+        }
+        engine
+    }
+    DisposableEffect(tts) {
+        onDispose { tts.stop(); tts.shutdown() }
+    }
+    LaunchedEffect(ready) {
+        if (ready) tts.speak("Excellent! Correct answer!", TextToSpeech.QUEUE_FLUSH, null, "correct_answer_feedback")
+    }
+    Row(
+        modifier = Modifier.fillMaxWidth().background(PaleBlue, RoundedCornerShape(14.dp)).padding(14.dp),
+        verticalAlignment = Alignment.CenterVertically,
+        horizontalArrangement = Arrangement.Center
+    ) {
+        Box(
+            modifier = Modifier.size(34.dp).background(Green, CircleShape),
+            contentAlignment = Alignment.Center
+        ) { Text("✓", color = Color.White, fontSize = 23.sp, fontWeight = FontWeight.ExtraBold) }
+        Spacer(Modifier.size(10.dp))
+        Text("أحسنت! إجابة صحيحة", color = Green, fontWeight = FontWeight.ExtraBold, fontSize = 17.sp)
+    }
+}
+
+@Composable
 private fun LessonScreen(lessonNumber: Int, onBack: () -> Unit, onLessonComplete: (Int) -> Unit) {
     var questionIndex by remember { mutableStateOf(0) }
     var selectedAnswer by remember { mutableStateOf<String?>(null) }
@@ -373,12 +409,8 @@ private fun LessonScreen(lessonNumber: Int, onBack: () -> Unit, onLessonComplete
         }
         if (checked) {
             Spacer(Modifier.height(12.dp))
-            Text(
-                if (isCorrect) "أحسنت! إجابة صحيحة " else "الإجابة الصحيحة: ${exercise.answer}",
-                color = if (isCorrect) Green else AccentGreen,
-                fontWeight = FontWeight.Bold,
-                fontSize = 16.sp
-            )
+            if (isCorrect) CorrectAnswerFeedback()
+            else Text("الإجابة الصحيحة: ${exercise.answer}", color = AccentGreen, fontWeight = FontWeight.Bold, fontSize = 16.sp)
         }
         Spacer(Modifier.height(18.dp))
         Button(
@@ -448,7 +480,11 @@ private fun FinalExamScreen(unitNumber: Int, onBack: () -> Unit, onComplete: (Bo
             item.choices.forEach { choice ->
                 Card(modifier = Modifier.fillMaxWidth().padding(vertical = 5.dp).clickable(enabled = !checked) { answer = choice }, shape = RoundedCornerShape(15.dp), colors = CardDefaults.cardColors(containerColor = if (answer == choice) PaleBlue else Color.White), border = androidx.compose.foundation.BorderStroke(if (answer == choice) 2.dp else 1.dp, if (answer == choice) Green else Color(0xFFE6EAF0))) { Text(choice, modifier = Modifier.fillMaxWidth().padding(17.dp), color = Ink, textAlign = TextAlign.Center, fontSize = 17.sp) }
             }
-            if (checked) { Spacer(Modifier.height(10.dp)); Text(if (correct) "إجابة صحيحة" else "الإجابة الصحيحة: ${item.answer}", color = if (correct) Green else Color(0xFFB45309), fontWeight = FontWeight.Bold) }
+            if (checked) {
+                Spacer(Modifier.height(10.dp))
+                if (correct) CorrectAnswerFeedback()
+                else Text("الإجابة الصحيحة: ${item.answer}", color = Color(0xFFB45309), fontWeight = FontWeight.Bold)
+            }
             Spacer(Modifier.height(18.dp))
             Button(onClick = { if (!checked) { checked = true; if (correct) score += 1 } else if (index < questions.lastIndex) { index += 1; answer = null; checked = false } else finished = true }, enabled = checked || answer != null, modifier = Modifier.fillMaxWidth().height(52.dp), colors = ButtonDefaults.buttonColors(containerColor = Green, disabledContainerColor = Color(0xFFE6EAF0)), shape = RoundedCornerShape(15.dp)) { Text(if (!checked) "تحقق من الإجابة" else if (index == questions.lastIndex) "عرض النتيجة" else "السؤال التالي", fontWeight = FontWeight.Bold) }
         } else {
