@@ -22,4 +22,37 @@
 <symbol id="shoes" viewBox="0 0 100 100"><path d="M12 59q18 2 27-27l18 8q2 20 27 24 9 3 5 16H15q-10-6-3-21z" fill="#9bcdb6" stroke="#648f7b" stroke-width="4"/><path d="M18 73h67m-43-30 16 8" stroke="#fff" stroke-width="4" stroke-linecap="round"/></symbol>
 <symbol id="book-read" viewBox="0 0 100 100"><path d="M12 24q20-9 38 5v53Q31 69 12 79zM88 24q-20-9-38 5v53q19-13 38-3z" fill="#fff" stroke="#245da0" stroke-width="4"/><path d="M50 29v53" stroke="#9bcdb6" stroke-width="3"/></symbol>
 <symbol id="play" viewBox="0 0 100 100"><circle cx="50" cy="50" r="37" fill="#e9f4ff" stroke="#245da0" stroke-width="4"/><path d="m40 28 31 22-31 22z" fill="#19a56b"/></symbol>
-<symbol id="heart" viewBox="0 0 100 100"><path d="M50 82 18 51C-1 31 25 6 45 25l5 6 5-6c20-19 46 6 27 26z" fill="#e89da7" stroke="#b96f80" stroke-width="4" stroke-linejoin="round"/></symbol></defs></svg>
+<symbol id="heart" viewBox="0 0 100 100"><path d="M50 82 18 51C-1 31 25 6 45 25l5 6 5-6c20-19 46 6 27 26z" fill="#e89da7" stroke="#b96f80" stroke-width="4" stroke-linejoin="round"/></symbol>
+<symbol id="woman" viewBox="0 0 48 48">
+  <path d="M7 46c0-9 7-15 17-15s17 6 17 15z" fill="#2f9e8f"/>
+  <path d="M24 4c-8 0-13 6-13 13 0 5 2 9 4 12-4 2-7 5-8 10h34c-1-5-4-8-8-10 2-3 4-7 4-12 0-7-5-13-13-13z" fill="#7c5cff"/>
+  <ellipse cx="24" cy="17" rx="6.5" ry="8" fill="#f2c9a0"/>
+</symbol>
+<symbol id="girl" viewBox="0 0 48 48">
+  <g transform="translate(6 10) scale(.75)">
+    <path d="M7 46c0-9 7-15 17-15s17 6 17 15z" fill="#f08a5d"/>
+    <path d="M24 4c-8 0-13 6-13 13 0 5 2 9 4 12-4 2-7 5-8 10h34c-1-5-4-8-8-10 2-3 4-7 4-12 0-7-5-13-13-13z" fill="#ffb4a2"/>
+    <ellipse cx="24" cy="17" rx="6.5" ry="8" fill="#f2c9a0"/>
+  </g>
+</symbol>
+<symbol id="man" viewBox="0 0 48 48">
+  <path d="M8 46c0-9 7-16 16-16s16 7 16 16z" fill="#4b8bf5"/>
+  <circle cx="24" cy="17" r="8.5" fill="#f2c9a0"/>
+  <path d="M15 14c0-6 4-9 9-9s9 3 9 9z" fill="#fff"/>
+  <path d="M17 11h14" stroke="#4b8bf5" stroke-width="1.6" stroke-linecap="round"/>
+</symbol>
+<symbol id="boy" viewBox="0 0 48 48">
+  <g transform="translate(6 10) scale(.75)">
+    <path d="M8 46c0-9 7-16 16-16s16 7 16 16z" fill="#2f9e8f"/>
+    <circle cx="24" cy="17" r="8.5" fill="#f2c9a0"/>
+    <path d="M15 14c0-6 4-9 9-9s9 3 9 9z" fill="#fff"/>
+  </g>
+</symbol>
+<symbol id="grandfather" viewBox="0 0 48 48">
+  <path d="M8 46c0-9 7-16 16-16s16 7 16 16z" fill="#8a6bd1"/>
+  <circle cx="24" cy="17" r="8.5" fill="#f2c9a0"/>
+  <path d="M16 19c0 9 4 13 8 13s8-4 8-13c-3 3-5 4-8 4s-5-1-8-4z" fill="#f1f1f1"/>
+  <path d="M15 14c0-6 4-9 9-9s9 3 9 9z" fill="#fff"/>
+  <path d="M17 11h14" stroke="#8a6bd1" stroke-width="1.6" stroke-linecap="round"/>
+</symbol>
+</defs></svg>
