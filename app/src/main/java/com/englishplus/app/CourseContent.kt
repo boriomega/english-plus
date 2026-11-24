@@ -388,10 +388,10 @@ object CourseContent {
                 Exercise("ARM", "arm", "ما معنى هذه الكلمة؟", listOf("قدم", "ذراع", "ساق"), "ذراع", "I can say arm."),
                 Exercise("LEG", "leg", "ما معنى هذه الكلمة؟", listOf("ساق", "قدم", "جسم"), "ساق", "I can say leg."),
                 Exercise("FOOT", "foot", "ما معنى هذه الكلمة؟", listOf("جسم", "مريض", "قدم"), "قدم", "I can say foot."),
-                Exercise("BODY", "body", "ما معنى هذه الكلمة؟", listOf("مريض", "جسم", "مريض"), "جسم", "I can say body.")
+                Exercise("BODY", "body", "ما معنى هذه الكلمة؟", listOf("مريض", "جسم", "طبيب"), "جسم", "I can say body.")
             )),
             CourseLesson(53, "زيارة الطبيب", listOf(
-                Exercise("ILL", "ill", "ما معنى هذه الكلمة؟", listOf("ألم", "مريض", "مريض"), "مريض", "I can say ill."),
+                Exercise("ILL", "ill", "ما معنى هذه الكلمة؟", listOf("ألم", "مريض", "راحة"), "مريض", "I can say ill."),
                 Exercise("SICK", "sick", "ما معنى هذه الكلمة؟", listOf("مريض", "ألم", "صداع"), "مريض", "I can say sick."),
                 Exercise("PAIN", "pain", "ما معنى هذه الكلمة؟", listOf("صداع", "حمى", "ألم"), "ألم", "I can say pain."),
                 Exercise("HEADACHE", "headache", "ما معنى هذه الكلمة؟", listOf("طبيب", "صداع", "حمى"), "صداع", "I can say headache."),
