@@ -8,6 +8,8 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
@@ -16,6 +18,7 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
@@ -195,11 +198,72 @@ private fun HomeScreen(xp: Int, completed: Int, onStart: () -> Unit) {
         }
         Spacer(Modifier.height(22.dp))
         Text("مسار التعلّم", color = Ink, fontSize = 20.sp, fontWeight = FontWeight.Bold)
-        Spacer(Modifier.height(10.dp))
-        LevelCard("A0", "البداية من الصفر", "الحروف والكلمات الأولى • متاح الآن", true, onStart)
-        LevelCard("A1", "المبتدئ", "عبارات يومية بسيطة • قريباً", false, null)
-        LevelCard("A2", "ما قبل المتوسط", "محادثات ومفردات أكثر • قريباً", false, null)
-        LevelCard("B1", "المستوى المتوسط", "تواصل في مواقف الحياة • قريباً", false, null)
+        Text("ابدأ من الأسفل وتقدّم درساً بعد درس", color = Color(0xFF64748B), fontSize = 12.sp)
+        Spacer(Modifier.height(16.dp))
+        Card(
+            modifier = Modifier.fillMaxWidth(),
+            shape = RoundedCornerShape(24.dp),
+            colors = CardDefaults.cardColors(containerColor = Color.White)
+        ) {
+            Column(Modifier.fillMaxWidth().padding(vertical = 18.dp, horizontal = 12.dp)) {
+                Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.End) {
+                    Text("الوحدة 1 • الكلمات الأولى", color = Navy, fontWeight = FontWeight.Bold, fontSize = 15.sp)
+                }
+                Spacer(Modifier.height(16.dp))
+                (1..10).forEach { lessonNumber ->
+                    val isDone = lessonNumber <= completed
+                    val isUnlocked = lessonNumber == completed + 1
+                    Row(
+                        modifier = Modifier.fillMaxWidth().padding(vertical = 5.dp),
+                        horizontalArrangement = when (lessonNumber % 3) {
+                            0 -> Arrangement.Start
+                            1 -> Arrangement.Center
+                            else -> Arrangement.End
+                        },
+                        verticalAlignment = Alignment.CenterVertically
+                    ) {
+                        Column(horizontalAlignment = Alignment.CenterHorizontally) {
+                            Button(
+                                onClick = onStart,
+                                enabled = isUnlocked,
+                                modifier = Modifier.size(76.dp),
+                                shape = CircleShape,
+                                colors = ButtonDefaults.buttonColors(
+                                    containerColor = if (isDone) Green else if (isUnlocked) FlagRed else Color(0xFFE1E7EF),
+                                    disabledContainerColor = Color(0xFFE1E7EF),
+                                    contentColor = Color.White,
+                                    disabledContentColor = Color(0xFF8290A3)
+                                ),
+                                elevation = ButtonDefaults.buttonElevation(defaultElevation = if (isUnlocked) 5.dp else 0.dp),
+                                contentPadding = androidx.compose.foundation.layout.PaddingValues(0.dp)
+                            ) {
+                                Text(
+                                    when {
+                                        isDone -> "★"
+                                        isUnlocked -> "▶"
+                                        else -> "🔒"
+                                    },
+                                    fontSize = 25.sp,
+                                    fontWeight = FontWeight.ExtraBold
+                                )
+                            }
+                            Text(
+                                when {
+                                    isDone -> "الدرس $lessonNumber ✓"
+                                    isUnlocked -> "ابدأ الآن"
+                                    else -> "الدرس $lessonNumber"
+                                },
+                                color = if (isUnlocked) FlagRed else Color(0xFF64748B),
+                                fontSize = 11.sp,
+                                fontWeight = FontWeight.Bold
+                            )
+                        }
+                    }
+                }
+                Spacer(Modifier.height(8.dp))
+                Text("A1 ثم A2 وB1 ستُفتح بعد إكمال مسار البداية", color = Color(0xFF64748B), fontSize = 12.sp)
+            }
+        }
         Spacer(Modifier.height(16.dp))
         Text(
             "تُحفظ نقاطك وتقدّمك على هذا الجهاز",
