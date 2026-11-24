@@ -5,7 +5,7 @@ An Android English-learning app for Arabic-speaking beginners.
 ## Product goals
 - Arabic right-to-left interface and explanations.
 - Complete Arabic-supported CEFR A1 course: 12 units, 60 lessons, and 300 vocabulary exercises.
-- Five lessons per unit followed by a five-question unit checkpoint; at least 3 correct answers unlock the next unit.
+- Five lessons per unit followed by a five-question unit checkpoint; at least 4 correct answers unlock the next unit.
 - Structured Arabic JSON course source at `app/src/main/assets/a1_course_ar.json` and native Kotlin course data used by the app.
 - Core lessons designed to work offline.
 - Free core learning experience, with optional paid features considered later.
