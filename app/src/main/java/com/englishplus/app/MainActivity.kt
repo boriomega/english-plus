@@ -397,7 +397,7 @@ private fun LessonScreen(lessonNumber: Int, onBack: () -> Unit, onLessonComplete
     val isCorrect = selectedAnswer == exercise.answer
 
     Column(
-        modifier = Modifier.fillMaxSize().verticalScroll(rememberScrollState()).padding(20.dp),
+        modifier = Modifier.fillMaxSize().background(Page).verticalScroll(rememberScrollState()).padding(20.dp),
         horizontalAlignment = Alignment.End
     ) {
         Row(
@@ -518,7 +518,7 @@ private fun FinalExamScreen(unitNumber: Int, onBack: () -> Unit, onComplete: (Bo
     var finished by remember { mutableStateOf(false) }
     val item = questions[index]
     val correct = answer == item.answer
-    Column(Modifier.fillMaxSize().verticalScroll(rememberScrollState()).padding(20.dp), horizontalAlignment = Alignment.End) {
+    Column(Modifier.fillMaxSize().background(Page).verticalScroll(rememberScrollState()).padding(20.dp), horizontalAlignment = Alignment.End) {
         Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceBetween, verticalAlignment = Alignment.CenterVertically) {
             Button(onClick = onBack, colors = ButtonDefaults.buttonColors(containerColor = Navy)) { Text("خروج") }
             Text("اختبار الوحدة $unitNumber", color = Green, fontWeight = FontWeight.Bold)
@@ -561,7 +561,7 @@ private fun FinalExamScreen(unitNumber: Int, onBack: () -> Unit, onComplete: (Bo
 @Composable
 private fun ResultScreen(xp: Int, completed: Int, onContinue: () -> Unit) {
     Column(
-        modifier = Modifier.fillMaxSize().padding(24.dp),
+        modifier = Modifier.fillMaxSize().background(Page).padding(24.dp),
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
     ) {
