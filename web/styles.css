@@ -41,3 +41,6 @@
 
 /* Course map: clear grouping for the twelve A1 units */
 .unit-heading{grid-column:1/-1;margin:22px 4px 2px;padding:10px 14px;border-radius:13px;background:#edf3f8;color:#7189a5;font-size:14px;font-weight:900;line-height:1.6}.unit-heading:first-child{margin-top:4px}
+
+/* Calm grammar focus card with an accessible audio action */
+.grammar-tip{position:relative;display:grid;gap:7px;margin:12px 0 18px;padding:14px 54px 14px 14px;background:#f1f6f3;border:1px solid #dcebe2;border-radius:16px;color:#526e60;text-align:right;line-height:1.65}.grammar-tip b{font-size:13px;color:#4d765f}.grammar-tip span{font-size:12px;color:#708477}.grammar-tip div{font:800 15px Nunito,sans-serif;text-align:center;color:#536f85}.grammar-tip small{font-size:12px;text-align:center;color:#84958b}.grammar-tip .word-audio{position:absolute;right:10px;top:50%;transform:translateY(-50%);margin:0;width:36px;height:36px}
