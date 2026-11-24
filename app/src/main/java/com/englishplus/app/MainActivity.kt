@@ -162,9 +162,11 @@ private fun EnglishPlusApp() {
 
 @Composable
 private fun HomeScreen(xp: Int, completed: Int, passedUnits: Int, onStartLesson: (Int) -> Unit, onStartExam: (Int) -> Unit) {
-    val nextUnit = (completed / 5).coerceIn(0, 11) + 1
-    val currentUnitPassed = (passedUnits and (1 shl (nextUnit - 1))) != 0
-    val examReady = completed > 0 && completed % 5 == 0 && !currentUnitPassed
+    val completedUnit = if (completed == 0) 0 else ((completed - 1) / 5) + 1
+    val completedUnitPassed = completedUnit > 0 && (passedUnits and (1 shl (completedUnit - 1))) != 0
+    val nextUnit = if (completedUnitPassed) (completedUnit + 1).coerceAtMost(12) else completedUnit.coerceAtLeast(1)
+    val currentUnitPassed = completedUnitPassed
+    val examReady = completedUnit > 0 && completed >= completedUnit * 5 && !completedUnitPassed
     Column(modifier = Modifier.fillMaxSize().verticalScroll(rememberScrollState()).background(Page).padding(horizontal = 20.dp, vertical = 24.dp), horizontalAlignment = Alignment.End) {
         Row(modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceBetween, verticalAlignment = Alignment.CenterVertically) {
             Text("⚡ $xp XP", color = Green, fontWeight = FontWeight.Bold, fontSize = 15.sp)
@@ -221,7 +223,15 @@ private fun HomeScreen(xp: Int, completed: Int, passedUnits: Int, onStartLesson:
                         val isUnlocked = lessonNumber == completed + 1 && unitUnlocked
                         Row(modifier = Modifier.fillMaxWidth().padding(vertical = 5.dp), horizontalArrangement = when (lessonNumber % 3) { 0 -> Arrangement.Start; 1 -> Arrangement.Center; else -> Arrangement.End }, verticalAlignment = Alignment.CenterVertically) {
                             Column(horizontalAlignment = Alignment.CenterHorizontally) {
-                                Button(onClick = { onStartLesson(lessonNumber) }, enabled = isUnlocked || isDone, modifier = Modifier.size(66.dp), shape = CircleShape, colors = ButtonDefaults.buttonColors(containerColor = if (isDone) Green else if (isUnlocked) Color(0xFF269B61) else Color(0xFFE1E7EF), disabledContainerColor = Color(0xFFE1E7EF), contentColor = Color.White, disabledContentColor = Color(0xFF8290A3), elevation = ButtonDefaults.buttonElevation(defaultElevation = if (isUnlocked) 5.dp else 0.dp), contentPadding = androidx.compose.foundation.layout.PaddingValues(0.dp)) { Text(if (isDone) "✓" else if (isUnlocked) "▶" else "🔒", fontSize = 23.sp, fontWeight = FontWeight.ExtraBold) }
+                                Button(
+                                    onClick = { onStartLesson(lessonNumber) },
+                                    enabled = isUnlocked || isDone,
+                                    modifier = Modifier.size(66.dp),
+                                    shape = CircleShape,
+                                    colors = ButtonDefaults.buttonColors(containerColor = if (isDone) Green else if (isUnlocked) Color(0xFF269B61) else Color(0xFFE1E7EF), disabledContainerColor = Color(0xFFE1E7EF), contentColor = Color.White, disabledContentColor = Color(0xFF8290A3)),
+                                    elevation = ButtonDefaults.buttonElevation(defaultElevation = if (isUnlocked) 5.dp else 0.dp),
+                                    contentPadding = androidx.compose.foundation.layout.PaddingValues(0.dp)
+                                ) { Text(if (isDone) "✓" else if (isUnlocked) "▶" else "🔒", fontSize = 23.sp, fontWeight = FontWeight.ExtraBold) }
                                 Text(if (isDone) "مكتمل" else if (isUnlocked) "ابدأ" else "الدرس $lessonNumber", color = if (isUnlocked) Green else Color(0xFF64748B), fontSize = 11.sp, fontWeight = FontWeight.Bold)
                                 Text(lesson.title, color = Color(0xFF64748B), fontSize = 10.sp, textAlign = TextAlign.Center)
                             }
