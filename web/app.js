@@ -133,10 +133,22 @@ $("word-audio")?.addEventListener("click",()=>speak(word[0]));$("grammar-audio")
 if(kind===0){const opts=[word[1],...allWords.filter(w=>w[1]!==word[1]).sort(()=>Math.random()-.5).slice(0,3).map(w=>w[1])];$("answers").innerHTML=opts.sort(()=>Math.random()-.5).map(c=>'<button class="answer" type="button">'+c+'</button>').join("");document.querySelectorAll(".answer").forEach(b=>b.onclick=()=>{if(answered)return;selectedAnswer=b;document.querySelectorAll(".answer").forEach(x=>x.classList.toggle("selected",x===b));checkAnswer(b,word[1])});$("next").onclick=nextQuestion;startQuestionTimer(kind,word[1],()=>selectedAnswer?.textContent.trim()??"")}
 else if(kind===1){const tokens=sentence.match(/[A-Za-z0-9’'-]+[.,!?]?/g)||[],extras=["the","a","is","my","today","very"].filter(x=>!tokens.some(t=>t.toLowerCase().replace(/[.,!?]/g,"")===x)).slice(0,2),bank=[...tokens,...extras].sort(()=>Math.random()-.5),picked=[];
 bank.forEach(token=>{const tile=document.createElement("button");tile.type="button";tile.className="word-tile";tile.textContent=token;tile.onclick=()=>{if(answered)return;picked.push(token);const chip=document.createElement("button");chip.type="button";chip.className="word-chip";chip.textContent=token;chip.onclick=()=>{if(answered)return;const index=picked.indexOf(token);if(index>=0)picked.splice(index,1);chip.remove();const back=document.createElement("button");back.type="button";back.className="word-tile";back.textContent=token;back.onclick=tile.onclick;$("word-order-bank").append(back)};$("word-order-answer").append(chip);tile.remove();const norm=v=>String(v).toLowerCase().replace(/[.,!?]/g,"").replace(/\s+/g," ").trim();if(norm(picked.join(" "))===norm(sentence))checkAnswer(chip,sentence,picked.join(" "))};$("word-order-bank").append(tile)});
-$("next").disabled=false;$("next").onclick=()=>{if(answered)nextQuestion();else{checkAnswer(null,sentence,picked.join(" "));if(!answered){$("next").disabled=false;$("next").textContent="تحقق من الترتيب"}}};startQuestionTimer(kind,sentence,()=>picked.join(" "));}else{const field=$("typed-answer");field.addEventListener("input",()=>{const norm=v=>String(v).toLowerCase().replace(/[.,!?]/g,"").replace(/\s+/g," ").trim();if(norm(field.value)===norm(word[0]))checkAnswer(field,word[0],field.value)});startQuestionTimer(kind,word[0],()=>field.value.trim())}
+$("next").disabled=false;$("next").onclick=()=>{if(answered)nextQuestion();else{checkAnswer(null,sentence,picked.join(" "));if(!answered){$("next").disabled=false;$("next").textContent="تحقق من الترتيب"}}};startQuestionTimer(kind,sentence,()=>picked.join(" "));}else{const field=$("typed-answer");
+field.addEventListener("input",()=>{
+ const next=$("next");
+ if(next&&!answered){
+  next.disabled=!field.value.trim();
+  next.textContent="تحقق من الإجابة";
+  next.onclick=()=>checkAnswer(field,word[0],field.value);
+ }
+});
+$("next").disabled=true;
+$("next").textContent="تحقق من الإجابة";
+$("next").onclick=()=>checkAnswer(field,word[0],field.value);
+startQuestionTimer(kind,word[0],()=>field.value.trim())
 }function checkAnswer(control,correct,typed,timedOut=false){
 if(answered)return;
-const normalize=v=>String(v).toLowerCase().replace(/[.,!?]/g,"").replace(/\\s+/g," ").trim();
+const normalize=v=>String(v).toLowerCase().replace(/[.,!?]/g,"").replace(/\s+/g," ").trim();
 const value=typed??control?.textContent.trim()??"";
 const ok=!timedOut&&normalize(value)===normalize(correct);
 if(ok){
