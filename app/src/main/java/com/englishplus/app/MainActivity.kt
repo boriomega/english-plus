@@ -94,11 +94,12 @@ private fun EnglishPlusApp(context: Context) {
             val lesson = selected
             if (lesson == null) LearningPath(completed, xp, streak) { selected = it }
             else QuizScreen(lesson, completed >= lesson.id, onExit = { selected = null }) {
-                if (completed < lesson.id) {
+                val firstCompletion = completed < lesson.id
+                if (firstCompletion) {
                     completed = lesson.id
                     prefs.edit().putInt("completed", completed).apply()
                 }
-                if (completed < lesson.id) {
+                if (firstCompletion) {
                     xp += 30
                     prefs.edit().putInt("xp", xp).apply()
                 }
