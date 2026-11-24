@@ -582,7 +582,7 @@ private fun ResultScreen(xp: Int, completed: Int, onContinue: () -> Unit) {
         Spacer(Modifier.height(10.dp))
         Text("حصلت على نقاط مقابل إجاباتك الصحيحة.", color = Ink, fontSize = 15.sp, textAlign = TextAlign.Center)
         Spacer(Modifier.height(18.dp))
-        Text("⭐ $xp XP", color = FlagRed, fontSize = 26.sp, fontWeight = FontWeight.Bold)
+        Text("⚡ $xp XP", color = FlagRed, fontSize = 26.sp, fontWeight = FontWeight.Bold)
         Text("$completed دروس مكتملة", color = Color(0xFF64748B), fontSize = 14.sp)
         Spacer(Modifier.height(28.dp))
         Button(
