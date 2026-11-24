@@ -22,7 +22,8 @@ jobs:
         with:
           node-version: '22'
       - name: Check JavaScript syntax
-        run: node --check web/app.js
+        run: |
+          node --check web/app.js
           node --check web/placement.js
       - name: Check required app assets
         run: |
