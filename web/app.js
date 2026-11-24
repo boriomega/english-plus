@@ -139,6 +139,8 @@ if(answered){
  $("next").onclick=nextQuestion;$("next").disabled=false;
  $("next").textContent=question===(practiceMode?3:lessons[activeLesson].words.length-1)?"إنهاء":"متابعة";
  if(!practiceMode&&hearts===0)$("next").textContent="استعادة قلب بالتدريب";
+}else if($("feedback").classList.contains("bad")){
+ $("next").disabled=false;$("next").textContent="إعادة المحاولة";$("next").onclick=retryCurrentQuestion;
 }else{
  $("next").disabled=true;
 }
