@@ -22,6 +22,7 @@ class CourseContentTest {
                 assertFalse(exercise.word.isBlank())
                 assertFalse(exercise.example.isBlank())
                 assertEquals(3, exercise.choices.size)
+                assertEquals(3, exercise.choices.distinct().size)
                 assertTrue("Answer missing for ${exercise.word}", exercise.answer in exercise.choices)
             }
         }
