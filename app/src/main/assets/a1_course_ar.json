@@ -3492,7 +3492,7 @@
               "choicesAr": [
                 "مريض",
                 "جسم",
-                "مريض"
+                "طبيب"
               ],
               "answerAr": "جسم",
               "exampleEn": "I can say body."
@@ -3510,7 +3510,7 @@
               "choicesAr": [
                 "ألم",
                 "مريض",
-                "مريض"
+                "راحة"
               ],
               "answerAr": "مريض",
               "exampleEn": "I can say ill."
