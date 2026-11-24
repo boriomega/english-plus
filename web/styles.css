@@ -295,3 +295,7 @@ button:focus-visible{outline:3px solid #91b5d8;outline-offset:3px}
 @media(prefers-reduced-motion:reduce){
   *,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
 }
+
+
+/* Apple marker for lessons that are still locked. */
+.path-step.locked .path-lock-art{width:40px;height:40px;opacity:.82;filter:drop-shadow(0 2px 1px #7f9bb522)}
