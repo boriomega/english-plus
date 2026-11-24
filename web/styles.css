@@ -27,3 +27,5 @@
 .placement-retake{border:0;border-radius:10px;background:#edf2f9;color:var(--navy);font:800 11px Tajawal;padding:8px 10px}
 .placement-retake.hidden{display:none}
 @media(max-width:420px){.placement-card{padding:23px 17px}.placement-card h1{font-size:22px}.placement-retake{font-size:10px;padding:7px}}
+
+.placement-status{background:#fff8e8;border:1px solid #f0d99e;border-radius:14px;padding:11px 14px;margin-top:15px;color:#755314;font-size:12px;line-height:1.7;font-weight:700}
