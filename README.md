@@ -4,11 +4,14 @@ An Android English-learning app for Arabic-speaking beginners.
 
 ## Product goals
 - Arabic right-to-left interface and explanations.
-- Structured English learning from beginner level onward.
+- Complete Arabic-supported CEFR A1 course: 12 units, 60 lessons, and 300 vocabulary exercises.
+- Five lessons per unit followed by a five-question unit checkpoint; at least 3 correct answers unlock the next unit.
+- Structured Arabic JSON course source at `app/src/main/assets/a1_course_ar.json` and native Kotlin course data used by the app.
 - Core lessons designed to work offline.
 - Free core learning experience, with optional paid features considered later.
 - Original, consistent educational illustrations and a friendly, colorful learning experience.
 - English pronunciation using Android text-to-speech in lesson cards.
+- Unit progress, XP, and passed checkpoints are stored locally on the device.
 
 ## Visual identity
 - Deep green: #16834A
@@ -26,4 +29,4 @@ All lessons, examples, and illustrations must be reviewed against the project's 
 - Android Gradle Plugin
 
 ## Build
-Open this repository in Android Studio with JDK 17 and allow Gradle sync. The initial app foundation is version 0.1.0. Android text-to-speech uses the device's installed English voice; availability and voice quality depend on Android speech services.
+Open this repository in Android Studio with JDK 17 and allow Gradle sync. The app foundation is version 0.1.0. Android text-to-speech uses the device's installed English voice; availability and voice quality depend on Android speech services.
