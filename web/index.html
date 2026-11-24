@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#123b70"><meta name="description" content="English Plus — تعلم الإنجليزية خطوة بخطوة">
+  <link rel="manifest" href="manifest.webmanifest"><link rel="stylesheet" href="styles.css">
+  <title>English Plus</title>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="English Plus"><span class="brand-mark">E+</span><span>ENGLISH <b>PLUS</b><small>خطوتك اليومية نحو الإنجليزية</small></span></a>
+    <div class="top-actions"><span class="streak">⭐ <b id="points">0</b></span><button class="sound-toggle" id="mute" aria-label="تشغيل أو كتم الصوت">🔊</button></div>
+  </header>
+  <main class="shell">
+    <section class="welcome"><div><p class="eyebrow">مرحباً بك في رحلتك</p><h1>تعلّم الإنجليزية<br><span>بخطوات صغيرة!</span></h1><p>دروس قصيرة، كلمات مفيدة، وتقدّم تراه بنفسك.</p></div><div class="mascot" aria-hidden="true">🦉</div></section>
+    <section class="progress-card"><div class="progress-head"><div><b>المستوى A1</b><small>المبتدئ • الأساسيات</small></div><strong id="progress-label">0 / 5</strong></div><div class="progress-track"><span id="progress-bar"></span></div></section>
+    <section class="section-heading"><div><h2>مسار التعلّم</h2><p>أكمل الدرس لفتح الدرس التالي</p></div><span class="level-tag">A1</span></section>
+    <section id="lesson-list" class="lesson-list" aria-label="الدروس"></section>
+    <footer>ENGLISH PLUS <span>•</span> تعلّم بثقة كل يوم</footer>
+  </main>
+  <dialog id="lesson-dialog" class="lesson-dialog">
+    <div class="dialog-top"><button id="close-lesson" class="icon-button" aria-label="إغلاق">✕</button><div class="mini-progress"><span id="lesson-progress"></span></div><span id="question-count">1 / 4</span></div>
+    <div id="lesson-content"></div>
+  </dialog>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="app.js"></script>
+</body></html>
