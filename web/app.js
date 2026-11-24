@@ -34,7 +34,7 @@ const ICONS = Object.freeze({
 
 // Character illustrations used for family vocabulary questions.
 const CHARACTER_ICONS = Object.freeze({
-  Mother: "woman", Father: "man", Sister: "girl", Brother: "boy",
+  Mother: "woman", Father: "father", Sister: "girl", Brother: "boy",
   Grandmother: "woman", Grandfather: "grandfather", Aunt: "woman", Uncle: "man",
   Child: "boy", Daughter: "girl", Son: "boy"
 });
