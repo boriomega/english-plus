@@ -23,11 +23,13 @@ jobs:
           node-version: '22'
       - name: Check JavaScript syntax
         run: node --check web/app.js
+          node --check web/placement.js
       - name: Check required app assets
         run: |
           test -s web/index.html
           test -s web/styles.css
           test -s web/app.js
+          test -s web/placement.js
           test -s web/manifest.webmanifest
           test -s web/service-worker.js
           test -s web/illustrations.svg
