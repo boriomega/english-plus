@@ -151,11 +151,7 @@ private fun EnglishPlusApp() {
         "result" -> ResultScreen(xp = xp, completed = completed, onContinue = { screen = "home" })
         else -> HomeScreen(xp = xp, completed = completed, passedUnits = passedUnits,
             onStartLesson = { lesson ->
-                val alreadyCompleted = lesson in 1..completed
-                val unitNumber = ((lesson - 1) / 5) + 1
-                val unitUnlocked = unitNumber == 1 || (passedUnits and (1 shl (unitNumber - 2))) != 0
-                val nextAllowed = lesson == completed + 1 && unitUnlocked
-                if (lesson in 1..60 && (alreadyCompleted || nextAllowed)) { selectedLesson = lesson; screen = "lesson" }
+                if (lesson in 1..60) { selectedLesson = lesson; screen = "lesson" }
             },
             onStartExam = { unit ->
                 val ready = completed >= unit * 5 && (passedUnits and (1 shl (unit - 1))) == 0
@@ -225,23 +221,10 @@ private fun HomeScreen(xp: Int, completed: Int, passedUnits: Int, onStartLesson:
                         val lessonNumber = lesson.number
                         val isDone = lessonNumber <= completed
                         val unitUnlocked = unit.number == 1 || (passedUnits and (1 shl (unit.number - 2))) != 0
-                        val isUnlocked = lessonNumber == completed + 1 && unitUnlocked
                         Row(modifier = Modifier.fillMaxWidth().padding(vertical = 5.dp), horizontalArrangement = when (lessonNumber % 3) { 0 -> Arrangement.Start; 1 -> Arrangement.Center; else -> Arrangement.End }, verticalAlignment = Alignment.CenterVertically) {
                             Column(horizontalAlignment = Alignment.CenterHorizontally) {
-                                if (isUnlocked) {
-                                    AppleLessonButton(onClick = { onStartLesson(lessonNumber) }, modifier = Modifier.size(82.dp))
-                                } else {
-                                    Button(
-                                        onClick = { onStartLesson(lessonNumber) },
-                                        enabled = isDone,
-                                        modifier = Modifier.size(82.dp),
-                                        shape = CircleShape,
-                                        colors = ButtonDefaults.buttonColors(containerColor = if (isDone) Green else Color(0xFFECEFEF), disabledContainerColor = Color(0xFFECEFEF), contentColor = Color.White, disabledContentColor = Color(0xFF8290A3)),
-                                        elevation = ButtonDefaults.buttonElevation(defaultElevation = 0.dp),
-                                        contentPadding = androidx.compose.foundation.layout.PaddingValues(0.dp)
-                                    ) { Text(if (isDone) "✓" else "🔒", fontSize = 23.sp, fontWeight = FontWeight.ExtraBold) }
-                                }
-                                Text(if (isDone) "مكتمل" else if (isUnlocked) "ابدأ" else "الدرس $lessonNumber", color = if (isUnlocked) Green else Color(0xFF64748B), fontSize = 11.sp, fontWeight = FontWeight.Bold)
+                                AppleLessonButton(onClick = { onStartLesson(lessonNumber) }, modifier = Modifier.size(82.dp))
+                                Text(if (isDone) "مكتمل" else "ابدأ", color = Green, fontSize = 11.sp, fontWeight = FontWeight.Bold)
                                 Text(lesson.title, color = Color(0xFF64748B), fontSize = 10.sp, textAlign = TextAlign.Center)
                             }
                         }
