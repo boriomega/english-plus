@@ -142,10 +142,10 @@ private fun EnglishPlusApp() {
             }
         )
         "exam" -> FinalExamScreen(
-            level = if (completed >= 6) "A1" else "A0",
+            level = if (a0ExamPassed) "A1" else "A0",
             onBack = { screen = "home" },
             onComplete = { passed ->
-                if (passed && completed >= 6 && !a1ExamPassed) {
+                if (passed && completed >= 6 && a0ExamPassed && !a1ExamPassed) {
                     a1ExamPassed = true
                     prefs.edit().putBoolean("a1_exam_passed", true).apply()
                 } else if (passed && completed >= 3 && !a0ExamPassed) {
@@ -174,7 +174,7 @@ private fun EnglishPlusApp() {
                 }
             },
             onStartExam = {
-                val a0Ready = completed >= 3 && completed < 6 && !a0ExamPassed
+                val a0Ready = completed >= 3 && !a0ExamPassed
                 val a1Ready = completed >= 6 && a0ExamPassed && !a1ExamPassed
                 if (a0Ready || a1Ready) screen = "exam"
             }
