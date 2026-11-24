@@ -146,6 +146,7 @@ $("next").disabled=true;
 $("next").textContent="تحقق من الإجابة";
 $("next").onclick=()=>checkAnswer(field,word[0],field.value);
 startQuestionTimer(kind,word[0],()=>field.value.trim())
+}
 }function checkAnswer(control,correct,typed,timedOut=false){
 if(answered)return;
 const normalize=v=>String(v).toLowerCase().replace(/[.,!?]/g,"").replace(/\s+/g," ").trim();
