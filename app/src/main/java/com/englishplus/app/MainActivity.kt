@@ -63,7 +63,17 @@ private val beginnerExercises = listOf(
     Exercise("BOOK", "book", "ماذا تعني هذه الكلمة؟", listOf("قلم", "باب", "كتاب"), "كتاب", "This is my book."),
     Exercise("WATER", "WAW-ter", "ماذا تعني هذه الكلمة؟", listOf("ماء", "طعام", "منزل"), "ماء", "I drink water."),
     Exercise("THANK YOU", "THANK yoo", "اختر الترجمة الصحيحة", listOf("من فضلك", "شكراً لك", "صباح الخير"), "شكراً لك", "Thank you, my friend."),
-    Exercise("GOOD MORNING", "good MOR-ning", "ماذا تعني العبارة؟", listOf("تصبح على خير", "مساء الخير", "صباح الخير"), "صباح الخير", "Good morning, everyone.")
+    Exercise("GOOD MORNING", "good MOR-ning", "ماذا تعني العبارة؟", listOf("تصبح على خير", "مساء الخير", "صباح الخير"), "صباح الخير", "Good morning, everyone."),
+    Exercise("PLEASE", "pleez", "ماذا تعني هذه الكلمة؟", listOf("من فضلك", "عفواً", "وداعاً"), "من فضلك", "Please sit here."),
+    Exercise("HOUSE", "hows", "ماذا تعني هذه الكلمة؟", listOf("مدرسة", "منزل", "شارع"), "منزل", "This is my house."),
+    Exercise("FAMILY", "FAM-uh-lee", "ماذا تعني هذه الكلمة؟", listOf("صديق", "عائلة", "مدينة"), "عائلة", "I love my family."),
+    Exercise("FRIEND", "frend", "ماذا تعني هذه الكلمة؟", listOf("معلم", "جار", "صديق"), "صديق", "He is my friend."),
+    Exercise("SCHOOL", "skool", "ماذا تعني هذه الكلمة؟", listOf("مدرسة", "مكتبة", "حديقة"), "مدرسة", "My school is big."),
+    Exercise("PEN", "pen", "ماذا تعني هذه الكلمة؟", listOf("حقيبة", "قلم", "كتاب"), "قلم", "This is a pen."),
+    Exercise("APPLE", "AP-uhl", "ماذا تعني هذه الكلمة؟", listOf("تفاحة", "برتقالة", "موزة"), "تفاحة", "I eat an apple."),
+    Exercise("CAT", "kat", "ماذا تعني هذه الكلمة؟", listOf("كلب", "طائر", "قطة"), "قطة", "The cat is small."),
+    Exercise("WATER", "WAW-ter", "اختر معنى الكلمة", listOf("ماء", "حليب", "عصير"), "ماء", "I drink water."),
+    Exercise("GOODBYE", "good-BYE", "ماذا تعني هذه الكلمة؟", listOf("مرحباً", "إلى اللقاء", "شكراً"), "إلى اللقاء", "Goodbye, see you soon.")
 )
 
 class MainActivity : ComponentActivity() {
@@ -174,13 +184,13 @@ private fun HomeScreen(xp: Int, completed: Int, onStart: () -> Unit) {
                 Text("$completed دروس مكتملة", color = Ink, fontWeight = FontWeight.Bold)
                 Spacer(Modifier.height(8.dp))
                 LinearProgressIndicator(
-                    progress = { (completed.coerceAtMost(5) / 5f) },
+                    progress = { (completed.coerceAtMost(3) / 3f) },
                     modifier = Modifier.fillMaxWidth(),
                     color = Green,
                     trackColor = PaleBlue
                 )
                 Spacer(Modifier.height(5.dp))
-                Text("هدف البداية: إكمال 5 دروس", color = Color(0xFF64748B), fontSize = 12.sp)
+                Text("هدف البداية: إكمال 3 دروس", color = Color(0xFF64748B), fontSize = 12.sp)
             }
         }
         Spacer(Modifier.height(22.dp))
