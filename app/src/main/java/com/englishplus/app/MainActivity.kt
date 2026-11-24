@@ -6,6 +6,7 @@ import android.speech.tts.TextToSpeech
 import java.util.Locale
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
@@ -39,6 +40,7 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalLayoutDirection
 import androidx.compose.ui.text.font.FontWeight
@@ -355,6 +357,14 @@ private fun HomeScreen(xp: Int, completed: Int, examPassed: Boolean, a1ExamPasse
     }
 }
 
+private fun illustrationFor(word: String): Int = when (word.uppercase()) {
+    "WATER" -> R.drawable.illustration_water
+    "HOUSE" -> R.drawable.illustration_house
+    "APPLE" -> R.drawable.illustration_apple
+    "CAT" -> R.drawable.illustration_cat
+    else -> R.drawable.illustration_book
+}
+
 @Composable
 private fun SpeechButton(text: String) {
     val context = LocalContext.current
@@ -422,7 +432,7 @@ private fun LessonScreen(lessonNumber: Int, onBack: () -> Unit, onLessonComplete
                 modifier = Modifier.fillMaxWidth().padding(28.dp),
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
-                Text("📘", fontSize = 42.sp)
+                Image(painter = painterResource(id = illustrationFor(exercise.word)), contentDescription = exercise.word, modifier = Modifier.size(112.dp))
                 Spacer(Modifier.height(8.dp))
                 Text(exercise.word, color = Navy, fontSize = 32.sp, fontWeight = FontWeight.ExtraBold)
                 Text(exercise.pronunciation, color = Color(0xFF64748B), fontSize = 15.sp)
