@@ -1,6 +1,8 @@
 package com.boriomega.englishplus
 
 import android.os.Bundle
+import android.media.AudioManager
+import android.media.ToneGenerator
 import android.speech.tts.TextToSpeech
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -32,8 +34,10 @@ private val Ink = Color(0xFF34445B)
 
 class MainActivity : ComponentActivity() {
     private var tts: TextToSpeech? = null
+    private var tones: ToneGenerator? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        tones = ToneGenerator(AudioManager.STREAM_MUSIC, 65)
         tts = TextToSpeech(this) { status ->
             if (status == TextToSpeech.SUCCESS) {
                 tts?.language = Locale.US
@@ -50,6 +54,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             EnglishPlusApp(
                 onSpeak = { speak(it) },
+                onAnswerFeedback = { correct -> tones?.startTone(if (correct) ToneGenerator.TONE_PROP_ACK else ToneGenerator.TONE_PROP_NACK, 150) },
                 initialCompleted = initial,
                 onCompletedChange = { completed ->
                     prefs.edit().putStringSet("completed_lessons", completed.map { it.toString() }.toSet()).apply()
@@ -63,6 +68,8 @@ class MainActivity : ComponentActivity() {
     override fun onDestroy() {
         tts?.stop()
         tts?.shutdown()
+        tones?.release()
+        tones = null
         super.onDestroy()
     }
 }
@@ -81,6 +88,7 @@ private val courseLessons = listOf(
 @Composable
 fun EnglishPlusApp(
     onSpeak: (String) -> Unit,
+    onAnswerFeedback: (Boolean) -> Unit,
     initialCompleted: Set<Int>,
     onCompletedChange: (Set<Int>) -> Unit
 ) {
@@ -155,6 +163,7 @@ fun EnglishPlusApp(
                 LessonScreen(
                     lesson = courseLessons[index],
                     onSpeak = onSpeak,
+                    onAnswerFeedback = onAnswerFeedback,
                     onBack = { selectedIndex = null },
                     onPass = {
                         completed = completed + index
@@ -171,6 +180,7 @@ fun EnglishPlusApp(
 private fun LessonScreen(
     lesson: Lesson,
     onSpeak: (String) -> Unit,
+    onAnswerFeedback: (Boolean) -> Unit,
     onBack: () -> Unit,
     onPass: () -> Unit
 ) {
@@ -234,7 +244,7 @@ private fun LessonScreen(
                 Row(
                     Modifier.fillMaxWidth().padding(vertical = 5.dp)
                         .background(bg, RoundedCornerShape(14.dp))
-                        .clickable(enabled = selectedAnswer == null) { selectedAnswer = option }
+                        .clickable(enabled = selectedAnswer == null) { selectedAnswer = option; onAnswerFeedback(option == word.arabic) }
                         .padding(16.dp),
                     verticalAlignment = Alignment.CenterVertically
                 ) {
