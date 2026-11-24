@@ -117,7 +117,7 @@ private fun EnglishPlusApp() {
             lessonNumber = selectedLesson,
             onBack = { screen = "home" },
             onLessonComplete = { earned ->
-                saveProgress(xp + earned, completed + 1)
+                if (selectedLesson > completed) saveProgress(xp + earned, selectedLesson)
                 screen = "result"
             }
         )
@@ -170,7 +170,7 @@ private fun HomeScreen(xp: Int, completed: Int, onStartLesson: (Int) -> Unit) {
                 )
                 Spacer(Modifier.height(16.dp))
                 Button(
-                    onClick = onStart,
+                    onClick = { onStartLesson((completed + 1).coerceIn(1, 3)) },
                     colors = ButtonDefaults.buttonColors(containerColor = FlagRed),
                     shape = RoundedCornerShape(14.dp)
                 ) { Text("تابع التعلّم", fontWeight = FontWeight.Bold) }
