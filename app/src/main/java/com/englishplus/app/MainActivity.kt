@@ -165,8 +165,19 @@ private fun EnglishPlusApp() {
             completed = completed,
             examPassed = a0ExamPassed,
             a1ExamPassed = a1ExamPassed,
-            onStartLesson = { lesson -> selectedLesson = lesson; screen = "lesson" },
-            onStartExam = { screen = "exam" }
+            onStartLesson = { lesson ->
+                val alreadyCompleted = lesson in 1..completed
+                val nextAllowed = lesson == completed + 1 && (lesson <= 3 || a0ExamPassed)
+                if (lesson in 1..6 && (alreadyCompleted || nextAllowed)) {
+                    selectedLesson = lesson
+                    screen = "lesson"
+                }
+            },
+            onStartExam = {
+                val a0Ready = completed >= 3 && completed < 6 && !a0ExamPassed
+                val a1Ready = completed >= 6 && a0ExamPassed && !a1ExamPassed
+                if (a0Ready || a1Ready) screen = "exam"
+            }
         )
     }
 }
@@ -272,6 +283,13 @@ private fun HomeScreen(xp: Int, completed: Int, examPassed: Boolean, a1ExamPasse
                 }
                 Spacer(Modifier.height(16.dp))
                 (1..6).forEach { lessonNumber ->
+                    if (lessonNumber == 4) {
+                        Spacer(Modifier.height(18.dp))
+                        Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.End) {
+                            Text("A1 • بناء الجمل والمفردات", color = Navy, fontWeight = FontWeight.Bold, fontSize = 15.sp)
+                        }
+                        Spacer(Modifier.height(12.dp))
+                    }
                     val isDone = lessonNumber <= completed
                     val isUnlocked = lessonNumber == completed + 1 && (lessonNumber <= 3 || examPassed)
                     Row(
