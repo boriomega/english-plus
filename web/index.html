@@ -35,6 +35,6 @@
     <div id="lesson-content"></div>
   </dialog>
   <div id="toast" class="toast" role="status" aria-live="polite"></div>
-  <dialog id="settings-dialog" class="settings-dialog"><div class="settings-head"><h2>إعدادات التعلّم</h2><button id="close-settings" class="icon-button" aria-label="إغلاق">✕</button></div><label class="setting-row" for="auto-next"><span><b>الانتقال التلقائي</b><small>الانتقال للسؤال التالي بعد 5 ثوانٍ</small></span><input id="auto-next" type="checkbox" checked></label><p class="settings-note">يمكنك إيقاف الانتقال التلقائي في أي وقت.</p></dialog>
+  <dialog id="settings-dialog" class="settings-dialog"><div class="settings-head"><h2>إعدادات التعلّم</h2><button id="close-settings" class="icon-button" aria-label="إغلاق">✕</button></div><label class="setting-row" for="auto-next"><span><b>الانتقال التلقائي</b><small>مهلة الإجابة 7 ثوانٍ لكل سؤال</small></span><input id="auto-next" type="checkbox" checked></label><p class="settings-note">يبدأ المؤقت مع ظهور السؤال، وتُسجّل الإجابة عند انتهاء الوقت.</p></dialog>
   <script src="app.js"></script><script src="placement.js"></script><script src="design.js"></script><script>if("serviceWorker" in navigator)window.addEventListener("load",()=>navigator.serviceWorker.register("./service-worker.js").catch(()=>{}));</script>
 </body></html>
