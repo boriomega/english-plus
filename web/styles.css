@@ -38,3 +38,6 @@
 
 /* Accessible English pronunciation control */
 .word-audio{display:inline-grid;place-items:center;vertical-align:middle;margin-inline-start:8px;width:38px;height:38px;border:0;border-radius:12px;background:#edf3fa;color:var(--navy);font-size:19px;cursor:pointer;box-shadow:0 3px 0 #dce5ee}.word-audio:active{transform:translateY(2px);box-shadow:0 1px 0 #dce5ee}.word-audio:focus-visible,.listen-button:focus-visible{outline:3px solid #83c7a8;outline-offset:3px}
+
+/* Course map: clear grouping for the twelve A1 units */
+.unit-heading{grid-column:1/-1;margin:22px 4px 2px;padding:10px 14px;border-radius:13px;background:#edf3f8;color:#7189a5;font-size:14px;font-weight:900;line-height:1.6}.unit-heading:first-child{margin-top:4px}
