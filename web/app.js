@@ -82,7 +82,33 @@ function sound(type="click"){
   play();
  }catch(e){console.warn("English Plus audio unavailable",e)}
 }
-function speak(word){if(muted){toast("الصوت مكتوم؛ اضغط زر الصوت لتشغيله");return}if(!("speechSynthesis"in window)||!("SpeechSynthesisUtterance"in window)){toast("النطق الصوتي غير مدعوم في هذا المتصفح");return}try{const engine=window.speechSynthesis;engine.cancel();const utterance=new SpeechSynthesisUtterance(String(word));utterance.lang="en-US";utterance.rate=.88;utterance.pitch=1;const chooseVoice=()=>{const voices=engine.getVoices();utterance.voice=voices.find(v=>/^en-US$/i.test(v.lang))||voices.find(v=>/^en-/i.test(v.lang))||null};chooseVoice();utterance.onerror=event=>{console.warn("Pronunciation error",event.error);toast("تعذر تشغيل النطق؛ تحقق من إعدادات الصوت في الجهاز")};utterance.onstart=()=>sound("click");engine.speak(utterance);if(engine.paused)engine.resume()}catch(error){console.warn("Pronunciation unavailable",error);toast("تعذر تشغيل الصوت على هذا الجهاز")}}
+function speak(word){
+ if(muted){toast("الصوت مكتوم؛ اضغط زر الصوت لتشغيله");return}
+ if(!("speechSynthesis" in window)||!("SpeechSynthesisUtterance" in window)){toast("النطق الصوتي غير مدعوم في هذا المتصفح");return}
+ try{
+  const engine=window.speechSynthesis;
+  engine.cancel();
+  const utterance=new SpeechSynthesisUtterance(String(word));
+  utterance.lang="en-US";
+  utterance.rate=.86;
+  utterance.pitch=1;
+  const selectEnglishVoice=()=>{
+   const voices=engine.getVoices()||[];
+   utterance.voice=voices.find(v=>/^en-US/i.test(v.lang))||voices.find(v=>/^en-/i.test(v.lang))||null;
+  };
+  selectEnglishVoice();
+  if(!engine.__englishPlusVoiceReady){
+   engine.addEventListener?.("voiceschanged",selectEnglishVoice,{once:true});
+   engine.__englishPlusVoiceReady=true;
+  }
+  utterance.onerror=event=>{
+   console.warn("Pronunciation error",event.error);
+   if(event.error!=="canceled"&&event.error!=="interrupted")toast("تعذر تشغيل النطق؛ تحقق من إعدادات تحويل النص إلى كلام في الجهاز");
+  };
+  engine.speak(utterance);
+  if(engine.paused)engine.resume();
+ }catch(error){console.warn("Pronunciation unavailable",error);toast("تعذر تشغيل الصوت على هذا الجهاز")}
+}
 function addXP(n){const oldLevel=Math.floor(xp/100)+1;xp+=n;localStorage.setItem("ep-xp",xp);localStorage.setItem("ep-points",xp);const newLevel=Math.floor(xp/100)+1;if(newLevel>oldLevel){sound("level");showLevelUp(newLevel)}}
 function showLevelUp(level){const el=document.createElement("div");el.className="level-up";el.innerHTML=`<div class="level-up-card"><span>🏆</span><h2>مستوى جديد!</h2><p>وصلت إلى المستوى ${level}</p><button class="primary-button" style="margin-top:16px">رائع!</button></div>`;document.body.append(el);el.querySelector("button").onclick=()=>el.remove();setTimeout(()=>el.remove(),5000)}
 function unlockBadge(id){if(badges.has(id))return;badges.add(id);save("ep-badges",[...badges]);toast(({first:"🏅 إنجاز جديد: أول درس!",combo:"🔥 خمس إجابات صحيحة متتالية!",week:"🎉 إنجاز رائع: 7 أيام متتالية!"})[id]||"🏅 إنجاز جديد!")}
@@ -104,7 +130,7 @@ else if(kind===1){prompt="رتّب الكلمات لتكوين جملة";body='<
 else{prompt="اكتب الكلمة الإنجليزية";body='<div class="word-picture">'+iconArt(CHARACTER_ICONS[word[0]]||WORD_ICONS[word[0]]||word[2],"word-art")+'</div><div class="word-ar">'+word[1]+'</div><input id="typed-answer" class="word-input" type="text" autocomplete="off" autocapitalize="none" placeholder="اكتب الكلمة هنا" aria-label="اكتب الكلمة الإنجليزية">';}
 $("lesson-content").innerHTML='<p class="question-kicker">'+(practiceMode?"تدريب استعادة القلوب":("❤️ "+hearts+" • XP "+xp))+'</p><span class="exercise-kind">'+(kind===0?"اختيار من متعدد":kind===1?"ترتيب الكلمات":"كتابة")+'</span><h2 class="question-title">'+prompt+'</h2>'+body+grammar+'<div class="question-timer"><span id="question-seconds">10</span><div class="question-time-track"><span id="question-time-bar"></span></div></div><div class="answers" id="answers"></div><div class="feedback" id="feedback" aria-live="polite"></div><button class="primary-button" id="next" disabled>'+(kind===1?"تحقق من الترتيب":(question===total-1?"إنهاء":"متابعة"))+'</button>';
 $("word-audio")?.addEventListener("click",()=>speak(word[0]));$("grammar-audio")?.addEventListener("click",()=>speak(lessons[activeLesson].grammar[2]));
-if(kind===0){const opts=[word[1],...allWords.filter(w=>w[1]!==word[1]).sort(()=>Math.random()-.5).slice(0,3).map(w=>w[1])];$("answers").innerHTML=opts.sort(()=>Math.random()-.5).map(c=>'<button class="answer" type="button">'+c+'</button>').join("");document.querySelectorAll(".answer").forEach(b=>b.onclick=()=>{if(answered)return;selectedAnswer=b;document.querySelectorAll(".answer").forEach(x=>x.classList.toggle("selected",x===b));if(b.textContent.trim()===word[1])checkAnswer(b,word[1])});$("next").onclick=nextQuestion;startQuestionTimer(kind,word[1],()=>selectedAnswer?.textContent.trim()??"")}
+if(kind===0){const opts=[word[1],...allWords.filter(w=>w[1]!==word[1]).sort(()=>Math.random()-.5).slice(0,3).map(w=>w[1])];$("answers").innerHTML=opts.sort(()=>Math.random()-.5).map(c=>'<button class="answer" type="button">'+c+'</button>').join("");document.querySelectorAll(".answer").forEach(b=>b.onclick=()=>{if(answered)return;selectedAnswer=b;document.querySelectorAll(".answer").forEach(x=>x.classList.toggle("selected",x===b));checkAnswer(b,word[1])});$("next").onclick=nextQuestion;startQuestionTimer(kind,word[1],()=>selectedAnswer?.textContent.trim()??"")}
 else if(kind===1){const tokens=sentence.match(/[A-Za-z0-9’'-]+[.,!?]?/g)||[],extras=["the","a","is","my","today","very"].filter(x=>!tokens.some(t=>t.toLowerCase().replace(/[.,!?]/g,"")===x)).slice(0,2),bank=[...tokens,...extras].sort(()=>Math.random()-.5),picked=[];
 bank.forEach(token=>{const tile=document.createElement("button");tile.type="button";tile.className="word-tile";tile.textContent=token;tile.onclick=()=>{if(answered)return;picked.push(token);const chip=document.createElement("button");chip.type="button";chip.className="word-chip";chip.textContent=token;chip.onclick=()=>{if(answered)return;const index=picked.indexOf(token);if(index>=0)picked.splice(index,1);chip.remove();const back=document.createElement("button");back.type="button";back.className="word-tile";back.textContent=token;back.onclick=tile.onclick;$("word-order-bank").append(back)};$("word-order-answer").append(chip);tile.remove();const norm=v=>String(v).toLowerCase().replace(/[.,!?]/g,"").replace(/\s+/g," ").trim();if(norm(picked.join(" "))===norm(sentence))checkAnswer(chip,sentence,picked.join(" "))};$("word-order-bank").append(tile)});
 $("next").disabled=false;$("next").onclick=()=>{if(answered)nextQuestion();else{checkAnswer(null,sentence,picked.join(" "));if(!answered){$("next").disabled=false;$("next").textContent="تحقق من الترتيب"}}};startQuestionTimer(kind,sentence,()=>picked.join(" "));}else{const field=$("typed-answer");field.addEventListener("input",()=>{const norm=v=>String(v).toLowerCase().replace(/[.,!?]/g,"").replace(/\s+/g," ").trim();if(norm(field.value)===norm(word[0]))checkAnswer(field,word[0],field.value)});startQuestionTimer(kind,word[0],()=>field.value.trim())}
@@ -126,7 +152,7 @@ if(ok){
   sound("wrong");$("feedback").className="feedback bad";$("feedback").textContent="✗ Try again — Time is up!";
   if(control)control.classList.add("wrong");
  }else{
-  sound("wrong");$("feedback").className="feedback bad";$("feedback").textContent="Try again!";
+  sound("wrong");$("feedback").className="feedback bad";$("feedback").textContent="Try again! الإجابة الصحيحة: "+correct;
   if(control)control.classList.add("wrong");
   if(control?.classList.contains("answer"))control.disabled=true;
   if(control?.id==="typed-answer")control.classList.remove("wrong");
@@ -147,6 +173,18 @@ if(answered){
 }
 function retryCurrentQuestion(){stopQuestionTimer();showQuestion();sound("click")}
 function nextQuestion(){stopQuestionTimer();if(!answered)return;if(!practiceMode&&hearts<=0){$("lesson-content").innerHTML=`<div class="word-picture">❤️‍🩹</div><h2 class="question-title" style="text-align:center">نفدت القلوب!</h2><p style="text-align:center;color:var(--muted)">ابدأ تدريباً قصيراً وأجب عن 3 أسئلة صحيحة لاستعادة قلب.</p><button class="primary-button" id="refill-now">ابدأ التدريب</button>`;$("refill-now").onclick=()=>{ $("lesson-dialog").close();beginPractice()};return}const total=practiceMode?4:lessons[activeLesson].words.length;if(question<total-1){question++;showQuestion();sound("click");return}if(practiceMode){if(practiceCorrect>=3){hearts=Math.min(5,hearts+1);localStorage.setItem("ep-hearts",hearts);$("lesson-dialog").close();render();toast("رائع! استعدت قلباً ❤️")}else{$("lesson-content").innerHTML=`<div class="word-picture">💪</div><h2 class="question-title" style="text-align:center">واصل المحاولة</h2><p style="text-align:center;color:var(--muted)">تحتاج إلى 3 إجابات صحيحة لاستعادة قلب.</p><button class="primary-button" id="practice-again">إعادة التدريب</button>`;$("practice-again").onclick=beginPractice}return}
-if(correctCount>=Math.ceil(total*.75)){const wasFirst=completed.size===0;const firstCompletion=!completed.has(activeLesson);completed.add(activeLesson);save("ep-completed",[...completed]);if(firstCompletion)addXP(20);if(wasFirst)unlockBadge("first");if(streak>=7)unlockBadge("week");sound("complete");$("lesson-dialog").close();render();toast("ممتاز! أكملت الدرس وفتحت المرحلة التالية 🎉")}else{$("lesson-content").innerHTML=`<div class="word-picture">💪</div><h2 class="question-title" style="text-align:center">أنت قريب من النجاح!</h2><p style="text-align:center;color:var(--muted)">أجب عن ثلاثة أرباع الأسئلة بشكل صحيح على الأقل. أعد المحاولة لترسيخ الكلمات.</p><button class="primary-button" id="retry">إعادة الدرس</button>`;$("retry").onclick=()=>{question=0;correctCount=0;combo=0;showQuestion();sound("click")}}}
+if(correctCount>=Math.ceil(total*.75)){const wasFirst=completed.size===0;const firstCompletion=!completed.has(activeLesson);completed.add(activeLesson);save("ep-completed",[...completed]);if(firstCompletion)addXP(20);if(wasFirst)unlockBadge("first");if(streak>=7)unlockBadge("week");sound("complete");showLessonComplete();}else{$("lesson-content").innerHTML=`<div class="word-picture">💪</div><h2 class="question-title" style="text-align:center">أنت قريب من النجاح!</h2><p style="text-align:center;color:var(--muted)">أجب عن ثلاثة أرباع الأسئلة بشكل صحيح على الأقل. أعد المحاولة لترسيخ الكلمات.</p><button class="primary-button" id="retry">إعادة الدرس</button>`;$("retry").onclick=()=>{question=0;correctCount=0;combo=0;showQuestion();sound("click")}}}
+function showLessonComplete(){
+ const nextIndex=activeLesson+1;
+ const hasNext=nextIndex<lessons.length;
+ $("lesson-progress").style.width="100%";
+ $("question-count").textContent="اكتمل الدرس";
+ $("lesson-content").innerHTML='<section class="lesson-complete"><div class="complete-medal">🏆</div><h2>أحسنت! أكملت الدرس</h2><p>إجابات صحيحة: '+correctCount+' من '+lessons[activeLesson].words.length+'</p><p class="complete-subtitle">واصل التعلّم خطوة بخطوة.</p><div class="complete-actions">'+(hasNext?'<button class="primary-button" id="next-lesson">الدرس التالي ←</button>':'')+'<button class="secondary-button" id="back-to-path">العودة إلى المسار</button></div></section>';
+ $("next-lesson")?.addEventListener("click",()=>{
+  $("lesson-dialog").close();
+  openLesson(nextIndex);
+ });
+ $("back-to-path")?.addEventListener("click",()=>{$("lesson-dialog").close();render()});
+}
 function toast(msg){$("toast").textContent=msg;$("toast").classList.add("show");setTimeout(()=>$("toast").classList.remove("show"),2600)}
 $("lesson-list").addEventListener("click",e=>{const b=e.target.closest("[data-open]");if(b){sound("click");openLesson(Number(b.dataset.open))}});$("mute").onclick=()=>{muted=!muted;localStorage.setItem("ep-muted",String(muted));render();if(!muted)sound("click")};$("close-lesson").onclick=()=>{$("lesson-dialog").close();sound("click")};$("lesson-dialog").addEventListener("click",e=>{if(e.target===$("lesson-dialog")){$("lesson-dialog").close();sound("click")}});$("practice-refill").onclick=beginPractice;render();
