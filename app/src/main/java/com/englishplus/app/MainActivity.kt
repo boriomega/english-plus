@@ -51,7 +51,7 @@ import androidx.compose.ui.unit.sp
 import androidx.compose.runtime.CompositionLocalProvider
 
 private val Navy = Color(0xFF123B70)
-private val FlagRed = Color(0xFF16834A)
+private val AccentGreen = Color(0xFF16834A)
 private val PaleBlue = Color(0xFFE8F5EC)
 private val Ink = Color(0xFF172B4D)
 private val Page = Color(0xFFF7F9FC)
@@ -362,7 +362,7 @@ private fun LessonScreen(lessonNumber: Int, onBack: () -> Unit, onLessonComplete
             Spacer(Modifier.height(12.dp))
             Text(
                 if (isCorrect) "أحسنت! إجابة صحيحة " else "الإجابة الصحيحة: ${exercise.answer}",
-                color = if (isCorrect) Green else FlagRed,
+                color = if (isCorrect) Green else AccentGreen,
                 fontWeight = FontWeight.Bold,
                 fontSize = 16.sp
             )
@@ -463,7 +463,7 @@ private fun ResultScreen(xp: Int, completed: Int, onContinue: () -> Unit) {
         Spacer(Modifier.height(10.dp))
         Text("حصلت على نقاط مقابل إجاباتك الصحيحة.", color = Ink, fontSize = 15.sp, textAlign = TextAlign.Center)
         Spacer(Modifier.height(18.dp))
-        Text("⚡ $xp XP", color = FlagRed, fontSize = 26.sp, fontWeight = FontWeight.Bold)
+        Text("⚡ $xp XP", color = AccentGreen, fontSize = 26.sp, fontWeight = FontWeight.Bold)
         Text("$completed دروس مكتملة", color = Color(0xFF64748B), fontSize = 14.sp)
         Spacer(Modifier.height(28.dp))
         Button(
@@ -498,7 +498,7 @@ private fun LevelCard(
             Text(
                 level,
                 modifier = Modifier.background(
-                    if (active) FlagRed else Color(0xFFE6EAF0),
+                    if (active) AccentGreen else Color(0xFFE6EAF0),
                     RoundedCornerShape(12.dp)
                 ).padding(horizontal = 13.dp, vertical = 9.dp),
                 color = if (active) Color.White else Navy,
