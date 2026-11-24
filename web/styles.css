@@ -74,3 +74,6 @@
   --pri:#8fb5da;--pri2:#6f98c1;--ok:#76c7a0;--okbg:#193b32;
   --bad:#e69a9d;--badbg:#452a31;--line:#354d63;
 }
+
+/* Word-order exercise tiles */
+.word-order-answer{direction:ltr;display:flex;flex-wrap:wrap;justify-content:center;gap:8px;min-height:58px;padding:12px 8px;margin:18px 0 12px;border-top:2px solid var(--line);border-bottom:2px solid var(--line);border-radius:12px}.word-order-bank{direction:ltr;display:flex;flex-wrap:wrap;justify-content:center;gap:9px;margin:14px 0 18px}.word-tile,.word-chip{border:2px solid var(--line);border-bottom-width:4px;border-radius:12px;background:var(--card);color:var(--ink);padding:10px 13px;font:800 17px Tajawal,system-ui,sans-serif}.word-chip{display:inline-flex;align-items:center;background:var(--okbg);border-color:var(--ok);color:var(--ink)}.word-tile:active{transform:translateY(2px)}
