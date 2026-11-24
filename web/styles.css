@@ -447,3 +447,25 @@ body{background:#f1e8d8;color:#514735}
 .answer.selected{border-color:#b99a68;background:#f7f0e4;box-shadow:0 3px 0 #e8ddca}
 .word-chip{border-color:#b99a68;background:#f7f0e4;color:#715b3b}
 .path-step.biting::after{background:radial-gradient(circle at 35% 40%,#f1e8d8 0 5px,transparent 5.5px),radial-gradient(circle at 72% 45%,#f1e8d8 0 5px,transparent 5.5px),radial-gradient(circle at 53% 78%,#f1e8d8 0 5px,transparent 5.5px)}
+
+
+/* FINAL HOTFIX: force the cream palette across legacy purple component rules */
+:root{
+ color-scheme:light!important;
+ --purple:#b99a68!important;--purple-dark:#80643d!important;
+ --purple-soft:#f7f0e4!important;--paper:#f1e8d8!important;
+ --bg:#f1e8d8!important;--navy:#80643d!important;
+ --pri:#b99a68!important;--pri2:#80643d!important;
+ --blue:#ddc9a7!important;--red:#b99a68!important;
+ --line:#e5d8c3!important;
+}
+html,body{background:#f1e8d8!important;color:#514735!important}
+.topbar,.unit-map,.progress-card,.achievements,.settings-dialog{background-color:#fffdf8!important}
+.welcome,.placement-panel,#placement-panel{background:linear-gradient(125deg,#b99a68,#d8c29d)!important}
+.brand,.brand b,.section-heading h2,.progress-head b,.achievement-head h2,.settings-head h2{color:#80643d!important}
+.brand-mark,.level-tag,.unit-map-heading span,.placement-mark,.placement-level,.placement-btn{background:#b99a68!important}
+.primary-button,.lesson-action{background:linear-gradient(135deg,#d8c29d,#b99a68)!important}
+.path-node{background:linear-gradient(145deg,#fffaf0,#f1e7d5)!important;border-color:#e5d8c3!important}
+.path-step:not(.locked):not(.done) .path-node{background:linear-gradient(145deg,#ddc9a7,#b99a68)!important}
+.question-timer,.setting-row,.answer.selected,.word-chip{background:#f7f0e4!important;border-color:#b99a68!important;color:#715b3b!important}
+.question-time-track span{background:#b99a68!important}
