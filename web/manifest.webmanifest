@@ -1,0 +1,11 @@
+{
+  "name": "English Plus",
+  "short_name": "English Plus",
+  "description": "تعلم الإنجليزية خطوة بخطوة",
+  "lang": "ar",
+  "dir": "rtl",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#f4f7fc",
+  "theme_color": "#123b70"
+}
