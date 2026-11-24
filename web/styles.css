@@ -299,3 +299,55 @@ button:focus-visible{outline:3px solid #91b5d8;outline-offset:3px}
 
 /* Apple marker for lessons that are still locked. */
 .path-step.locked .path-lock-art{width:40px;height:40px;opacity:.82;filter:drop-shadow(0 2px 1px #7f9bb522)}
+
+
+/* English Plus — purple visual identity and larger learning path */
+:root{
+  --purple:#8e6bb5;
+  --purple-dark:#72518f;
+  --purple-soft:#eee7f5;
+  --paper:#f1eff3;
+  --bg:#f1eff3;
+  --navy:#8e6bb5;
+  --pri:#8e6bb5;
+  --pri2:#72518f;
+  --blue:#c5b2d8;
+  --red:#8e6bb5;
+  --line:#e3dce9;
+}
+body{background:#f1eff3}
+.topbar{background:#fff;border-bottom-color:#e7e0ec}
+.brand,.section-heading h2,.progress-head b,.achievement-head h2{color:var(--purple-dark)}
+.brand-mark{background:linear-gradient(145deg,#a88ac5,#805da4);box-shadow:0 4px 0 #dfd3e9}
+.welcome{background:linear-gradient(125deg,#80609f 0%,#aa8bc4 100%);border-color:#b49bc9;box-shadow:0 6px 0 #dfd5e8}
+.welcome h1 span{color:#f5edf9}
+.level-tag,.unit-map-heading span{background:var(--purple);color:#fff}
+.unit-map{background:#fff;border-color:#e4dce9;box-shadow:0 5px 0 #e5dfe9,0 12px 28px #76588c10}
+.path-node{width:92px;height:92px;border:5px solid #e4d9ed;background:linear-gradient(145deg,#f6f1fa,#ece3f3);box-shadow:0 7px 0 #ded3e8,0 10px 16px #76588c18}
+.path-art{width:49px;height:49px}
+.path-step:not(.locked):not(.done) .path-node{background:linear-gradient(145deg,#b49acb,#8968aa);border-color:#e4d9ed;box-shadow:0 7px 0 #72518f,0 10px 17px #76588c2b}
+.path-step.done .path-node{background:linear-gradient(145deg,#e7f6ed,#d5efdf);border-color:#a8d9bd}
+.path-step.locked .path-node{background:#eeebf0;border-color:#e4dfe8;box-shadow:0 6px 0 #e2dde6}
+.path-label b{font-size:14px}
+.primary-button,.lesson-action{background:linear-gradient(135deg,#a98ac4,#8663a7);box-shadow:0 5px 0 #70508d}
+.primary-button:active,.lesson-action:active{box-shadow:0 1px 0 #70508d}
+.placement-panel,#placement-panel{background:linear-gradient(145deg,#76558f,#a88ac0)}
+.placement-mark{background:var(--purple);box-shadow:0 4px 0 #dfd3e9}
+.placement-level{background:#8e6bb5;box-shadow:0 4px 0 #72518f}
+.placement-level:nth-child(2){background:#a98bc3;box-shadow:0 4px 0 #80609f}
+.placement-level:nth-child(3){background:#9275ad;box-shadow:0 4px 0 #72518f}
+.placement-level:nth-child(4){background:#72518f;box-shadow:0 4px 0 #563b70}
+.placement-btn{background:var(--purple);box-shadow:0 4px 0 #72518f}
+.settings-toggle{font-size:18px}
+.settings-dialog{width:min(92%,430px);border:1px solid #e4dce9;border-radius:22px;padding:20px;background:#fff;color:#34445b;box-shadow:0 12px 45px #49345b30;margin:auto}
+.settings-dialog::backdrop{background:#30243c66}
+.settings-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:18px}
+.settings-head h2{margin:0;color:#72518f;font-size:20px}
+.setting-row{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:15px;background:#f5f1f8;border:1px solid #e9e0ef;border-radius:15px;cursor:pointer}
+.setting-row b,.setting-row small{display:block}
+.setting-row b{font-size:15px;color:#5e4775}
+.setting-row small,.settings-note{font-size:12px;color:#8b8194;margin-top:5px}
+.setting-row input{width:23px;height:23px;accent-color:#8e6bb5;flex:none}
+.settings-note{line-height:1.7}
+@media(max-width:390px){.path-node{width:82px;height:82px}.path-art{width:44px;height:44px}.path-label b{font-size:12px}}
+@media(prefers-reduced-motion:reduce){.path-node,.primary-button,.lesson-action{transition:none}}
