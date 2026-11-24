@@ -469,3 +469,45 @@ html,body{background:#f1e8d8!important;color:#514735!important}
 .path-step:not(.locked):not(.done) .path-node{background:linear-gradient(145deg,#ddc9a7,#b99a68)!important}
 .question-timer,.setting-row,.answer.selected,.word-chip{background:#f7f0e4!important;border-color:#b99a68!important;color:#715b3b!important}
 .question-time-track span{background:#b99a68!important}
+
+
+/* English Plus — fresh Duolingo-inspired green identity */
+:root{
+  color-scheme:light!important;
+  --purple:#58cc02!important;
+  --purple-dark:#328b00!important;
+  --purple-soft:#e5f8d8!important;
+  --paper:#f5fbeF!important;
+  --bg:#f5fbeF!important;
+  --navy:#328b00!important;
+  --pri:#58cc02!important;
+  --pri2:#328b00!important;
+  --blue:#b9ed91!important;
+  --red:#58cc02!important;
+  --green:#58cc02!important;
+  --ok:#58a700!important;
+  --okbg:#e5f8d8!important;
+  --line:#d8ebca!important;
+}
+html,body{background:#f5fbef!important;color:#304b26!important}
+.topbar,.unit-map,.progress-card,.achievements,.settings-dialog{background:#fff!important;border-color:#d8ebca!important}
+.brand,.brand b,.section-heading h2,.progress-head b,.achievement-head h2,.settings-head h2{color:#328b00!important}
+.brand-mark,.level-tag,.unit-map-heading span,.placement-mark,.placement-level,.placement-btn{background:#58cc02!important;color:#fff!important}
+.welcome,.placement-panel,#placement-panel{background:linear-gradient(125deg,#58cc02,#8be34a)!important;border-color:#70d832!important}
+.welcome h1 span{color:#f4ffe9!important}
+.path-node{background:linear-gradient(145deg,#f5ffed,#e4f7d7)!important;border-color:#cdebb8!important;box-shadow:0 7px 0 #d5eac7,0 10px 16px #328b0018!important}
+.path-step:not(.locked):not(.done) .path-node{background:linear-gradient(145deg,#8be34a,#58cc02)!important;border-color:#d4efc2!important;box-shadow:0 7px 0 #328b00,0 10px 17px #328b0020!important}
+.path-step.done .path-node{background:linear-gradient(145deg,#e5f8d8,#c9efb2)!important;border-color:#9edb78!important}
+.path-step.locked .path-node{background:#edf2e9!important;border-color:#dce7d4!important;box-shadow:0 6px 0 #dce7d4!important}
+.primary-button,.lesson-action{background:linear-gradient(135deg,#72dc27,#58cc02)!important;box-shadow:0 5px 0 #328b00!important;color:#fff!important}
+.primary-button:active,.lesson-action:active{box-shadow:0 1px 0 #328b00!important}
+.question-timer,.setting-row,.answer.selected,.word-chip{background:#effbe7!important;border-color:#58cc02!important;color:#328b00!important}
+.question-time-track{background:#d9efca!important}
+.question-time-track span{background:#58cc02!important}
+.feedback.good{background:#e5f8d8!important;border-color:#9edb78!important;color:#328b00!important}
+.answer.correct{background:#e5f8d8!important;border-color:#58cc02!important;color:#328b00!important}
+.placement-card{border-color:#d8ebca!important}
+.placement-progress span{background:#58cc02!important}
+.setting-row input{accent-color:#58cc02!important}
+.path-step.biting::after{background:radial-gradient(circle at 35% 40%,#f5fbef 0 5px,transparent 5.5px),radial-gradient(circle at 72% 45%,#f5fbef 0 5px,transparent 5.5px),radial-gradient(circle at 53% 78%,#f5fbef 0 5px,transparent 5.5px)!important}
+button:focus-visible{outline-color:#58cc02!important}
