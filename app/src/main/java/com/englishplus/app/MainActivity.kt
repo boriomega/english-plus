@@ -59,7 +59,7 @@ private val Navy = Color(0xFF496783)
 private val AccentGreen = Color(0xFF648F78)
 private val PaleBlue = Color(0xFFF0F4F0)
 private val Ink = Color(0xFF344456)
-private val Page = Color(0xFFFAFBFA)
+private val Page = Color(0xFFF0F1F3)
 private val Green = Color(0xFF648F78)
 
 data class Exercise(
@@ -229,12 +229,12 @@ private fun HomeScreen(xp: Int, completed: Int, passedUnits: Int, onStartLesson:
                         Row(modifier = Modifier.fillMaxWidth().padding(vertical = 5.dp), horizontalArrangement = when (lessonNumber % 3) { 0 -> Arrangement.Start; 1 -> Arrangement.Center; else -> Arrangement.End }, verticalAlignment = Alignment.CenterVertically) {
                             Column(horizontalAlignment = Alignment.CenterHorizontally) {
                                 if (isUnlocked) {
-                                    AppleLessonButton(onClick = { onStartLesson(lessonNumber) }, modifier = Modifier.size(66.dp))
+                                    AppleLessonButton(onClick = { onStartLesson(lessonNumber) }, modifier = Modifier.size(82.dp))
                                 } else {
                                     Button(
                                         onClick = { onStartLesson(lessonNumber) },
                                         enabled = isDone,
-                                        modifier = Modifier.size(66.dp),
+                                        modifier = Modifier.size(82.dp),
                                         shape = CircleShape,
                                         colors = ButtonDefaults.buttonColors(containerColor = if (isDone) Green else Color(0xFFECEFEF), disabledContainerColor = Color(0xFFECEFEF), contentColor = Color.White, disabledContentColor = Color(0xFF8290A3)),
                                         elevation = ButtonDefaults.buttonElevation(defaultElevation = 0.dp),
@@ -297,7 +297,7 @@ private fun AppleLessonButton(onClick: () -> Unit, modifier: Modifier = Modifier
                 painter = painterResource(id = R.drawable.illustration_apple),
                 contentDescription = "ابدأ الدرس بالتفاحة",
                 modifier = Modifier
-                    .size(46.dp)
+                    .size(58.dp)
                     .graphicsLayer {
                         scaleX = scale
                         scaleY = scale
