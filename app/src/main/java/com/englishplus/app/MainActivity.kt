@@ -258,23 +258,36 @@ private fun illustrationFor(word: String): Int = when (word.uppercase()) {
 @Composable
 private fun SpeechButton(text: String) {
     val context = LocalContext.current
-    val engine = remember(context) { TextToSpeech(context) { status ->
-        if (status == TextToSpeech.SUCCESS) {
-            // The engine is initialized asynchronously; the button remains available.
+    var speechReady by remember { mutableStateOf(false) }
+    val engine = remember(context) {
+        lateinit var tts: TextToSpeech
+        tts = TextToSpeech(context) { status ->
+            if (status == TextToSpeech.SUCCESS) {
+                val languageStatus = tts.setLanguage(Locale.US)
+                val americanVoice = tts.voices
+                    ?.filter { it.locale.language == "en" && it.locale.country == "US" }
+                    ?.maxByOrNull { it.quality }
+                if (americanVoice != null) tts.voice = americanVoice
+                speechReady = languageStatus >= TextToSpeech.LANG_AVAILABLE
+            }
         }
-    } }
+        tts
+    }
     DisposableEffect(engine) {
         onDispose { engine.stop(); engine.shutdown() }
     }
     Button(
         onClick = {
-            engine.language = Locale.US
-            engine.setSpeechRate(0.88f)
-            engine.speak(text, TextToSpeech.QUEUE_FLUSH, null, "english_plus_speech")
+            if (speechReady) {
+                engine.setSpeechRate(0.88f)
+                engine.setPitch(1.0f)
+                engine.speak(text, TextToSpeech.QUEUE_FLUSH, null, "english_plus_speech")
+            }
         },
+        enabled = speechReady,
         colors = ButtonDefaults.buttonColors(containerColor = Green),
         shape = RoundedCornerShape(12.dp)
-    ) { Text("🔊 استمع إلى النطق", fontWeight = FontWeight.Bold) }
+    ) { Text("🔊 استمع إلى النطق الأمريكي", fontWeight = FontWeight.Bold) }
 }
 
 @Composable
