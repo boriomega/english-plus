@@ -201,7 +201,7 @@ private fun HomeScreen(xp: Int, completed: Int, examPassed: Boolean, onStartLess
                 )
                 Spacer(Modifier.height(16.dp))
                 Button(
-                    onClick = { onStartLesson(if (completed >= 6) 6 else (completed + 1).coerceIn(1, 6)) },
+                    onClick = { if (completed >= 3 && !examPassed) onStartExam() else onStartLesson(if (completed >= 6) 6 else (completed + 1).coerceIn(1, 6)) },
                     colors = ButtonDefaults.buttonColors(containerColor = FlagRed),
                     shape = RoundedCornerShape(14.dp)
                 ) { Text("تابع التعلّم", fontWeight = FontWeight.Bold) }
