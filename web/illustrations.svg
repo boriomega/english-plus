@@ -22,4 +22,4 @@
 <symbol id="shoes" viewBox="0 0 100 100"><path d="M12 59q18 2 27-27l18 8q2 20 27 24 9 3 5 16H15q-10-6-3-21z" fill="#9bcdb6" stroke="#648f7b" stroke-width="4"/><path d="M18 73h67m-43-30 16 8" stroke="#fff" stroke-width="4" stroke-linecap="round"/></symbol>
 <symbol id="book-read" viewBox="0 0 100 100"><path d="M12 24q20-9 38 5v53Q31 69 12 79zM88 24q-20-9-38 5v53q19-13 38-3z" fill="#fff" stroke="#245da0" stroke-width="4"/><path d="M50 29v53" stroke="#9bcdb6" stroke-width="3"/></symbol>
 <symbol id="play" viewBox="0 0 100 100"><circle cx="50" cy="50" r="37" fill="#e9f4ff" stroke="#245da0" stroke-width="4"/><path d="m40 28 31 22-31 22z" fill="#19a56b"/></symbol>
-</defs></svg>
+<symbol id="heart" viewBox="0 0 100 100"><path d="M50 82 18 51C-1 31 25 6 45 25l5 6 5-6c20-19 46 6 27 26z" fill="#e89da7" stroke="#b96f80" stroke-width="4" stroke-linejoin="round"/></symbol></defs></svg>
