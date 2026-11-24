@@ -511,3 +511,122 @@ html,body{background:#f5fbef!important;color:#304b26!important}
 .setting-row input{accent-color:#58cc02!important}
 .path-step.biting::after{background:radial-gradient(circle at 35% 40%,#f5fbef 0 5px,transparent 5.5px),radial-gradient(circle at 72% 45%,#f5fbef 0 5px,transparent 5.5px),radial-gradient(circle at 53% 78%,#f5fbef 0 5px,transparent 5.5px)!important}
 button:focus-visible{outline-color:#58cc02!important}
+
+
+/* Modern tactile button system — English Plus */
+:root{
+  --btn-green:#58cc02;
+  --btn-green-dark:#328b00;
+  --btn-green-soft:#effbe7;
+  --btn-shadow:#328b00;
+}
+button{
+  -webkit-tap-highlight-color:transparent;
+  touch-action:manipulation;
+  transition:transform .16s ease,box-shadow .16s ease,background-color .16s ease,border-color .16s ease,filter .16s ease;
+}
+.primary-button,.lesson-action,.practice-button,.placement-btn{
+  min-height:50px;
+  border:0!important;
+  border-radius:17px!important;
+  background:linear-gradient(180deg,#70dc25 0%,#58cc02 100%)!important;
+  color:#fff!important;
+  font-weight:900!important;
+  letter-spacing:.1px;
+  box-shadow:0 5px 0 var(--btn-shadow),0 8px 18px #328b001c!important;
+  text-shadow:0 1px 0 #328b0022;
+}
+.primary-button:hover,.lesson-action:hover,.practice-button:hover,.placement-btn:hover{
+  filter:brightness(1.04) saturate(1.04);
+  transform:translateY(-1px);
+  box-shadow:0 6px 0 var(--btn-shadow),0 10px 20px #328b0022!important;
+}
+.primary-button:active,.lesson-action:active,.practice-button:active,.placement-btn:active{
+  transform:translateY(4px) scale(.99);
+  box-shadow:0 1px 0 var(--btn-shadow)!important;
+}
+.primary-button:disabled,.lesson-action:disabled,.placement-btn:disabled{
+  opacity:.48;
+  filter:grayscale(.2);
+  transform:none;
+  box-shadow:0 3px 0 #a9c99a!important;
+  cursor:not-allowed;
+}
+.answer,.placement-option{
+  min-height:54px;
+  border:2px solid #dcebd3!important;
+  border-bottom-width:4px!important;
+  border-radius:17px!important;
+  background:#fff!important;
+  color:#304b26!important;
+  padding:14px 16px;
+  font-weight:900;
+  box-shadow:0 3px 0 #dcebd3!important;
+}
+.answer:hover,.placement-option:hover{
+  border-color:#a8df83!important;
+  background:#f8fff3!important;
+}
+.answer:active,.placement-option:active{
+  transform:translateY(3px);
+  border-bottom-width:2px!important;
+  box-shadow:0 1px 0 #dcebd3!important;
+}
+.answer.selected{
+  background:#effbe7!important;
+  border-color:#58cc02!important;
+  color:#328b00!important;
+  box-shadow:0 3px 0 #b9e89c!important;
+}
+.answer.correct{
+  background:#e5f8d8!important;
+  border-color:#58cc02!important;
+  color:#328b00!important;
+  box-shadow:0 3px 0 #b9e89c!important;
+}
+.answer.wrong{
+  background:#fff1ef!important;
+  border-color:#e6a49b!important;
+  color:#a94d43!important;
+  box-shadow:0 3px 0 #f0d2ce!important;
+}
+.sound-toggle,.icon-button,.word-audio,.listen-button,.placement-retake{
+  min-width:44px;
+  min-height:44px;
+  border:1px solid #dcebd3!important;
+  border-radius:15px!important;
+  background:linear-gradient(180deg,#fff 0%,#f3faee 100%)!important;
+  color:#328b00!important;
+  box-shadow:0 3px 0 #e0ecd8!important;
+}
+.sound-toggle:hover,.icon-button:hover,.word-audio:hover,.listen-button:hover,.placement-retake:hover{
+  background:#effbe7!important;
+  border-color:#a8df83!important;
+}
+.sound-toggle:active,.icon-button:active,.word-audio:active,.listen-button:active,.placement-retake:active{
+  transform:translateY(2px);
+  box-shadow:0 1px 0 #e0ecd8!important;
+}
+.word-tile,.word-chip{
+  min-height:44px;
+  border-radius:14px!important;
+  border:2px solid #dcebd3!important;
+  border-bottom-width:4px!important;
+  background:#fff!important;
+  color:#304b26!important;
+  box-shadow:0 3px 0 #dcebd3!important;
+  font-weight:900!important;
+}
+.word-tile:hover{background:#f7fff1!important;border-color:#a8df83!important}
+.word-tile:active,.word-chip:active{
+  transform:translateY(2px);
+  box-shadow:0 1px 0 #dcebd3!important;
+}
+.word-chip{background:#effbe7!important;border-color:#58cc02!important;color:#328b00!important}
+button:focus-visible{
+  outline:3px solid #58cc02!important;
+  outline-offset:3px;
+}
+@media(prefers-reduced-motion:reduce){
+  button{transition:none!important}
+}
