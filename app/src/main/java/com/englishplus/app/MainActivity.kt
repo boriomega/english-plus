@@ -200,7 +200,7 @@ private fun HomeScreen(xp: Int, completed: Int, passedUnits: Int, onStartLesson:
                 Column(Modifier.fillMaxWidth().padding(16.dp), horizontalAlignment = Alignment.End) {
                     Text("أكملت دروس الوحدة $nextUnit", color = Navy, fontWeight = FontWeight.Bold, fontSize = 17.sp)
                     Spacer(Modifier.height(5.dp))
-                    Text("اجتز الاختبار بإجابات صحيحة لا تقل عن 3 من أصل 5 لفتح الوحدة التالية.", color = Ink, fontSize = 13.sp, textAlign = TextAlign.End)
+                    Text("اجتز الاختبار بإجابات صحيحة 4 من أصل 5 على الأقل لفتح الوحدة التالية.", color = Ink, fontSize = 13.sp, textAlign = TextAlign.End)
                     Spacer(Modifier.height(10.dp))
                     Button(onClick = { onStartExam(nextUnit) }, colors = ButtonDefaults.buttonColors(containerColor = Green), shape = RoundedCornerShape(12.dp)) { Text("ابدأ اختبار الوحدة") }
                 }
@@ -439,12 +439,12 @@ private fun FinalExamScreen(unitNumber: Int, onBack: () -> Unit, onComplete: (Bo
             Spacer(Modifier.height(18.dp))
             Button(onClick = { if (!checked) { checked = true; if (correct) score += 1 } else if (index < questions.lastIndex) { index += 1; answer = null; checked = false } else finished = true }, enabled = checked || answer != null, modifier = Modifier.fillMaxWidth().height(52.dp), colors = ButtonDefaults.buttonColors(containerColor = Green, disabledContainerColor = Color(0xFFE6EAF0)), shape = RoundedCornerShape(15.dp)) { Text(if (!checked) "تحقق من الإجابة" else if (index == questions.lastIndex) "عرض النتيجة" else "السؤال التالي", fontWeight = FontWeight.Bold) }
         } else {
-            val passed = score >= 3
+            val passed = score >= 4
             Spacer(Modifier.height(42.dp))
             Text(if (passed) "ممتاز! اجتزت الاختبار" else "واصل التدريب وحاول مرة أخرى", color = Navy, fontSize = 23.sp, fontWeight = FontWeight.ExtraBold, textAlign = TextAlign.Center)
             Spacer(Modifier.height(12.dp))
             Text("$score من 5 إجابات صحيحة", color = if (passed) Green else Color(0xFFB45309), fontSize = 20.sp, fontWeight = FontWeight.Bold)
-            Text(if (passed) "فُتحت لك الوحدة التالية." else "تحتاج إلى 3 إجابات صحيحة على الأقل. أعد الدروس ثم حاول مجدداً.", color = Ink, fontSize = 14.sp, textAlign = TextAlign.Center)
+            Text(if (passed) "فُتحت لك الوحدة التالية." else "تحتاج إلى 4 إجابات صحيحة على الأقل. أعد الدروس ثم حاول مجدداً.", color = Ink, fontSize = 14.sp, textAlign = TextAlign.Center)
             Spacer(Modifier.height(24.dp))
             Button(onClick = { onComplete(passed) }, modifier = Modifier.fillMaxWidth(), colors = ButtonDefaults.buttonColors(containerColor = Navy), shape = RoundedCornerShape(15.dp)) { Text("العودة إلى المسار") }
         }
