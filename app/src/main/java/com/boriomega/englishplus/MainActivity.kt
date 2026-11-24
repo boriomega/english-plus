@@ -276,7 +276,7 @@ private fun LessonScreen(
                 Spacer(Modifier.height(7.dp))
                 if (!wordOrderMode) Text(lesson.example, color = Ink, fontWeight = FontWeight.Bold, textAlign = TextAlign.Center)
                 Text(lesson.translation, color = Ink.copy(alpha = .65f), textAlign = TextAlign.Center)
-                TextButton(onClick = { onSpeak(lesson.example) }) { Icon(Icons.Default.VolumeUp, contentDescription = null); Spacer(Modifier.width(5.dp)); Text("استمع إلى المثال") }
+                if (!wordOrderMode) TextButton(onClick = { onSpeak(lesson.example) }) { Icon(Icons.Default.VolumeUp, contentDescription = null); Spacer(Modifier.width(5.dp)); Text("استمع إلى المثال") }
             }
         }
         Spacer(Modifier.height(10.dp))
