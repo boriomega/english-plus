@@ -258,7 +258,11 @@ private fun LessonScreen(
     val isCorrect = if (wordOrderMode) selectedAnswer != null && normalizeAnswer(selectedAnswer!!) == normalizeAnswer(lesson.example) else selectedAnswer == word.arabic
 
     Column(Modifier.fillMaxSize().padding(20.dp)) {
-        Text("‹  رجوع", color = Navy, fontWeight = FontWeight.Bold, modifier = Modifier.clickable { onBack() }.padding(8.dp))
+        Row(Modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically) {
+            Text("‹  رجوع", color = Navy, fontWeight = FontWeight.Bold, modifier = Modifier.clickable { onBack() }.padding(8.dp))
+            Spacer(Modifier.weight(1f))
+            Text("♥ $hearts", color = Color(0xFFD98991), fontWeight = FontWeight.Black)
+        }
         Spacer(Modifier.height(12.dp))
         LinearProgressIndicator(
             progress = { (questionIndex + if (selectedAnswer != null) 1 else 0).toFloat() / totalQuestions },
