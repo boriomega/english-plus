@@ -29,3 +29,9 @@
 @media(max-width:420px){.placement-card{padding:23px 17px}.placement-card h1{font-size:22px}.placement-retake{font-size:10px;padding:7px}}
 
 .placement-status{background:#fff8e8;border:1px solid #f0d99e;border-radius:14px;padding:11px 14px;margin-top:15px;color:#755314;font-size:12px;line-height:1.7;font-weight:700}
+
+.placement-levels{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:20px 0}
+.placement-level{font-size:21px;letter-spacing:1px;background:#123b70;box-shadow:0 4px 0 #09284f}
+.placement-level:nth-child(2){background:#245da0;box-shadow:0 4px 0 #174477}
+.placement-level:nth-child(3){background:#e63946;box-shadow:0 4px 0 #b92635}
+.placement-level:nth-child(4){background:#a92331;box-shadow:0 4px 0 #791925}
