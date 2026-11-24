@@ -219,3 +219,79 @@ button:focus-visible{outline:3px solid #91b5d8;outline-offset:3px}
  .lesson-path{grid-auto-rows:minmax(108px,auto)}
  .path-label b{font-size:12px}
 }
+
+
+/* Final visual pass: clearer hierarchy, Arabic-first alignment and balanced hero */
+.topbar{
+  min-height:72px;
+  background:rgba(255,255,255,.96);
+  border-bottom:1px solid #e2ebf4;
+  box-shadow:0 3px 16px #597b9b0c;
+}
+.brand{gap:11px;letter-spacing:.5px}
+.brand-mark{
+  background:linear-gradient(145deg,#a8c5e2,#819fbe);
+  box-shadow:0 4px 0 #d7e4f0;
+}
+.sound-toggle,.icon-button{
+  background:#f0f5fa;
+  border:1px solid #e1eaf3;
+  color:#6684a4;
+}
+.shell{max-width:620px;padding-top:22px}
+.welcome{
+  min-height:166px;
+  padding:22px 21px;
+  background:linear-gradient(125deg,#91b3d4 0%,#b9cee3 100%);
+  border:1px solid #b8cce0;
+  box-shadow:0 6px 0 #dce7f1;
+}
+.welcome h1{font-size:26px;line-height:1.42}
+.welcome h1 span{color:#f8fbff}
+.welcome p{line-height:1.8}
+.mascot{
+  width:84px;height:84px;flex:none;
+  display:grid;place-items:center;
+  border-radius:25px;
+  padding:0;
+  background:#ffffff30;
+  border:2px solid #ffffff50;
+  box-shadow:inset 0 1px 0 #ffffff45;
+  transform:rotate(4deg);
+  font-size:0;
+}
+.mascot span{display:none}
+.mascot::before{
+  content:"📘";
+  font-size:47px;
+  line-height:1;
+  transform:rotate(-4deg);
+}
+.progress-card,.xp-progress,.achievements,.game-stats .stat-card{
+  border-color:#e0e9f2;
+  box-shadow:0 3px 0 #edf2f7;
+}
+.progress-card{padding:16px 17px}
+.section-heading{margin-top:25px}
+.section-heading h2{font-size:20px}
+.section-heading p{line-height:1.7}
+.unit-map-heading{direction:rtl;text-align:right}
+.unit-map-heading span{white-space:nowrap}
+.unit-map-heading b{line-height:1.5}
+.lesson-path{direction:ltr}
+.path-label{direction:rtl;text-align:center}
+.path-node{cursor:pointer}
+.path-step.locked .path-node{cursor:not-allowed}
+@media(max-width:420px){
+  .shell{padding-inline:13px}
+  .welcome{min-height:150px;padding:18px 16px}
+  .welcome h1{font-size:23px}
+  .mascot{width:70px;height:70px;border-radius:21px}
+  .mascot::before{font-size:39px}
+  .unit-map-heading{gap:7px}
+  .unit-map-heading b{font-size:13px}
+  .unit-map-heading small{font-size:10px;white-space:nowrap}
+}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+}
