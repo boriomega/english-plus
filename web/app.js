@@ -20,8 +20,8 @@ const LESSONS = [
     title: lesson[0],
     sub: lesson[1],
     icon: lesson[2],
-    unit: unitIndex + 1,
-    unitTitle: unit[0],
+    unit: UNIT_MAP[unitIndex],
+    unitTitle: UNIT_TITLES[unitIndex] || unit[0],
       words: lesson[3].map(([english, arabic, icon]) => [english, arabic, icon])
     }))
   )
