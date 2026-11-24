@@ -26,7 +26,7 @@ import androidx.compose.ui.unit.sp
 import java.util.Locale
 
 private val Navy = Color(0xFF123B70)
-private val Red = Color(0xFFE63946)
+private val Green = Color(0xFF19A56B)
 private val Cream = Color(0xFFF6F8FC)
 private val Ink = Color(0xFF17243A)
 
@@ -56,7 +56,7 @@ fun EnglishPlusApp(onSpeak: (String) -> Unit) {
         Lesson("الطعام الصحي", "Healthy food", "🍎", listOf("Apple" to "تفاحة", "Bread" to "خبز", "Water" to "ماء"), true),
         Lesson("الألوان", "Colors", "🎨", listOf("Red" to "أحمر", "Blue" to "أزرق", "Green" to "أخضر"), true)
     )
-    MaterialTheme(colorScheme = lightColorScheme(primary = Navy, secondary = Red, background = Cream)) {
+    MaterialTheme(colorScheme = lightColorScheme(primary = Navy, secondary = Green, background = Cream)) {
         Surface(Modifier.fillMaxSize(), color = Cream) {
             if (selected == null) {
                 Column(Modifier.fillMaxSize()) {
@@ -76,7 +76,7 @@ fun EnglishPlusApp(onSpeak: (String) -> Unit) {
                                 Text("المستوى الأول", color = Navy, fontWeight = FontWeight.Bold)
                                 Text("المبتدئ A1 • أساسيات الإنجليزية", color = Ink.copy(alpha=.7f), fontSize = 12.sp)
                             }
-                            Text("${completed.size}/${lessons.size}", color = Red, fontWeight = FontWeight.Bold)
+                            Text("${completed.size}/${lessons.size}", color = Green, fontWeight = FontWeight.Bold)
                         }
                     }
                     LazyColumn(contentPadding = PaddingValues(horizontal = 20.dp, vertical = 4.dp), verticalArrangement = Arrangement.spacedBy(12.dp)) {
@@ -131,7 +131,7 @@ private fun LessonScreen(lesson: Lesson, onSpeak: (String) -> Unit, onBack: () -
                     Text(english, color = Navy, fontSize = 19.sp, fontWeight = FontWeight.Bold)
                     Text(arabic, color = Ink.copy(alpha=.7f))
                 }
-                IconButton(onClick = { onSpeak(english) }) { Icon(Icons.Default.VolumeUp, contentDescription = "استمع", tint = Red) }
+                IconButton(onClick = { onSpeak(english) }) { Icon(Icons.Default.VolumeUp, contentDescription = "استمع", tint = Green) }
             }
         }
         Spacer(Modifier.height(20.dp))
@@ -140,6 +140,6 @@ private fun LessonScreen(lesson: Lesson, onSpeak: (String) -> Unit, onBack: () -
         }
         if (revealed) Text("أحسنت! اقرأ الكلمات الإنجليزية بصوت واضح، ثم اضغط إكمال الدرس.", color = Ink, modifier = Modifier.padding(12.dp))
         Spacer(Modifier.weight(1f))
-        Button(onClick = onComplete, modifier = Modifier.fillMaxWidth(), colors = ButtonDefaults.buttonColors(containerColor = Red)) { Text("إكمال الدرس وفتح التالي") }
+        Button(onClick = onComplete, modifier = Modifier.fillMaxWidth(), colors = ButtonDefaults.buttonColors(containerColor = Green)) { Text("إكمال الدرس وفتح التالي") }
     }
 }
