@@ -9,7 +9,7 @@ const LESSONS = LESSON_GROUPS.flatMap((unit, unitIndex) =>
     icon: lesson[2],
     unit: unitIndex + 1,
     unitTitle: unit[0],
-    words: lesson[3].map(([english, arabic, icon]) => [english, arabic, WORD_ICONS[english] || icon])
+    words: lesson[3].map(([english, arabic, icon]) => [english, arabic, icon])
   }))
 );
 
@@ -57,7 +57,7 @@ const sentence=practiceMode?"":lessons[activeLesson].grammar[2],sentenceAr=pract
 answered=false;$("lesson-progress").style.width=question/total*100+"%";$("question-count").textContent=(question+1)+" / "+total;
 let prompt="",body="";
 const grammar=!practiceMode&&question===0?'<aside class="grammar-tip"><b>قاعدة اليوم: '+lessons[activeLesson].grammar[0]+'</b><span>'+lessons[activeLesson].grammar[1]+'</span><div dir="ltr">'+lessons[activeLesson].grammar[2]+'</div><small>'+lessons[activeLesson].grammar[3]+'</small><button type="button" class="word-audio" id="grammar-audio" aria-label="استمع إلى المثال">🔊</button></aside>':"";
-if(kind===0){prompt="اختر معنى الكلمة";body='<div class="word-picture">'+iconArt(word[2],"word-art")+'</div><div class="word-en" dir="ltr">'+word[0]+' <button class="word-audio" id="word-audio" type="button" aria-label="استمع إلى الكلمة">🔊</button></div><div class="word-ar">اختر الترجمة العربية الصحيحة</div>';}
+if(kind===0){prompt="اختر معنى الكلمة";body='<div class="word-picture">'+iconArt(WORD_ICONS[word[0]] || word[2],"word-art")+'</div><div class="word-en" dir="ltr">'+word[0]+' <button class="word-audio" id="word-audio" type="button" aria-label="استمع إلى الكلمة">🔊</button></div><div class="word-ar">اختر الترجمة العربية الصحيحة</div>';}
 else{prompt="رتّب الكلمات لتكوين جملة";body='<div class="word-picture">'+iconArt("book","word-art")+'</div><div class="word-ar">'+sentenceAr+'</div><div class="word-en">كوّن الجملة الإنجليزية من الكلمات التالية</div><div class="word-order-answer" id="word-order-answer" aria-label="الجملة المرتبة"></div><div class="word-order-bank" id="word-order-bank" aria-label="الكلمات المتاحة"></div>';}
 $("lesson-content").innerHTML='<p class="question-kicker">'+(practiceMode?"تدريب استعادة القلوب":("❤️ "+hearts+" • XP "+xp))+'</p><span class="exercise-kind">'+(kind===0?"اختيار من متعدد":"ترتيب الكلمات")+'</span><h2 class="question-title">'+prompt+'</h2>'+body+grammar+'<div class="answers" id="answers"></div><div class="feedback" id="feedback" aria-live="polite"></div><button class="primary-button" id="next" disabled>'+(kind===1?"تحقق من الترتيب":(question===total-1?"إنهاء":"متابعة"))+'</button>';
 $("word-audio")?.addEventListener("click",()=>speak(word[0]));$("grammar-audio")?.addEventListener("click",()=>speak(lessons[activeLesson].grammar[2]));
