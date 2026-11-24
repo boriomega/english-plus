@@ -630,3 +630,42 @@ button:focus-visible{
 @media(prefers-reduced-motion:reduce){
   button{transition:none!important}
 }
+
+/* English Plus refresh: crisp green learning interface and modern controls */
+:root{--navy:#287b25;--blue:#58cc02;--red:#ff9f43;--green:#58cc02;--ink:#263b2b;--muted:#718276;--paper:#f5fbf1;--line:#e0edd9;--pri:#58cc02;--pri2:#46a900}
+body{background:radial-gradient(ellipse at 8% 0%,#e8f8dc 0,transparent 36%),var(--paper);color:var(--ink)}
+.topbar{border-bottom:1px solid #e6f0e1;box-shadow:0 5px 22px #244d1b0b}
+.brand{color:#287b25}.brand-mark{background:linear-gradient(145deg,#70df25,#42a900);border-radius:15px;box-shadow:0 4px 0 #328d00}
+.sound-toggle,.icon-button{background:#eff8e9;color:#348c16;border:1px solid #dfefd5;border-radius:14px;transition:transform .16s,background .16s}
+.sound-toggle:active,.icon-button:active{transform:scale(.94);background:#e0f4d4}
+.welcome{background:linear-gradient(125deg,#58cc02,#279b16);box-shadow:0 7px 0 #d4ebc8,0 16px 30px #318e181c;border-radius:26px}
+.welcome h1 span{color:#e9ffd9}.mascot{background:#ffffff24;border-color:#ffffff48}
+.progress-card,.xp-progress,.achievements{border-color:#e3efdc;box-shadow:0 4px 16px #315b2310}
+.progress-track span,.mini-progress span{background:linear-gradient(90deg,#8be34d,#43b900)}
+.section-heading h2,.progress-head b,.achievement-head h2{color:#287b25}
+.level-tag{background:#e7f7dc;color:#318e18;border-radius:12px}
+.unit-map{border:1px solid #e2eedc;border-radius:22px;padding:13px;background:#fff;box-shadow:0 5px 0 #e6efdf,0 12px 28px #315b230a}
+.unit-map-heading{display:flex;align-items:center;gap:10px;padding:5px 4px 14px;color:#294c2c}
+.unit-map-heading span{background:#58cc02;color:#fff;border-radius:10px;padding:7px 10px;font:900 11px Nunito;box-shadow:0 3px 0 #42a900}
+.unit-map-heading b{font-size:15px;flex:1}.unit-map-heading small{color:#829183;font-size:11px}
+.path-node{border:3px solid #fff;background:linear-gradient(145deg,#a5ee78,#58cc02);box-shadow:0 6px 0 #3fa800,0 10px 20px #3c9c1824;color:#fff;transition:transform .16s,filter .16s}
+.path-step:not(.locked) .path-node:active{transform:translateY(4px) scale(.97);box-shadow:0 2px 0 #3fa800}
+.path-step.locked .path-node{opacity:.78;background:linear-gradient(145deg,#d8e8d1,#b9d3ad);box-shadow:0 5px 0 #a9c69d}
+.path-step.locked .path-label small{color:#4b9a36}
+.path-step.done .path-node{background:linear-gradient(145deg,#b8f2a0,#66ca39);color:#246b1d}
+.path-label b{color:#294b2d}.path-label small{color:#4d9d30}
+.lesson-dialog{border:1px solid #e1eedb;border-radius:28px 28px 0 0;box-shadow:0 -18px 60px #244d1b20}
+.question-title{color:#287b25;font-weight:900}
+.word-picture{background:linear-gradient(145deg,#f4faef,#eaf6e2);border:1px solid #e1eedb}
+.word-audio,.listen-button{background:#eaf8e2;color:#318b19;border:1px solid #d5edc9;border-radius:14px;box-shadow:0 3px 0 #d3e8c8}
+.answer{border:2px solid #e2eddd;box-shadow:0 4px 0 #e2eddd;border-radius:16px;transition:all .16s}
+.answer.selected,.answer:focus-visible{border-color:#58cc02;background:#f1fbe9;outline:none}
+.primary-button,.lesson-action,.practice-button,.placement-btn{background:linear-gradient(180deg,#69d51b,#49b400);color:#fff;border:0;border-radius:16px;box-shadow:0 5px 0 #388f00,0 8px 18px #3e9e171c;font-weight:900;transition:transform .14s,filter .14s}
+.primary-button:active,.lesson-action:active,.practice-button:active,.placement-btn:active{transform:translateY(3px);box-shadow:0 2px 0 #388f00}
+.primary-button:disabled{background:#b9cbb0;box-shadow:0 4px 0 #9fb296}
+.feedback.good{background:#eaf9e4;border:1px solid #ccebbd;border-radius:13px;padding:9px;color:#2d8b20}
+.feedback.bad{background:#fff5e9;border:1px solid #f2d9b7;border-radius:13px;padding:9px;color:#a56a21}
+.question-timer{border-radius:12px;background:#edf5e8}
+.question-time-track span{background:linear-gradient(90deg,#8bdb4b,#f5b444)}
+.toast{background:#244c25;border:1px solid #4f8740;box-shadow:0 8px 24px #1b401c30}
+@media(min-width:650px){.lesson-dialog{border-radius:28px}.shell{max-width:780px}}
