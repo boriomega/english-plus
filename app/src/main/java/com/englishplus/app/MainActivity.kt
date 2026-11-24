@@ -225,7 +225,7 @@ private fun HomeScreen(xp: Int, completed: Int, onStart: () -> Unit) {
                         Column(horizontalAlignment = Alignment.CenterHorizontally) {
                             Button(
                                 onClick = onStart,
-                                enabled = isUnlocked,
+                                enabled = isUnlocked || isDone,
                                 modifier = Modifier.size(76.dp),
                                 shape = CircleShape,
                                 colors = ButtonDefaults.buttonColors(
