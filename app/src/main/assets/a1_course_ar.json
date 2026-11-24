@@ -1,0 +1,379 @@
+{
+  "course": "English Plus",
+  "cefrLevel": "A1",
+  "nativeLanguage": "ar",
+  "units": [
+    {
+      "unitNumber": 1,
+      "titleAr": "التعارف والتحيات",
+      "lessons": [
+        {
+          "lessonNumber": 1,
+          "titleAr": "التحية والتوديع",
+          "exercises": []
+        },
+        {
+          "lessonNumber": 2,
+          "titleAr": "التعريف بالنفس",
+          "exercises": []
+        },
+        {
+          "lessonNumber": 3,
+          "titleAr": "البلدان واللغات",
+          "exercises": []
+        },
+        {
+          "lessonNumber": 4,
+          "titleAr": "السؤال عن الحال",
+          "exercises": []
+        },
+        {
+          "lessonNumber": 5,
+          "titleAr": "مراجعة التعارف",
+          "exercises": []
+        }
+      ]
+    },
+    {
+      "unitNumber": 2,
+      "titleAr": "الأرقام والعائلة",
+      "lessons": [
+        {
+          "lessonNumber": 6,
+          "titleAr": "الأرقام الأساسية",
+          "exercises": []
+        },
+        {
+          "lessonNumber": 7,
+          "titleAr": "أفراد العائلة",
+          "exercises": []
+        },
+        {
+          "lessonNumber": 8,
+          "titleAr": "العمر والعدد",
+          "exercises": []
+        },
+        {
+          "lessonNumber": 9,
+          "titleAr": "وصف العائلة",
+          "exercises": []
+        },
+        {
+          "lessonNumber": 10,
+          "titleAr": "مراجعة العائلة والأرقام",
+          "exercises": []
+        }
+      ]
+    },
+    {
+      "unitNumber": 3,
+      "titleAr": "المنزل والأشياء",
+      "lessons": [
+        {
+          "lessonNumber": 11,
+          "titleAr": "غرف المنزل",
+          "exercises": []
+        },
+        {
+          "lessonNumber": 12,
+          "titleAr": "الأثاث",
+          "exercises": []
+        },
+        {
+          "lessonNumber": 13,
+          "titleAr": "أشياء يومية",
+          "exercises": []
+        },
+        {
+          "lessonNumber": 14,
+          "titleAr": "وصف المنزل",
+          "exercises": []
+        },
+        {
+          "lessonNumber": 15,
+          "titleAr": "مراجعة المنزل",
+          "exercises": []
+        }
+      ]
+    },
+    {
+      "unitNumber": 4,
+      "titleAr": "الطعام والشراب",
+      "lessons": [
+        {
+          "lessonNumber": 16,
+          "titleAr": "الفواكه والخضروات",
+          "exercises": []
+        },
+        {
+          "lessonNumber": 17,
+          "titleAr": "الوجبات",
+          "exercises": []
+        },
+        {
+          "lessonNumber": 18,
+          "titleAr": "المشروبات",
+          "exercises": []
+        },
+        {
+          "lessonNumber": 19,
+          "titleAr": "في المطعم",
+          "exercises": []
+        },
+        {
+          "lessonNumber": 20,
+          "titleAr": "مراجعة الطعام",
+          "exercises": []
+        }
+      ]
+    },
+    {
+      "unitNumber": 5,
+      "titleAr": "الحياة اليومية",
+      "lessons": [
+        {
+          "lessonNumber": 21,
+          "titleAr": "أفعال يومية",
+          "exercises": []
+        },
+        {
+          "lessonNumber": 22,
+          "titleAr": "الاستيقاظ والنوم",
+          "exercises": []
+        },
+        {
+          "lessonNumber": 23,
+          "titleAr": "العمل والدراسة",
+          "exercises": []
+        },
+        {
+          "lessonNumber": 24,
+          "titleAr": "أوقات الفراغ",
+          "exercises": []
+        },
+        {
+          "lessonNumber": 25,
+          "titleAr": "مراجعة الروتين",
+          "exercises": []
+        }
+      ]
+    },
+    {
+      "unitNumber": 6,
+      "titleAr": "الوقت والتقويم",
+      "lessons": [
+        {
+          "lessonNumber": 26,
+          "titleAr": "أيام الأسبوع",
+          "exercises": []
+        },
+        {
+          "lessonNumber": 27,
+          "titleAr": "أشهر السنة",
+          "exercises": []
+        },
+        {
+          "lessonNumber": 28,
+          "titleAr": "قراءة الساعة",
+          "exercises": []
+        },
+        {
+          "lessonNumber": 29,
+          "titleAr": "التواريخ",
+          "exercises": []
+        },
+        {
+          "lessonNumber": 30,
+          "titleAr": "مراجعة الوقت",
+          "exercises": []
+        }
+      ]
+    },
+    {
+      "unitNumber": 7,
+      "titleAr": "الدراسة والعمل",
+      "lessons": [
+        {
+          "lessonNumber": 31,
+          "titleAr": "المدرسة والمواد",
+          "exercises": []
+        },
+        {
+          "lessonNumber": 32,
+          "titleAr": "أدوات الدراسة",
+          "exercises": []
+        },
+        {
+          "lessonNumber": 33,
+          "titleAr": "المهن",
+          "exercises": []
+        },
+        {
+          "lessonNumber": 34,
+          "titleAr": "مكان العمل",
+          "exercises": []
+        },
+        {
+          "lessonNumber": 35,
+          "titleAr": "مراجعة الدراسة والعمل",
+          "exercises": []
+        }
+      ]
+    },
+    {
+      "unitNumber": 8,
+      "titleAr": "المدينة والمواصلات",
+      "lessons": [
+        {
+          "lessonNumber": 36,
+          "titleAr": "أماكن في المدينة",
+          "exercises": []
+        },
+        {
+          "lessonNumber": 37,
+          "titleAr": "الاتجاهات",
+          "exercises": []
+        },
+        {
+          "lessonNumber": 38,
+          "titleAr": "وسائل النقل",
+          "exercises": []
+        },
+        {
+          "lessonNumber": 39,
+          "titleAr": "السؤال عن الطريق",
+          "exercises": []
+        },
+        {
+          "lessonNumber": 40,
+          "titleAr": "مراجعة المدينة",
+          "exercises": []
+        }
+      ]
+    },
+    {
+      "unitNumber": 9,
+      "titleAr": "التسوق والملابس",
+      "lessons": [
+        {
+          "lessonNumber": 41,
+          "titleAr": "الملابس الأساسية",
+          "exercises": []
+        },
+        {
+          "lessonNumber": 42,
+          "titleAr": "الألوان والمقاسات",
+          "exercises": []
+        },
+        {
+          "lessonNumber": 43,
+          "titleAr": "الأسعار والمال",
+          "exercises": []
+        },
+        {
+          "lessonNumber": 44,
+          "titleAr": "في المتجر",
+          "exercises": []
+        },
+        {
+          "lessonNumber": 45,
+          "titleAr": "مراجعة التسوق",
+          "exercises": []
+        }
+      ]
+    },
+    {
+      "unitNumber": 10,
+      "titleAr": "الطقس والطبيعة",
+      "lessons": [
+        {
+          "lessonNumber": 46,
+          "titleAr": "حالة الطقس",
+          "exercises": []
+        },
+        {
+          "lessonNumber": 47,
+          "titleAr": "الفصول",
+          "exercises": []
+        },
+        {
+          "lessonNumber": 48,
+          "titleAr": "الطبيعة",
+          "exercises": []
+        },
+        {
+          "lessonNumber": 49,
+          "titleAr": "وصف الجو",
+          "exercises": []
+        },
+        {
+          "lessonNumber": 50,
+          "titleAr": "مراجعة الطقس والطبيعة",
+          "exercises": []
+        }
+      ]
+    },
+    {
+      "unitNumber": 11,
+      "titleAr": "الصحة والجسم",
+      "lessons": [
+        {
+          "lessonNumber": 51,
+          "titleAr": "أجزاء الجسم",
+          "exercises": []
+        },
+        {
+          "lessonNumber": 52,
+          "titleAr": "المشاعر والأعراض",
+          "exercises": []
+        },
+        {
+          "lessonNumber": 53,
+          "titleAr": "زيارة الطبيب",
+          "exercises": []
+        },
+        {
+          "lessonNumber": 54,
+          "titleAr": "العادات الصحية",
+          "exercises": []
+        },
+        {
+          "lessonNumber": 55,
+          "titleAr": "مراجعة الصحة",
+          "exercises": []
+        }
+      ]
+    },
+    {
+      "unitNumber": 12,
+      "titleAr": "الهوايات والسفر",
+      "lessons": [
+        {
+          "lessonNumber": 56,
+          "titleAr": "الهوايات",
+          "exercises": []
+        },
+        {
+          "lessonNumber": 57,
+          "titleAr": "الرياضة",
+          "exercises": []
+        },
+        {
+          "lessonNumber": 58,
+          "titleAr": "العطلات والسفر",
+          "exercises": []
+        },
+        {
+          "lessonNumber": 59,
+          "titleAr": "الفندق والمطار",
+          "exercises": []
+        },
+        {
+          "lessonNumber": 60,
+          "titleAr": "مراجعة عامة",
+          "exercises": []
+        }
+      ]
+    }
+  ]
+}
