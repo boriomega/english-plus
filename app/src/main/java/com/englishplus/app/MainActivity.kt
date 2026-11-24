@@ -2,6 +2,8 @@ package com.englishplus.app
 
 import android.content.Context
 import android.os.Bundle
+import android.speech.tts.TextToSpeech
+import java.util.Locale
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.background
@@ -29,6 +31,7 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.DisposableEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -46,7 +49,7 @@ import androidx.compose.ui.unit.sp
 import androidx.compose.runtime.CompositionLocalProvider
 
 private val Navy = Color(0xFF123B70)
-private val FlagRed = Color(0xFFE63946)
+private val FlagRed = Color(0xFF16834A)
 private val PaleBlue = Color(0xFFEAF2FC)
 private val Ink = Color(0xFF172B4D)
 private val Page = Color(0xFFF7F9FC)
@@ -194,7 +197,7 @@ private fun HomeScreen(xp: Int, completed: Int, examPassed: Boolean, a1ExamPasse
             horizontalArrangement = Arrangement.SpaceBetween,
             verticalAlignment = Alignment.CenterVertically
         ) {
-            Text("⭐ $xp XP", color = FlagRed, fontWeight = FontWeight.Bold, fontSize = 15.sp)
+            Text("⚡ $xp XP", color = FlagRed, fontWeight = FontWeight.Bold, fontSize = 15.sp)
             Column(horizontalAlignment = Alignment.End) {
                 Text("English Plus", color = Navy, fontSize = 25.sp, fontWeight = FontWeight.ExtraBold)
                 Text("رحلتك لتعلّم الإنجليزية تبدأ هنا", color = Ink, fontSize = 13.sp)
@@ -318,7 +321,7 @@ private fun HomeScreen(xp: Int, completed: Int, examPassed: Boolean, a1ExamPasse
                             ) {
                                 Text(
                                     when {
-                                        isDone -> "★"
+                                        isDone -> "✓"
                                         isUnlocked -> "▶"
                                         else -> "🔒"
                                     },
@@ -350,6 +353,28 @@ private fun HomeScreen(xp: Int, completed: Int, examPassed: Boolean, a1ExamPasse
             modifier = Modifier.fillMaxWidth(), textAlign = TextAlign.Center
         )
     }
+}
+
+@Composable
+private fun SpeechButton(text: String) {
+    val context = LocalContext.current
+    val engine = remember(context) { TextToSpeech(context) { status ->
+        if (status == TextToSpeech.SUCCESS) {
+            // The engine is initialized asynchronously; the button remains available.
+        }
+    } }
+    DisposableEffect(engine) {
+        onDispose { engine.stop(); engine.shutdown() }
+    }
+    Button(
+        onClick = {
+            engine.language = Locale.US
+            engine.setSpeechRate(0.88f)
+            engine.speak(text, TextToSpeech.QUEUE_FLUSH, null, "english_plus_speech")
+        },
+        colors = ButtonDefaults.buttonColors(containerColor = Green),
+        shape = RoundedCornerShape(12.dp)
+    ) { Text("🔊 استمع إلى النطق", fontWeight = FontWeight.Bold) }
 }
 
 @Composable
@@ -401,6 +426,8 @@ private fun LessonScreen(lessonNumber: Int, onBack: () -> Unit, onLessonComplete
                 Spacer(Modifier.height(8.dp))
                 Text(exercise.word, color = Navy, fontSize = 32.sp, fontWeight = FontWeight.ExtraBold)
                 Text(exercise.pronunciation, color = Color(0xFF64748B), fontSize = 15.sp)
+                Spacer(Modifier.height(8.dp))
+                SpeechButton("${exercise.word}. ${exercise.example}")
                 Spacer(Modifier.height(10.dp))
                 Text("مثال: ${exercise.example}", color = Ink, fontSize = 14.sp, textAlign = TextAlign.Center)
             }
@@ -433,7 +460,7 @@ private fun LessonScreen(lessonNumber: Int, onBack: () -> Unit, onLessonComplete
         if (checked) {
             Spacer(Modifier.height(12.dp))
             Text(
-                if (isCorrect) "أحسنت! إجابة صحيحة ⭐" else "الإجابة الصحيحة: ${exercise.answer}",
+                if (isCorrect) "أحسنت! إجابة صحيحة " else "الإجابة الصحيحة: ${exercise.answer}",
                 color = if (isCorrect) Green else FlagRed,
                 fontWeight = FontWeight.Bold,
                 fontSize = 16.sp
