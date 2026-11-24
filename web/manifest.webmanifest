@@ -6,6 +6,6 @@
   "dir": "rtl",
   "start_url": "./",
   "display": "standalone",
-  "background_color": "#f1eff3",
-  "theme_color": "#8e6bb5"
+  "background_color": "#f1e8d8",
+  "theme_color": "#b99a68"
 }
