@@ -398,3 +398,8 @@ body{background:#f1eff3}
 .answer.selected{border-color:#8e6bb5;background:#f3eef9;box-shadow:0 3px 0 #dfd1ed}
 .word-chip{cursor:pointer;border:2px solid #8e6bb5;background:#f3eef9;color:#68468f;border-radius:11px;padding:9px 13px;font:800 15px Nunito;margin:3px}
 #next{display:none}
+
+
+/* Soft blue app background at a moderate 50% visual intensity */
+:root{--paper:#dceaf5}
+body{background:#dceaf5}
