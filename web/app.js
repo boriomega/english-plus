@@ -201,3 +201,5 @@ function showLessonComplete(){
 }
 function toast(msg){$("toast").textContent=msg;$("toast").classList.add("show");setTimeout(()=>$("toast").classList.remove("show"),2600)}
 $("lesson-list").addEventListener("click",e=>{const b=e.target.closest("[data-open]");if(b){sound("click");openLesson(Number(b.dataset.open))}});$("mute").onclick=()=>{muted=!muted;localStorage.setItem("ep-muted",String(muted));render();if(!muted)sound("click")};$("close-lesson").onclick=()=>{$("lesson-dialog").close();sound("click")};$("lesson-dialog").addEventListener("click",e=>{if(e.target===$("lesson-dialog")){$("lesson-dialog").close();sound("click")}});$("practice-refill").onclick=beginPractice;render();
+window.addEventListener("ep-xp-updated",()=>{xp=Number(localStorage.getItem("ep-xp")||0);render()});
+window.addEventListener("ep-hearts-updated",()=>{hearts=Number(localStorage.getItem("ep-hearts")??5);render()});
