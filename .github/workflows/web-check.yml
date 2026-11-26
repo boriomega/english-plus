@@ -24,6 +24,7 @@ jobs:
       - name: Check JavaScript syntax
         run: |
           node --check web/app.js
+          node --check web/a1-a2.js
           node --check web/placement.js
       - name: Check required app assets
         run: |
